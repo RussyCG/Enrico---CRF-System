@@ -1,4 +1,6 @@
-﻿using MongoAccess.Models;
+﻿using MongoAccess.DbContext;
+using MongoAccess.Models;
+using MongoDB.Bson;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,15 +11,18 @@ namespace BusinessLogic.Controllers
 {
     public class DocumentController 
     {
+        //[HttpPost]
+        //[Route("api/course")]
         //public void async POST(Document Document)
         //{
         //     await 
         //}
+        DataBaseContext db = new DataBaseContext();
 
-        public void POST()
+        public void POST(BsonDocument[] documents)
         {
-            var document = new Document();
-
+            List<BsonDocument> docs = documents.ToList();
+            db.InsertAsync(docs);
         }
     }
 }
