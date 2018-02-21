@@ -11,27 +11,29 @@ namespace MongoAccess.DbContext
 {
     public class DataBaseContext
     {
-        MongoClient client = new MongoClient("http://Projects.belgiumcampus:27017");
+        MongoClient client = new MongoClient("mongodb://projects.belgiumcampus:27017");
 
-        
-        //public async Task<BsonDocument> InsertSingle(BsonDocument doc)
-        //{
-        //    var database = client.GetDatabase("PotatoFactoryCRF");
 
-        //    var collection = database.CreateCollectionAsync("MyCOllection");
-        //    return await collection.InsertOneAsync(doc);
-            
-        //}
+        public async Task<BsonDocument> InsertSingle(BsonDocument doc) {
+            var database = client.GetDatabase("PotatoFactoryCRF");
 
-        //public async Task<List<BsonDocument>> InsertAsync(List<BsonDocument> docs)
-        //{
+            await database.CreateCollectionAsync("MyCollection");
+            var collection = database.GetCollection<BsonDocument>("MyCollection");
+            await collection.InsertOneAsync(doc);
+
+            var filter = new BsonDocument();
+            return await collection.Find(filter).FirstOrDefaultAsync();
+
+        }
+
+        //public async Task<List<BsonDocument>> InsertAsync(List<BsonDocument> docs) {
         //    int amount = docs.Count();
         //    var database = client.GetDatabase("PotatoFactoryCRF");
         //    var documents = Enumerable.Range(1, amount).Select(i => new BsonDocument("counter", i));
-        //    var collection = database.CreateCollectionAsync("MyCOllection");
+        //    var collection = database.CreateCollectionAsync("MyCollection");
 
         //    return await collection.InsertManyAsync(docs);
-             
+
         //}
 
 
