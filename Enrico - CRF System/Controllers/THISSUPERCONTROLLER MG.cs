@@ -14,7 +14,13 @@ namespace Enrico___CRF_System.Controllers
         [HttpGet]        
         public async Task<string> GetCollections() {
 
-            
+            var docController = new DocumentController();
+            await docController.Post(new List<KeyValuePair<string, object>>() {
+                new KeyValuePair<string, object>("Name","Test"),
+                new KeyValuePair<string, object>("Age",18)
+            });
+           
+            return await docController.Get();
 
         }
 

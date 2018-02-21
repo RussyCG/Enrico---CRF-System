@@ -93,5 +93,21 @@ namespace MongoAccess.DbContext
                 return docs;
             }
         }
+
+        public static BsonDocument ObjectToBson(object obj) {
+
+            return BsonDocument.Create(obj);
+
+        }
+
+        public static BsonDocument KeyValuePairsToBson(List<KeyValuePair<string, object>> data) {
+
+            BsonDocument doc = new BsonDocument();
+            foreach (var item in data) {
+                doc.Add(item.Key, BsonValue.Create(item.Value));
+            }
+            return doc;
+
+        }
     }
 }

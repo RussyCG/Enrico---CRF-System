@@ -24,19 +24,16 @@ namespace BusinessLogic.Controllers
         //    await db.InsertAsync(docs);
         //}
 
-        //public async Task<string> Get()
-        //{
-        //    var val = await DataBaseContext.GetAllInCollection("test");
-        //    return val[1].ToString();
-        //}
+        public async Task<string> Get()
+        {
+            var val = await DataBaseContext.GetAllInCollection("test");
+            return val[1].ToString();
+        }
 
-        //public async Task<List<string>> Post(List<KeyValuePair<string, string>> values) {
-        //    BsonDocument doc = new BsonDocument();
-        //    foreach (var item in values){
-        //        doc.Add(item.Key, item.Value);
-        //    }
-        //    await DataBaseContext.InsertSingle("test",doc);
-        //    return await DataBaseContext.ListCollections();
-        //}
+        public async Task<List<string>> Post(List<KeyValuePair<string, object>> values) {
+            var doc = DataBaseContext.KeyValuePairsToBson(values);
+            await DataBaseContext.InsertSingle("test",doc);
+            return await DataBaseContext.ListCollections();
+        }
     }
 }
