@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\DocumentController.cs" />
+    <Compile Include="Interfaces\IDocumentController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MongoAccess\MongoAccess.csproj">
+      <Project>{d2491b93-d161-498e-a34d-f7e7fd844aa3}</Project>
+      <Name>MongoAccess</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
