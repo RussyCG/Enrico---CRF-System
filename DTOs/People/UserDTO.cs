@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.People
+namespace DTO_olds.People
 {
-    public abstract class UserDTO : Base.BaseDTO
+    public abstract class UserDTO_old : Base.BaseDTO_old
     {
         #region Fields
 
@@ -23,21 +23,21 @@ namespace DTOs.People
         /// <summary>
         /// Empty Constructor
         /// </summary>
-        public UserDTO()
+        public UserDTO_old()
             : base()
         {
 
         }
         
         /// <summary>
-        /// Initialise a user DTO without an ID
+        /// Initialise a user DTO_old without an ID
         /// </summary>
         /// <param name="UsernameParam">Unique Username for user</param>
         /// <param name="PasswordParam">Unique Password for user</param>
         /// <param name="LastActiveParam">Date Time the user was last active on the system</param>
         /// <param name="IsLockedParam">True if the user is locked out of the system and not allowed to log in</param>
         /// <param name="EmailAddressParam">Email Address to contact the user</param>
-        public UserDTO(string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
+        public UserDTO_old(string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
             : base()
         {
             this.Username = UsernameParam;
@@ -48,7 +48,7 @@ namespace DTOs.People
         }
 
         /// <summary>
-        /// Initialise a user DTO
+        /// Initialise a user DTO_old
         /// </summary>
         /// <param name="IDParam">ID of the User</param>
         /// <param name="UsernameParam">Unique Username for user</param>
@@ -56,7 +56,7 @@ namespace DTOs.People
         /// <param name="LastActiveParam">Date Time the user was last active on the system</param>
         /// <param name="IsLockedParam">True if the user is locked out of the system and not allowed to log in</param>
         /// <param name="EmailAddressParam">Email Address to contact the user</param>
-        public UserDTO(int IDParam, string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
+        public UserDTO_old(int IDParam, string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
             : base(IDParam)
         {
             this.Username = UsernameParam;

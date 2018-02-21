@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.Base
+namespace DTO_olds.Base
 {
     /// <summary>
     /// Generic Base class for getting the ID
     /// </summary>
-    public class BaseDTO
+    public class BaseDTO_old
     {
         #region Fields
 
@@ -25,16 +25,16 @@ namespace DTOs.Base
         /// <summary>
         /// Base empty constructor
         /// </summary>
-        public BaseDTO()
+        public BaseDTO_old()
         {
 
         }
 
         /// <summary>
-        /// Constructor to initialize the BaseDTO
+        /// Constructor to initialize the BaseDTO_old
         /// </summary>
         /// <param name="IDParam">ID of the record</param>
-        public BaseDTO(int IDParam)
+        public BaseDTO_old(int IDParam)
         {
             this.ID = IDParam;
         }

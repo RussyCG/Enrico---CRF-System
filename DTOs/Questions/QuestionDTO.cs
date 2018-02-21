@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.Questions
+namespace DTO_olds.Questions
 {
     /// <summary>
     /// Represents a Question that will be presented to the user to be answered
     /// </summary>
-    public abstract class QuestionDTO : Base.BaseDTO
+    public abstract class QuestionDTO_old : Base.BaseDTO_old
     {
         #region Fields
 
@@ -23,18 +23,18 @@ namespace DTOs.Questions
         /// <summary>
         /// Default Empty Constructor
         /// </summary>
-        public QuestionDTO():
+        public QuestionDTO_old():
             base()
         {
 
         }
 
         /// <summary>
-        /// Initialize Question DTO
+        /// Initialize Question DTO_old
         /// </summary>
         /// <param name="NumberParam">Question Number Eg. 1.</param>
         /// <param name="TextParam">Text of the question to ask the user</param>
-        public QuestionDTO(int NumberParam, string TextParam)
+        public QuestionDTO_old(int NumberParam, string TextParam)
             : base()
         {
             this.Number = NumberParam;
@@ -42,12 +42,12 @@ namespace DTOs.Questions
         }
 
         /// <summary>
-        /// Initialize Question DTO
+        /// Initialize Question DTO_old
         /// </summary>
         /// <param name="NumberParam">Question Number Eg. 1.</param>
         /// <param name="TextParam">Text of the question to ask the user</param>
         /// <param name="IDParam">ID of the Question</param>
-        public QuestionDTO(int IDParam, int NumberParam, string TextParam)
+        public QuestionDTO_old(int IDParam, int NumberParam, string TextParam)
             : base(IDParam)
         {
             this.Number = NumberParam;

@@ -4,25 +4,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.People.Users
+namespace DTO_olds.People.Users
 {
-    public class StudyMonitorDTO : UserDTO
+    public class StudyMonitorDTO_old : UserDTO_old
     {
         #region Constructors
 
-        public StudyMonitorDTO()
+        public StudyMonitorDTO_old()
             : base()
         {
 
         }
 
-        public StudyMonitorDTO(string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
+        public StudyMonitorDTO_old(string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
             : base(UsernameParam, PasswordParam, LastActiveParam, IsLockedParam, EmailAddressParam)
         {
 
         }
 
-        public StudyMonitorDTO(int IDParam, string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
+        public StudyMonitorDTO_old(int IDParam, string UsernameParam, string PasswordParam, DateTime LastActiveParam, bool IsLockedParam, string EmailAddressParam)
             : base(IDParam, UsernameParam, PasswordParam, LastActiveParam, IsLockedParam, EmailAddressParam)
         {
 

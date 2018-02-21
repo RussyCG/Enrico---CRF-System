@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.Questions
+namespace DTO_olds.Questions
 {
-    public class CheckboxSelectionQuestionDTO : MultiSelectionQuestionDTO
+    public class CheckboxSelectionQuestionDTO_old : MultiSelectionQuestionDTO_old
     {
         #region Constructors
 
         /// <summary>
         /// Default Empty Constructor
         /// </summary>
-        public CheckboxSelectionQuestionDTO()
+        public CheckboxSelectionQuestionDTO_old()
             : base()
         {
 
@@ -25,7 +25,7 @@ namespace DTOs.Questions
         /// <param name="NumberParam">Order number</param>
         /// <param name="TextParam">Text to answer</param>
         /// <param name="OptionsParam">Options to select from</param>
-        public CheckboxSelectionQuestionDTO(int NumberParam, string TextParam, List<string> OptionsParam)
+        public CheckboxSelectionQuestionDTO_old(int NumberParam, string TextParam, List<string> OptionsParam)
             : base(NumberParam, TextParam, OptionsParam)
         {
             this.Options = OptionsParam;
@@ -38,7 +38,7 @@ namespace DTOs.Questions
         /// <param name="NumberParam">Order number</param>
         /// <param name="TextParam">Text to answer</param>
         /// <param name="OptionsParam">Options to select from</param>
-        public CheckboxSelectionQuestionDTO(int IDParam, int NumberParam, string TextParam, List<string> OptionsParam)
+        public CheckboxSelectionQuestionDTO_old(int IDParam, int NumberParam, string TextParam, List<string> OptionsParam)
             : base(IDParam, NumberParam, TextParam, OptionsParam)
         {
             this.Options = OptionsParam;

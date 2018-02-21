@@ -4,37 +4,37 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.Questions
+namespace DTO_olds.Questions
 {
-    public class TextQuestionDTO : QuestionDTO
+    public class TextQuestionDTO_old : QuestionDTO_old
     {
         /// <summary>
         /// Default Empty Constructor
         /// </summary>
-        public TextQuestionDTO()
+        public TextQuestionDTO_old()
             : base()
         {
 
         }
 
         /// <summary>
-        /// Initialize Question DTO
+        /// Initialize Question DTO_old
         /// </summary>
         /// <param name="NumberParam">Question Number Eg. 1.</param>
         /// <param name="TextParam">Text of the question to ask the user</param>
-        public TextQuestionDTO(int NumberParam, string TextParam)
+        public TextQuestionDTO_old(int NumberParam, string TextParam)
             : base(NumberParam, TextParam)
         {
 
         }
 
         /// <summary>
-        /// Initialize Question DTO
+        /// Initialize Question DTO_old
         /// </summary>
         /// <param name="NumberParam">Question Number Eg. 1.</param>
         /// <param name="TextParam">Text of the question to ask the user</param>
         /// <param name="IDParam">ID of the Question</param>
-        public TextQuestionDTO(int IDParam, int NumberParam, string TextParam)
+        public TextQuestionDTO_old(int IDParam, int NumberParam, string TextParam)
             : base(IDParam, NumberParam, TextParam)
         {
 

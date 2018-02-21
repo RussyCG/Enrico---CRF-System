@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enrico - CRF System", "Enrico - CRF System\Enrico - CRF System.csproj", "{327CC8D2-019E-422B-9FD1-F760086F99EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{F232282A-30C3-40C4-A68E-837EF432931F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess-Old", "DataAccess\DataAccess-Old.csproj", "{F232282A-30C3-40C4-A68E-837EF432931F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{99787E54-058B-4A0D-B9F6-0A8BE6AC5E9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs", "DTOs\DTOs.csproj", "{67EC22A1-516C-4721-A3DB-14297219C979}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTOs-Old", "DTOs\DTOs-Old.csproj", "{67EC22A1-516C-4721-A3DB-14297219C979}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TempDTOs", "ClassLibrary1\TempDTOs.csproj", "{30A91EFB-91C4-4F1C-AE2B-3040B1FFB9BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MongoAccess", "MongoAccess\MongoAccess.csproj", "{D2491B93-D161-498E-A34D-F7E7FD844AA3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{30A91EFB-91C4-4F1C-AE2B-3040B1FFB9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30A91EFB-91C4-4F1C-AE2B-3040B1FFB9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30A91EFB-91C4-4F1C-AE2B-3040B1FFB9BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2491B93-D161-498E-A34D-F7E7FD844AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2491B93-D161-498E-A34D-F7E7FD844AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2491B93-D161-498E-A34D-F7E7FD844AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2491B93-D161-498E-A34D-F7E7FD844AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

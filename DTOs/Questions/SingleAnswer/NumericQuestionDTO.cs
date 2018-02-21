@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.Questions
+namespace DTO_olds.Questions
 {
-    public class NumericQuestionDTO : QuestionDTO
+    public class NumericQuestionDTO_old : QuestionDTO_old
     {
         #region Fields
 
@@ -19,30 +19,30 @@ namespace DTOs.Questions
         /// <summary>
         /// Default Empty Constructor
         /// </summary>
-        public NumericQuestionDTO()
+        public NumericQuestionDTO_old()
             : base()
         {
 
         }
 
         /// <summary>
-        /// Initialize Question DTO
+        /// Initialize Question DTO_old
         /// </summary>
         /// <param name="NumberParam">Question Number Eg. 1.</param>
         /// <param name="TextParam">Text of the question to ask the user</param>
-        public NumericQuestionDTO(int NumberParam, string TextParam, string UnitParam)
+        public NumericQuestionDTO_old(int NumberParam, string TextParam, string UnitParam)
             : base(NumberParam, TextParam)
         {
             InitialiseComponents(NumberParam, TextParam, UnitParam);
         }
 
         /// <summary>
-        /// Initialize Question DTO
+        /// Initialize Question DTO_old
         /// </summary>
         /// <param name="NumberParam">Question Number Eg. 1.</param>
         /// <param name="TextParam">Text of the question to ask the user</param>
         /// <param name="IDParam">ID of the Question</param>
-        public NumericQuestionDTO(int IDParam, int NumberParam, string TextParam, string UnitParam)
+        public NumericQuestionDTO_old(int IDParam, int NumberParam, string TextParam, string UnitParam)
             : base(IDParam, NumberParam, TextParam)
         {
 

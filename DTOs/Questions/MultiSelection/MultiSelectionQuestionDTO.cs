@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.Questions
+namespace DTO_olds.Questions
 {
     /// <summary>
     /// A question that has a multiple options that the user must select from
     /// </summary>
-    public abstract class MultiSelectionQuestionDTO : QuestionDTO
+    public abstract class MultiSelectionQuestionDTO_old : QuestionDTO_old
     {
         #region Fields
 
@@ -22,7 +22,7 @@ namespace DTOs.Questions
         /// <summary>
         /// Default Empty Constructor
         /// </summary>
-        public MultiSelectionQuestionDTO()
+        public MultiSelectionQuestionDTO_old()
             : base()
         {
 
@@ -34,7 +34,7 @@ namespace DTOs.Questions
         /// <param name="NumberParam">Order number</param>
         /// <param name="TextParam">Text to answer</param>
         /// <param name="OptionsParam">Options to select from</param>
-        public MultiSelectionQuestionDTO(int NumberParam, string TextParam, List<string> OptionsParam)
+        public MultiSelectionQuestionDTO_old(int NumberParam, string TextParam, List<string> OptionsParam)
             : base(NumberParam, TextParam)
         {
             this.Options = OptionsParam;
@@ -47,7 +47,7 @@ namespace DTOs.Questions
         /// <param name="NumberParam">Order number</param>
         /// <param name="TextParam">Text to answer</param>
         /// <param name="OptionsParam">Options to select from</param>
-        public MultiSelectionQuestionDTO(int IDParam, int NumberParam, string TextParam, List<string> OptionsParam)
+        public MultiSelectionQuestionDTO_old(int IDParam, int NumberParam, string TextParam, List<string> OptionsParam)
             : base(IDParam, NumberParam, TextParam)
         {
             this.Options = OptionsParam;

@@ -4,15 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DTOs.Other
+namespace DTO_olds.Other
 {
-    public class FormDTO : Base.BaseDTO
+    public class FormDTO_old : Base.BaseDTO_old
     {
         private string title;
         private int orderNumber;
-        private List<Questions.QuestionDTO> list;
+        private List<Questions.QuestionDTO_old> list;
 
-        public List<Questions.QuestionDTO> Questions
+        public List<Questions.QuestionDTO_old> Questions
         {
             get { return list; }
             set { list = value; }
