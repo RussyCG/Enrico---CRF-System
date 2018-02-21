@@ -1097,7 +1097,12 @@
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Views\Forms\Form1.html" />
     <Content Include="Views\Forms\Form1.css" />
+    <Content Include="Views\Forms\Form10.html" />
+    <Content Include="Views\Forms\Form11.html" />
+    <Content Include="Views\Forms\Form12.html" />
     <Content Include="Views\Forms\Form7.html" />
+    <Content Include="Views\Forms\Form8.html" />
+    <Content Include="Views\Forms\Form9.html" />
     <Content Include="Views\Forms\index.html" />
     <Content Include="Views\sb-admin\blank.html" />
     <Content Include="Views\sb-admin\cards.html" />
