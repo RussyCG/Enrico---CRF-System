@@ -1086,6 +1086,7 @@
     <Content Include="Scripts\moment-with-locales.min.js" />
     <Content Include="Scripts\moment.js" />
     <Content Include="Scripts\moment.min.js" />
+    <Content Include="Scripts\ngCRF.js" />
     <Content Include="Scripts\popper-utils.js" />
     <Content Include="Scripts\popper-utils.min.js" />
     <Content Include="Scripts\popper.js" />
@@ -1098,6 +1099,7 @@
     <Content Include="Views\Forms\FormBaseCSS.css" />
     <Content Include="Views\Forms\Form1.html" />
     <Content Include="Views\Forms\Form1.css" />
+    <Content Include="Views\Forms\Form7.html" />
     <Content Include="Views\Forms\index.html" />
     <Content Include="Views\sb-admin\blank.html" />
     <Content Include="Views\sb-admin\cards.html" />
