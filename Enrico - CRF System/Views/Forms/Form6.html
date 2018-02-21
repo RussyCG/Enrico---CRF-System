@@ -1,0 +1,396 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Adverse Event Form</title>
+
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../Content/bootstrap-datetimepicker.css" />
+
+    <!-- Self created style sheet for page -->
+    <link rel="stylesheet" href="FormBaseCSS.css" />
+
+    <script src="../../Scripts/jquery-2.1.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/moment-with-locales.js"></script>
+    <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
+</head>
+<body>
+    <header style="text-align: center;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Adverse Event Form</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <!-- General Information -->
+        <div class="row" id="general-information">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>1. General Information</h3>
+                </div>
+
+                <div class="form-body">
+                    <!-- Date -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label>Event Onset Date: </label>
+                            </div>
+
+                            <div class="col-md-9">
+                                <!-- Bootstrap date time picker -->
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+                                            <div class="form-group">
+                                                <div class='input-group date' id='dtGeneralInformation'>
+                                                    <input type='text' class="form-control" />
+                                                    <span class="input-group-addon">
+                                                        <span class="glyphicon glyphicon-calendar"></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End of Bootstrap date time picker -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Occurred -->
+                    <div class="container-fluid">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Event Occurred</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><input type="radio" name="chkEventOccurred" class="info-selection"></td><td>Intraprocedural</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" class="info-selection"></td><td>Pre-discharge</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" class="info-selection"></td><td>Post-discharge</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <!-- Event Type -->
+                    <div class="container-fluid">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Event Type</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>SAE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>SADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>AE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>ADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>UADE</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br />
+                    <!-- Event Related To -->
+                    <div class="container-fluid">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Event is related to: </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Procedure"></td><td>Procedure</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Comorbidities"></td><td>Comorbidities</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Device Malfunction"></td><td>Device Malfunction</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" onchange="toggleVisibility('txtOtherEventRelatedTo')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherEventRelatedTo" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherEventRelatedTo" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- End of General Information-->
+        <!-- Adverse Event Description -->
+        <div class="row" id="event-description">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>2. Adverse Event Description </h3>
+                </div>
+
+                <div class="form-body">
+                    <div class="container-fluid">
+                        <table class="table table-striped table-sm">
+                            <thead>
+                                <tr>
+                                    <th colspan="2">Code (please check only one): </th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><th colspan="2">Cardiac Events:</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>MYOCARDIAL INFARCTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ARRHYTHMIA WITHOUT PACEMAKER REQUIRED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ARRHYTHMIA WITH PACEMAKER DUE TO AV BLOCK</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ARRHYTHMIA WITH PACEMAKER NOT DUE TO AV BLOCK</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CARDIAC ARREST</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CARDIAC TAMPONADE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ENDOCARDITIS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERICARDIAL EFFUSION DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERICARDIAL EFFUSION NOT DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERICARDITUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SUDDEN DEATH</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMODYNAMIC COLLAPSE</td></tr>
+
+                                <tr><th colspan="2">Renal Events:</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL IMUFFICIENCY</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING TEMPORARY DIALYSIS (<30 DAYS)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING PERMANENT DIALYSIS (>30 DAYS)</td></tr>
+                                <tr id="txtRenalEventsDetails" class="additional-info-required-dialog">
+                                    <td colspan="2">
+                                        Max creatinine <input class="form-control" type="text" placeholder="Specify" name="txtMaxCreatinine" /> mg/dL
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /> UMOI
+                                        If the difference is an increase of at least 0.5mg/dl(44mmol/L) compared to baseline
+                                        GFR <input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" />mL/min
+                                    </td>
+                                </tr>
+
+                                <tr><th colspan="2">Pulmonary Events:</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PNEUMOTHORAX</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PLEURAL EFFUSION DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PLEURAL EFFUSION NOT DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>RESPIRATORY COMP / FAILURE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PNEUMONIA</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PULMONARY EMBOLISM</td></tr>
+
+                                <tr><th colspan="2">Neurlogical Events:</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>NEUROLOGICAL EVENT SEVERE NOT A STROKE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>NEUROLOGICAL EVENT MINOR NOT A STROKE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMORRHAGIC STROKE SEVERE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>NON-HEMORRHAGIC STROKE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>STROKE - CAUSE UNKNOWN</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SYNCOPE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>TRANSITORY PSYCHOTIC SYNDROME</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>TRANSITORY ISCHEMIC ATTACK (TIA)</td></tr>
+
+                                <tr><th colspan="2">Gastro Instunal Events:</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ULCER</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERFORATION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ISCHEMIC BOWL</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherGastroInstunalEvents')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherGastroInstunalEvents" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /></td>
+                                </tr>
+
+                                <tr><th colspan="2">Hematological Disorders: see VARC definition</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>MAJOR BLEEDING EVENT (transfusion > 2 units)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>LIFE-THREATENING BLEEDING EVENT (transfusion > 4 units)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>COAGULOPATHY / HEMATOLOGICAL DISORDER - THROMBOSIS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>COAGULOPATHY / HEMATOLOGICAL DISORDER - HIT</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMOLYSIS</td></tr>
+
+                                <tr><th colspan="2">Thromboembolic Event (Other than heart)</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>OCULAR THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>RENAL THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>GASTRO-INTESTINAL THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>SPLENETIC THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>HEPATIC THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>ARM THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>LEG THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>NEUROLOGICAL</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherThromboembolicEvents'); toggleVisibility('txtThromboembolicEventsDetails')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherThromboembolicEvents" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherThromboembolicEvents" /></td>
+                                </tr>
+                                <tr id="txtThromboembolicEventsDetails" class="additional-info-required-dialog">
+                                    <td colspan="2">
+                                        Lab results before initiating event driven anticoagulation
+                                        <br /><br />
+                                        PTT
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtPTTSec" /> sec
+                                        <br /><br />
+                                        INR
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtINR" />
+                                        <br /><br />
+                                        Platelet
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtPlatelet" />cells/mmⁿ
+                                    </td>
+                                </tr>
+
+                                <tr><th colspan="2">Miscellaneous</th></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>BONE FRACTURE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CANCER NEW DIAGNOSED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CANCER EXPECTED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>DRUG REACTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>INFLAMMATION / INFECTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>METABOLIC COMPLICATION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SEPSIS DUE TO PROLONGED HOSPITAL STAY</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SEPSIS AFTER DISCHARGE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SUICIDE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>MULTIPLE ORGAN FAILURE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>THORACIC WOUND COMP</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>URINARY TRACT INFECTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>VISION DISORDER</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherMiscellaneousEvents')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherMiscellaneousEvents" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherMiscellaneousEvents" /></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of Adverse Event Description-->
+        <!-- Adverse Event Treatment/Intervention -->
+        <div class="row" id="event-treatment">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>3. Adverse Event Treatment/Intervention</h3>
+                </div>
+
+                <div class="form-body">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Medical Therapy</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Surgical Intervention</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Hospital Readmission</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Transfusion</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection" ng-value="eventTreatmentOther"></td><td>Other: <input type="text" ng-model=[eventTreatmentOther]></td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End of Adverse Event Treatment/Intervention-->
+        <!-- Event Severity-->
+        <div class="row" id="event-severity">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>4. Event Severity</h3>
+                </div>
+
+                <div class="form-body">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Minor</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Mild</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Major</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End of Event Severity-->
+        <!-- Event Outcome-->
+        <div class="row" id="event-outcome">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>5. Outcome</h3>
+                </div>
+
+                <div class="form-body">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Resolved</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Resolved with sequelea</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>On-going</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Death (Add death form if death is selected)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End of Event Outcome-->
+        <!-- Narrative-->
+        <div class="row" id="event-narrative">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>6. Narrative</h3>
+                </div>
+                <br />
+                <div class="col-md-3">
+                    <label>Please describe the event and its course etc</label>
+                </div>
+                
+                <div class="form-body">
+                    <textarea style="width: 70%; height: 300px;"></textarea>
+                </div>
+            </div>
+        </div>
+        <!-- End of Narrative-->
+
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="container-fluid navbar-fixed" id="navButtons">
+        <div class="row">
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <button class="btn btn-warning" onclick="window.location='../Forms/index.html'">< Back to Forms</button>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+                
+            </div>
+
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 20px;">
+        <h5><strong>Copyright &copy; <label id="lblFooterYear"></label> - The Belgium Campus</strong></h5>
+    </footer>
+
+
+    <script type="text/javascript">
+        document.getElementById('lblFooterYear').innerHTML = (new Date()).getFullYear();
+
+        var toggleVisibility = function ($Element) {
+            $('#' + $Element).toggle();
+        }
+
+        var DateTimePickers = ["dtGeneralInformation", "dtPhysicalAssessment", "dtStudyRandomization", "dtHistoryOfVascularDiseaseStroke", "dtSurgicalInterventionCardiacSurgery", "dtSurgicalInterventionCarotidSurgery", "dtSurgicalInterventionOtherSurgery", "datetimepicker1"];
+
+        $(function () {
+            for (i = 0; i < DateTimePickers.length; i++) {
+                $('#' + DateTimePickers[i]).datetimepicker().datetimepicker();
+            }
+        });
+    </script>
+</body>
+</html>
