@@ -27,11 +27,11 @@ namespace BusinessLogic.Controllers
         public async Task<string> Get()
         {
             var val = await DataBaseContext.GetAllInCollection("test");
-            return val[1].ToString();
+            return val[7].ToString();
         }
 
-        public async Task<List<string>> Post(List<KeyValuePair<string, object>> values) {
-            var doc = DataBaseContext.KeyValuePairsToBson(values);
+        public async Task<List<string>> Post(string values) {
+            var doc = DataBaseContext.JsonToBson(values);
             await DataBaseContext.InsertSingle("test",doc);
             return await DataBaseContext.ListCollections();
         }

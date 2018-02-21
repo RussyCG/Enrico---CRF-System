@@ -1,6 +1,7 @@
 ﻿using MongoAccess.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -94,9 +95,10 @@ namespace MongoAccess.DbContext
             }
         }
 
-        public static BsonDocument ObjectToBson(object obj) {
+        public static BsonDocument JsonToBson(string json) {
 
-            return BsonDocument.Create(obj);
+            var bson = BsonDocument.Parse(json);            
+            return bson;
 
         }
 
