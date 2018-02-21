@@ -113,7 +113,10 @@
                                 <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Procedure"></td><td>Procedure</td></tr>
                                 <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Comorbidities"></td><td>Comorbidities</td></tr>
                                 <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Device Malfunction"></td><td>Device Malfunction</td></tr>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" ng-value="eventRelatedOther"></td><td>Other <input type="text" ng-model=[eventRelatedOther]></td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" onchange="toggleVisibility('txtOtherEventRelatedTo')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherEventRelatedTo" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherEventRelatedTo" /></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -154,9 +157,17 @@
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMODYNAMIC COLLAPSE</td></tr>
 
                                 <tr><th colspan="2">Renal Events:</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>RENAL IMUFFICIENCY</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>RENAL FAILURE REQUIRING TEMPORARY DIALYSIS (<30 DAYS)</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>RENAL FAILURE REQUIRING PERMANENT DIALYSIS (>30 DAYS)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL IMUFFICIENCY</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING TEMPORARY DIALYSIS (<30 DAYS)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING PERMANENT DIALYSIS (>30 DAYS)</td></tr>
+                                <tr id="txtRenalEventsDetails" class="additional-info-required-dialog">
+                                    <td colspan="2">
+                                        Max creatinine <input class="form-control" type="text" placeholder="Specify" name="txtMaxCreatinine" /> mg/dL
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /> UMOI
+                                        If the difference is an increase of at least 0.5mg/dl(44mmol/L) compared to baseline
+                                        GFR <input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" />mL/min
+                                    </td>
+                                </tr>
 
                                 <tr><th colspan="2">Pulmonary Events:</th></tr>
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PNEUMOTHORAX</td></tr>
@@ -180,7 +191,10 @@
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ULCER</td></tr>
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERFORATION</td></tr>
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ISCHEMIC BOWL</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" ng-value="GastroInstunalEventOther"></td><td>Other <input type="text" ng-model=[GastroInstunalEventOther]></td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherGastroInstunalEvents')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherGastroInstunalEvents" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /></td>
+                                </tr>
 
                                 <tr><th colspan="2">Hematological Disorders: see VARC definition</th></tr>
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>MAJOR BLEEDING EVENT (transfusion > 2 units)</td></tr>
@@ -190,15 +204,32 @@
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMOLYSIS</td></tr>
 
                                 <tr><th colspan="2">Thromboembolic Event (Other than heart)</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>OCULAR THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>RENAL THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>GASTRO-INTESTINAL THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SPLENETIC THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEPATIC THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ARM THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>LEG THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>NEUROLOGICAL</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" ng-value="thrombusInOtherLocation"></td><td>THROMBUS in Other location: <input type="text" ng-model=[thrombusInOtherLocation]></td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>OCULAR THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>RENAL THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>GASTRO-INTESTINAL THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>SPLENETIC THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>HEPATIC THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>ARM THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>LEG THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>NEUROLOGICAL</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherThromboembolicEvents'); toggleVisibility('txtThromboembolicEventsDetails')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherThromboembolicEvents" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherThromboembolicEvents" /></td>
+                                </tr>
+                                <tr id="txtThromboembolicEventsDetails" class="additional-info-required-dialog">
+                                    <td colspan="2">
+                                        Lab results before initiating event driven anticoagulation
+                                        <br /><br />
+                                        PTT
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtPTTSec" /> sec
+                                        <br /><br />
+                                        INR
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtINR" />
+                                        <br /><br />
+                                        Platelet
+                                        <input class="form-control" type="text" placeholder="Specify" name="txtPlatelet" />cells/mmⁿ
+                                    </td>
+                                </tr>
 
                                 <tr><th colspan="2">Miscellaneous</th></tr>
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>BONE FRACTURE</td></tr>
@@ -214,7 +245,10 @@
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>THORACIC WOUND COMP</td></tr>
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>URINARY TRACT INFECTION</td></tr>
                                 <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>VISION DISORDER</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" ng-value="miscEventOther"></td><td>Other <input type="text" ng-model=[miscEventOther]></td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherMiscellaneousEvents')"></td><td>Other*</td></tr>
+                                <tr id="txtOtherMiscellaneousEvents" class="additional-info-required-dialog">
+                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherMiscellaneousEvents" /></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
