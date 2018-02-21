@@ -1,0 +1,324 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>HADS Questionnaire</title>
+
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../Content/bootstrap-datetimepicker.css" />
+
+    <!-- Self created style sheet for page -->
+    <link rel="stylesheet" href="Form1.css" />
+
+    <script src="../../Scripts/jquery-2.1.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/moment-with-locales.js"></script>
+    <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
+</head>
+<body>
+    <header style="text-align: center;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>HADS Questionnaire</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <!-- Inclusion Criteria -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>1. General Information - Date of assessment</h3>
+                </div>
+
+                <div class="form-body">
+                    <!-- Bootstrap date time picker -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='dtInformedConsent'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Bootstrap date time picker -->
+                </div>
+            </div>
+        </div>
+        <!-- End of Inclusion Criteria-->
+        <!-- Inclusion Criteria -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>IES-R Questionnaire</h3>
+                </div>
+
+                <div class="form-body">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th>No.</th>
+                                <th>Option</th>
+                                <th style="text-align: center">Not at all</th>
+                                <th style="text-align: center">A little bit</th>
+                                <th style="text-align: center">Moderately</th>
+                                <th style="text-align: center">Quite a bit</th>
+                                <th style="text-align: center">Extremely</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1.</td>
+                                <td>Any reminder brought back feelings about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>2.</td>
+                                <td>I had trouble staying asleep</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>3.</td>
+                                <td>Other things kept making me think about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>4.</td>
+                                <td>I felt irritable</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>5.</td>
+                                <td>I avoided letting myself get upset when I thought about it or was reminded about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>6.</td>
+                                <td>I thought about it when I didn't mean to</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>7.</td>
+                                <td>I felt as if it hadn't happened or wasn't real</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>8.</td>
+                                <td>I stayed away from reminders about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>9.</td>
+                                <td>Pictures about it popped into my mind</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>10.</td>
+                                <td>I was jumpy and easily startled</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>11.</td>
+                                <td>I tried not to think about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>12.</td>
+                                <td>I was aware that I still had a lot of feelings about it, but I didn't deal with them</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>13.</td>
+                                <td>My feelings about it where kind of numb</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>14.</td>
+                                <td>I found myself acting or feeling as though as I was back at that time</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>15.</td>
+                                <td>I had trouble falling asleep</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>16.</td>
+                                <td>I had waves of strong feelings about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>17.</td>
+                                <td>I tried to remove it from my memory</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>18.</td>
+                                <td>I had trouble concentrating</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>19.</td>
+                                <td>Reminders of it caused me to have physical reactions, such as sweating, trouble breathing, nausea, or a pounding heart</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>20.</td>
+                                <td>I had dreams about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>21.</td>
+                                <td>I felt watchful or on-guard</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                            <tr>
+                                <td>22.</td>
+                                <td>I tried not to talk about it</td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                                <td style="text-align: center"><input checked type="radio" name="rad1_1" class="info-selection"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End of Inclusion Criteria-->
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="container-fluid navbar-fixed" id="navButtons">
+        <div class="row">
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <button class="btn btn-warning" onclick="window.location='../Forms/index.html'">< Back to Forms</button>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+
+            </div>
+
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 20px;">
+        <h5><strong>Copyright &copy; <label id="lblFooterYear"></label> - The Belgium Campus</strong></h5>
+    </footer>
+
+
+    <script type="text/javascript">
+        document.getElementById('lblFooterYear').innerHTML = (new Date()).getFullYear();
+
+        var toggleVisibility = function ($Element) {
+            $('#' + $Element).toggle();
+        }
+
+        var DateTimePickers = ["dtInformedConsent", "dtPhysicalAssessment", "dtStudyRandomization", "dtHistoryOfVascularDiseaseStroke", "dtSurgicalInterventionCardiacSurgery", "dtSurgicalInterventionCarotidSurgery", "dtSurgicalInterventionOtherSurgery", "datetimepicker1"];
+
+        $(function () {
+            for (i = 0; i < DateTimePickers.length; i++) {
+                $('#' + DateTimePickers[i]).datetimepicker().datetimepicker();
+            }
+        });
+    </script>
+</body>
+</html>

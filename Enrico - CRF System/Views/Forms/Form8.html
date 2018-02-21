@@ -1,0 +1,256 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Protocol Deviation</title>
+
+    <link rel="stylesheet" href="../../Content/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../Content/font-awesome.min.css" />
+    <link rel="stylesheet" href="../../Content/bootstrap-datetimepicker.css" />
+
+    <!-- Self created style sheet for page -->
+    <link rel="stylesheet" href="Form1.css" />
+
+    <script src="../../Scripts/jquery-2.1.1.min.js"></script>
+    <script src="../../Scripts/bootstrap.min.js"></script>
+    <script src="../../Scripts/moment-with-locales.js"></script>
+    <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
+</head>
+<body>
+    <header style="text-align: center;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Protocol Deviation</h2>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="container-fluid">
+        <!-- Inclusion Criteria -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>1. Date Of Occurence</h3>
+                </div>
+
+                <div class="form-body">
+                    <!-- Bootstrap date time picker -->
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
+                                <div class="form-group">
+                                    <div class='input-group date' id='dtOccurence'>
+                                        <input type='text' class="form-control" />
+                                        <span class="input-group-addon">
+                                            <span class="glyphicon glyphicon-calendar"></span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End of Bootstrap date time picker -->
+                </div>
+            </div>
+        </div>
+        <!-- End of Inclusion Criteria-->
+        <!-- Exclusion Criteria -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>2. Time Interval</h3>
+                </div>
+
+                <div class="form-body">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Baseline</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Procedure</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Discharge</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>28 DFU</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>90 DFU</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>6 MFU</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>1 YFU</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End of Exclusion Criteria-->
+        <!-- Exclusion Criteria -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>3. Protocol Deviation Code</h3>
+                </div>
+
+                <div class="form-body">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInclusionCriteria')"></td><td>Inclusion Criteria*</td></tr>
+                            <tr id="divInclusionCriteria" class="additional-info-required-dialog">
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                            </tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divExclusionCriteria')"></td><td>Exclusion Criteria*</td></tr>
+                            <tr id="divExclusionCriteria" class="additional-info-required-dialog">
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                            </tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Informed Consent not signed by subject</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Informed Consent signed after procedure</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Informed Consent not signed by the PI</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Protocol Mandated Clinical Follow Up Visit</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Physical Exam</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divLabratoryValuesNotCollected')"></td><td>Labratory values not collected*</td></tr>
+                            <tr id="divLabratoryValuesNotCollected" class="additional-info-required-dialog">
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                            </tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Invasive Hemodynamics Assessment</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInvasiveHemodynamicsParameters')"></td><td>Invasive Hemodynamics parameters not collected*</td></tr>
+                            <tr id="divInvasiveHemodynamicsParameters" class="additional-info-required-dialog">
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                            </tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Protocol mandated medications not given</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divOther')"></td><td>Other*</td></tr>
+                            <tr id="divOther" class="additional-info-required-dialog">
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End of Exclusion Criteria-->
+        <!-- Exclusion Criteria -->
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>4. Reason for Deviation</h3>
+                </div>
+
+                <div class="form-body">
+                    <table class="table table-striped table-sm">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Option</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Not Done</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Out of time window</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Out of range</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Physician preference</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Does not apply</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" onchange="toggleVisibility('divOtherReason')"></td><td>Other*</td></tr>
+                            <tr id="divOtherReason" class="additional-info-required-dialog">
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- End of Exclusion Criteria-->
+        <!-- Physical Assessment -->
+        <div class="row" id="physical-assessment">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>5. Description</h3>
+                </div>
+
+                <div class="form-body">
+                    <div class="container-fluid">
+                        <!-- Height -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="col-form-label">Description: </label>
+                            </div>
+
+                            <div class="col-md-9 input-item">
+                                <input style="height: 7em" type="text" name="txtDescription" placeholder="" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of physical assessment -->
+        <!-- Physical Assessment -->
+        <div class="row" id="physical-assessment">
+            <div class="col-sm-12 col-md-12 col-lg-12 col-xl-12 form-grouping">
+                <div class="form-header">
+                    <h3>6. Comment</h3>
+                </div>
+
+                <div class="form-body">
+                    <div class="container-fluid">
+                        <!-- Height -->
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label class="col-form-label">Comment: </label>
+                            </div>
+
+                            <div class="col-md-9 input-item">
+                                <input style="height: 7em" type="text" name="txtComment" placeholder="" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End of physical assessment -->
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="container-fluid navbar-fixed" id="navButtons">
+        <div class="row">
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <button class="btn btn-warning" onclick="window.location='../Forms/index.html'">< Back to Forms</button>
+            </div>
+
+            <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+
+            </div>
+
+            <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+            </div>
+        </div>
+    </div>
+
+    <footer style="margin-top: 20px;">
+        <h5><strong>Copyright &copy; <label id="lblFooterYear"></label> - The Belgium Campus</strong></h5>
+    </footer>
+
+
+    <script type="text/javascript">
+        document.getElementById('lblFooterYear').innerHTML = (new Date()).getFullYear();
+
+        var toggleVisibility = function ($Element) {
+            $('#' + $Element).toggle();
+        }
+
+        var DateTimePickers = ["dtOccurence"];
+
+        $(function () {
+            for (i = 0; i < DateTimePickers.length; i++) {
+                $('#' + DateTimePickers[i]).datetimepicker().datetimepicker();
+            }
+        });
+    </script>
+</body>
+</html>
