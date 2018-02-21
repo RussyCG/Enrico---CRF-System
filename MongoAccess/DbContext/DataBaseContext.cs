@@ -13,11 +13,24 @@ namespace MongoAccess.DbContext
     {
         MongoClient client = new MongoClient("Projects.belgiumcampus:27017");
 
-        public void Insert()
-        {
-            var database = client.GetDatabase("PotatoFactoryCRF");
-            database.CreateCollection("");
-        }
+        //public void InsertSingle(BsonDocument doc)
+        //{
+        //    var database = client.GetDatabase("PotatoFactoryCRF");
+            
+        //    var collection = database.CreateCollectionAsync("MyCOllection");
+        //    collection.InsertOne(doc);
+        //}
+
+        //public async void InsertAsync(List<BsonDocument> docs)
+        //{
+        //    int amount = docs.Count();
+        //    var database = client.GetDatabase("PotatoFactoryCRF");
+        //    var documents = Enumerable.Range(1, amount).Select(i => new BsonDocument("counter", i));
+        //    var collection = database.CreateCollectionAsync("MyCOllection");
+            
+            
+        //    await collection.InsertManyAsync(documents);
+        //}
 
 
 
