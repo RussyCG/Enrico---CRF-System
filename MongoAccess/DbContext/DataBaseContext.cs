@@ -11,28 +11,28 @@ namespace MongoAccess.DbContext
 {
     public class DataBaseContext
     {
-        MongoClient client = new MongoClient("Projects.belgiumcampus:27017");
+        MongoClient client = new MongoClient("http://Projects.belgiumcampus:27017");
 
         
-        public async Task<BsonDocument> InsertSingle(BsonDocument doc)
-        {
-            var database = client.GetDatabase("PotatoFactoryCRF");
+        //public async Task<BsonDocument> InsertSingle(BsonDocument doc)
+        //{
+        //    var database = client.GetDatabase("PotatoFactoryCRF");
 
-            var collection = database.CreateCollectionAsync("MyCOllection");
-            //return await collection.InsertOneAsync(doc);
-            return null;
-        }
+        //    var collection = database.CreateCollectionAsync("MyCOllection");
+        //    return await collection.InsertOneAsync(doc);
+            
+        //}
 
-        public async Task<List<BsonDocument>> InsertAsync(List<BsonDocument> docs)
-        {
-            int amount = docs.Count();
-            var database = client.GetDatabase("PotatoFactoryCRF");
-            var documents = Enumerable.Range(1, amount).Select(i => new BsonDocument("counter", i));
-            var collection = database.CreateCollectionAsync("MyCOllection");
+        //public async Task<List<BsonDocument>> InsertAsync(List<BsonDocument> docs)
+        //{
+        //    int amount = docs.Count();
+        //    var database = client.GetDatabase("PotatoFactoryCRF");
+        //    var documents = Enumerable.Range(1, amount).Select(i => new BsonDocument("counter", i));
+        //    var collection = database.CreateCollectionAsync("MyCOllection");
 
-            //await collection.InsertManyAsync(docs);
-            return null;
-        }
+        //    return await collection.InsertManyAsync(docs);
+             
+        //}
 
 
 
