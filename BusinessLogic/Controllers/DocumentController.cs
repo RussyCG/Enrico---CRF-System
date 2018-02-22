@@ -24,9 +24,16 @@ namespace BusinessLogic.Controllers
         //    await db.InsertAsync(docs);
         //}
 
-        public Object Get(string id)
+        public async Task<string> Get()
         {
-            return db.GetBsonDocuments(id).ToJson();
+            var val = await DataBaseContext.GetAllInCollection("test");
+            return val[7].ToString();
+        }
+
+        public async Task<List<string>> Post(string values) {
+            var doc = DataBaseContext.JsonToBson(values);
+            await DataBaseContext.InsertSingle("test",doc);
+            return await DataBaseContext.ListCollections();
         }
     }
 }

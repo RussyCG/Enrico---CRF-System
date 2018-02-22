@@ -1,6 +1,7 @@
 ﻿using MongoAccess.Models;
 using MongoDB.Bson;
 using MongoDB.Driver;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,54 +12,104 @@ namespace MongoAccess.DbContext
 {
     public class DataBaseContext
     {
-        MongoClient client = new MongoClient("mongodb://projects.belgiumcampus:27017");
+        const string DB_NAME = "crfdb";        
+        static MongoClient client = new MongoClient("mongodb://projects.belgiumcampus.ac.za:27017");
 
+        static IMongoDatabase GetDB() {
 
-        public async Task<BsonDocument> InsertSingle(BsonDocument doc) {
-            var database = client.GetDatabase("PotatoFactoryCRF");
-
-            await database.CreateCollectionAsync("MyCollection");
-            var collection = database.GetCollection<BsonDocument>("MyCollection");
-            await collection.InsertOneAsync(doc);
-
-            var filter = new BsonDocument();
-            return await collection.Find(filter).FirstOrDefaultAsync();
+            return client.GetDatabase(DB_NAME);
 
         }
 
-        //public async Task<List<BsonDocument>> InsertAsync(List<BsonDocument> docs) {
-        //    int amount = docs.Count();
-        //    var database = client.GetDatabase("PotatoFactoryCRF");
-        //    var documents = Enumerable.Range(1, amount).Select(i => new BsonDocument("counter", i));
-        //    var collection = database.CreateCollectionAsync("MyCollection");
+        public static async Task<List<string>> ListCollections() {
 
-        //    return await collection.InsertManyAsync(docs);
+            List<string> collectionNames = new List<string>();
+            var collections = await GetDB().ListCollectionsAsync();
+            await collections.ForEachAsync(
+                    x => collectionNames.Add((string)x.GetValue("name"))
+                );
+            return collectionNames;
 
-        //}
-
-
-
-        public async Task<List<BsonDocument>> GetBsonDocuments(string id)
-        {
-            List<BsonDocument> Documents = new List<BsonDocument>();
-            var database = client.GetDatabase("PotatoFactoryCRF");
-            var collection = database.GetCollection<BsonDocument>(id);
-            await collection.Find(new BsonDocument()).ForEachAsync(d => Documents.Add(d));
-            return Documents;
         }
 
-        public async Task<List<BsonDocument>> GetDocumentswithFilter(int value)
-        {
-            List<BsonDocument> Documents = new List<BsonDocument>();
-            var filter = Builders<BsonDocument>.Filter.Eq("", value);
-            var database = client.GetDatabase("PotatoFactoryCRF");
-            var collection = database.GetCollection<BsonDocument>(value.ToString());
-            var cursor = collection.Find(filter).ToCursor();
-            foreach (var document in cursor.ToEnumerable())
-            {
-                 Documents.Add(document);
+        static IMongoCollection<BsonDocument> GetCollection(string name) {
+            
+            return GetDB().GetCollection<BsonDocument>(name);
+
+        }
+
+        public static async Task<bool> InsertSingle(string collectionName, BsonDocument doc) {
+
+            try {
+                var collection = GetCollection(collectionName);
+                await collection.InsertOneAsync(doc);
+                return true;
             }
-            return Documents;
+            catch (Exception) {
+                return false;
+            }
+
+        }
+
+        public static async Task<bool> MultiInsertAsync(string collectionName, List<BsonDocument> docs) {
+
+            try {
+                var collection = GetCollection(collectionName);
+                await collection.InsertManyAsync(docs);
+                return true;
+            }
+            catch (Exception) {
+                return false;
+            }
+
+        }
+
+        public static async Task<List<BsonDocument>> GetAllInCollection(string collectionName)
+        {
+            List<BsonDocument> docs = new List<BsonDocument>();
+            var collection = GetCollection(collectionName);
+            using (IAsyncCursor<BsonDocument> cursor = await collection.FindAsync(FilterDefinition<BsonDocument>.Empty)) {
+                while (await cursor.MoveNextAsync()) {
+                    IEnumerable<BsonDocument> batch = cursor.Current;
+                    foreach (var item in batch) {
+                        docs.Add(item);
+                    }
+                }
+                return docs;
+            }
+            
+        }
+
+        public static async Task<List<BsonDocument>> GetAllInCollectionFiltered(string collectionName, BsonDocument filter)
+        {
+            List<BsonDocument> docs = new List<BsonDocument>();
+            var collection = GetCollection(collectionName);
+            using (IAsyncCursor<BsonDocument> cursor = await collection.FindAsync(filter)) {
+                while (await cursor.MoveNextAsync()) {
+                    IEnumerable<BsonDocument> batch = cursor.Current;
+                    foreach (var item in batch) {
+                        docs.Add(item);
+                    }
+                }
+                return docs;
+            }
+        }
+
+        public static BsonDocument JsonToBson(string json) {
+
+            var bson = BsonDocument.Parse(json);            
+            return bson;
+
+        }
+
+        public static BsonDocument KeyValuePairsToBson(List<KeyValuePair<string, object>> data) {
+
+            BsonDocument doc = new BsonDocument();
+            foreach (var item in data) {
+                doc.Add(item.Key, BsonValue.Create(item.Value));
+            }
+            return doc;
+
         }
     }
 }
