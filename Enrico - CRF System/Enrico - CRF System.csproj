@@ -1096,6 +1096,7 @@
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
     <Content Include="Views\Forms\Form10.html" />
+    <Content Include="Views\Forms\Form2.html" />
     <Content Include="Views\Forms\Form3.html" />
     <Content Include="Views\Forms\Form5.html" />
     <Content Include="Views\Forms\Form4.html" />
