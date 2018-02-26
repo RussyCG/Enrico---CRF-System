@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="ngCRF">
 <head>
     <meta charset="utf-8" />
     <title>Study Initiation / Clinical Baseline</title>
@@ -12,11 +12,16 @@
     <link rel="stylesheet" href="FormBaseCSS.css" />
 
     <script src="../../Scripts/jquery-2.1.1.min.js"></script>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/ngCRF.js"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>
     <script src="../../Scripts/moment-with-locales.js"></script>
     <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script>
+    <script src="../../Scripts/datetime-picker.js"></script>
 </head>
-<body>
+<body ng-controller="formController">
     <header style="text-align: center;">
         <div class="container-fluid">
             <div class="row">
@@ -46,15 +51,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1.</td><td><input type="radio" name="rad1_1" class="info-selection"></td><td> <input checked type="radio" name="rad1_1" class="info-selection"></td> <td>Patients with shock</td></tr>
-                            <tr><td>2.</td><td><input type="radio" name="rad1_2" class="info-selection"></td><td> <input checked type="radio" name="rad1_2" class="info-selection"></td> <td>Patients sedated and mechanically ventilated</td></tr>
-                            <tr><td>3.</td><td><input type="radio" name="rad1_3" class="info-selection"></td><td> <input checked type="radio" name="rad1_3" class="info-selection"></td> <td>Patient with fluid overload with or without AKI</td></tr>
-                            <tr><td>4.</td><td><input type="radio" name="rad1_4" class="info-selection"></td><td> <input checked type="radio" name="rad1_4" class="info-selection"></td> <td>Absence of fluid responsiveness (PLR test negative, < 10 % increase in CI)</td></tr>
-                            <tr><td>5.</td><td><input type="radio" name="rad1_5" class="info-selection"></td><td> <input checked type="radio" name="rad1_5" class="info-selection"></td> <td>Negative Furosemide stress test (>200ml/120 min after 1mg/kg furosemide)</td></tr>
-                            <tr><td>6.</td><td><input type="radio" name="rad1_6" class="info-selection"></td><td> <input checked type="radio" name="rad1_6" class="info-selection"></td> <td>Written informed consent.</td></tr>
-                            <tr><td>7.</td><td><input type="radio" name="rad1_7" class="info-selection"></td><td> <input checked type="radio" name="rad1_7" class="info-selection"></td> <td>Patient must be 18 years old or older.</td></tr>
-                            <tr><td>8.</td><td><input type="radio" name="rad1_8" class="info-selection"></td><td> <input checked type="radio" name="rad1_8" class="info-selection"></td> <td>Treating ICU doctor expects patient to require treatment in an ICU beyond the 2 next calendar days</td></tr>
-                            <tr><td>9.</td><td><input type="radio" name="rad1_9" class="info-selection"></td><td> <input checked type="radio" name="rad1_9" class="info-selection"></td> <td>BIA-data with fluid overload defined as 5 % increase in VE over baseline body weight</td></tr>
+                            <tr><td>1.</td><td><input type="radio" name="rad1_1" class="info-selection" ng-click="Form.InclusionCriteria['rad1_1'] = true"></td><td> <input type="radio" name="rad1_1" class="info-selection" ng-click="Form.InclusionCriteria['rad1_1'] = false"></td> <td>Patients with shock</td></tr>
+                            <tr><td>2.</td><td><input type="radio" name="rad1_2" class="info-selection" ng-click="Form.InclusionCriteria['rad1_2'] = true"></td><td> <input type="radio" name="rad1_2" class="info-selection" ng-click="Form.InclusionCriteria['rad1_2'] = false"></td> <td>Patients sedated and mechanically ventilated</td></tr>
+                            <tr><td>3.</td><td><input type="radio" name="rad1_3" class="info-selection" ng-click="Form.InclusionCriteria['rad1_3'] = true"></td><td> <input type="radio" name="rad1_3" class="info-selection" ng-click="Form.InclusionCriteria['rad1_3'] = false"></td> <td>Patient with fluid overload with or without AKI</td></tr>
+                            <tr><td>4.</td><td><input type="radio" name="rad1_4" class="info-selection" ng-click="Form.InclusionCriteria['rad1_4'] = true"></td><td> <input type="radio" name="rad1_4" class="info-selection" ng-click="Form.InclusionCriteria['rad1_4'] = false"></td> <td>Absence of fluid responsiveness (PLR test negative, < 10 % increase in CI)</td></tr>
+                            <tr><td>5.</td><td><input type="radio" name="rad1_5" class="info-selection" ng-click="Form.InclusionCriteria['rad1_5'] = true"></td><td> <input type="radio" name="rad1_5" class="info-selection" ng-click="Form.InclusionCriteria['rad1_5'] = false"></td> <td>Negative Furosemide stress test (>200ml/120 min after 1mg/kg furosemide)</td></tr>
+                            <tr><td>6.</td><td><input type="radio" name="rad1_6" class="info-selection" ng-click="Form.InclusionCriteria['rad1_6'] = true"></td><td> <input type="radio" name="rad1_6" class="info-selection" ng-click="Form.InclusionCriteria['rad1_6'] = false"></td> <td>Written informed consent.</td></tr>
+                            <tr><td>7.</td><td><input type="radio" name="rad1_7" class="info-selection" ng-click="Form.InclusionCriteria['rad1_7'] = true"></td><td> <input type="radio" name="rad1_7" class="info-selection" ng-click="Form.InclusionCriteria['rad1_7'] = false"></td> <td>Patient must be 18 years old or older.</td></tr>
+                            <tr><td>8.</td><td><input type="radio" name="rad1_8" class="info-selection" ng-click="Form.InclusionCriteria['rad1_8'] = true"></td><td> <input type="radio" name="rad1_8" class="info-selection" ng-click="Form.InclusionCriteria['rad1_8'] = false"></td> <td>Treating ICU doctor expects patient to require treatment in an ICU beyond the 2 next calendar days</td></tr>
+                            <tr><td>9.</td><td><input type="radio" name="rad1_9" class="info-selection" ng-click="Form.InclusionCriteria['rad1_9'] = true"></td><td> <input type="radio" name="rad1_9" class="info-selection" ng-click="Form.InclusionCriteria['rad1_9'] = false"></td> <td>BIA-data with fluid overload defined as 5 % increase in VE over baseline body weight</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -79,24 +84,24 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1.</td><td><input type="radio" name="rad2_1" class="info-selection"></td><td> <input checked type="radio" name="rad2_1" class="info-selection"></td> <td>Patients with lactate > 4mmol or rising lactate over last 6 hours</td></tr>
-                            <tr><td>2.</td><td><input type="radio" name="rad2_2" class="info-selection"></td><td> <input checked type="radio" name="rad2_2" class="info-selection"></td><td>Patients with hypotension (MAP < 50mmHg) resistant to vasopressors</td></tr>
-                            <tr><td>3.</td><td><input type="radio" name="rad2_3" class="info-selection"></td><td> <input checked type="radio" name="rad2_3" class="info-selection"></td><td>Patients with vasopressor dose > 0.3 µg/kg/min</td></tr>
-                            <tr><td>4.</td><td><input type="radio" name="rad2_4" class="info-selection"></td><td> <input checked type="radio" name="rad2_4" class="info-selection"></td><td>Patients with more than one vasopressor in use</td></tr>
-                            <tr><td>5.</td><td><input type="radio" name="rad2_5" class="info-selection"></td><td> <input checked type="radio" name="rad2_5" class="info-selection"></td><td>Patients with hypernatremia > 155 mmol/L. (= exclusion to be randomized in HSS group)</td></tr>
-                            <tr><td>6.</td><td><input type="radio" name="rad2_6" class="info-selection"></td><td> <input checked type="radio" name="rad2_6" class="info-selection"></td><td> Patients with Albumin level > 25g/L. (= exclusion to be randomized in albumin 20 % group)</td></tr>
-                            <tr><td>7.</td><td><input type="radio" name="rad2_7" class="info-selection"></td><td> <input checked type="radio" name="rad2_7" class="info-selection"></td> <td>Patients with body weight < 40 kg (measured or estimated) </td></tr>
-                            <tr><td>8.</td><td><input type="radio" name="rad2_8" class="info-selection"></td><td> <input checked type="radio" name="rad2_8" class="info-selection"></td> <td>Patients with hyperchloremia > 115 mmol/l. (= exclusion to be randomized in HSS group)</td></tr>
-                            <tr><td>9.</td><td><input type="radio" name="rad2_9" class="info-selection"></td><td> <input checked type="radio" name="rad2_9" class="info-selection"></td> <td>Start of deresuscitation beyond day 5</td></tr>
-                            <tr><td>10.</td><td><input type="radio" name="rad2_10" class="info-selection"></td><td> <input type="radio" name="rad2_10" class="info-selection"></td> <td>Female patient is pregnant/breastfeeding</td></tr>
-                            <tr><td>11.</td><td><input type="radio" name="rad2_11" class="info-selection"></td><td> <input checked type="radio" name="rad2_11" class="info-selection"></td> <td>Diabetic ketoacidosis or hyperosmolar hyperglycemic state</td></tr>
-                            <tr><td>12.</td><td><input type="radio" name="rad2_12" class="info-selection"></td><td> <input checked type="radio" name="rad2_12" class="info-selection"></td> <td>Non-traumatic subarachnoid hemorrhage</td></tr>
-                            <tr><td>13.</td><td><input type="radio" name="rad2_13" class="info-selection"></td><td> <input checked type="radio" name="rad2_13" class="info-selection"></td> <td>Cardiogenic shock</td></tr>
-                            <tr><td>14.</td><td><input type="radio" name="rad2_14" class="info-selection"></td><td> <input checked type="radio" name="rad2_14" class="info-selection"></td> <td>Suspected or proven active diabetes insipidus (administration of desmopressin within 24 hours)</td></tr>
-                            <tr><td>15.</td><td><input type="radio" name="rad2_15" class="info-selection"></td><td> <input checked type="radio" name="rad2_15" class="info-selection"></td> <td>Suspected or proven SIADH</td></tr>
-                            <tr><td>16.</td><td><input type="radio" name="rad2_16" class="info-selection"></td><td> <input checked type="radio" name="rad2_16" class="info-selection"></td> <td>Expected to die within 24 hours</td></tr>
-                            <tr><td>17.</td><td><input type="radio" name="rad2_17" class="info-selection"></td><td> <input checked type="radio" name="rad2_17" class="info-selection"></td> <td>Refusal of consent</td></tr>
-                            <tr><td>18.</td><td><input type="radio" name="rad2_18" class="info-selection"></td><td> <input checked type="radio" name="rad2_18" class="info-selection"></td> <td>Inability of personal consulted to understand written verbal information and for whom no interpreter is available </td></tr>
+                            <tr><td>1.</td><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_1'] = true"></td><td> <input type="radio" name="rad2_1" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_1'] = false"></td> <td>Patients with lactate > 4mmol or rising lactate over last 6 hours</td></tr>
+                            <tr><td>2.</td><td><input type="radio" name="rad2_2" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_2'] = true"></td><td> <input type="radio" name="rad2_2" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_2'] = false"></td><td>Patients with hypotension (MAP < 50mmHg) resistant to vasopressors</td></tr>
+                            <tr><td>3.</td><td><input type="radio" name="rad2_3" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_3'] = true"></td><td> <input type="radio" name="rad2_3" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_3'] = false"></td><td>Patients with vasopressor dose > 0.3 µg/kg/min</td></tr>
+                            <tr><td>4.</td><td><input type="radio" name="rad2_4" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_4'] = true"></td><td> <input type="radio" name="rad2_4" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_4'] = false"></td><td>Patients with more than one vasopressor in use</td></tr>
+                            <tr><td>5.</td><td><input type="radio" name="rad2_5" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_5'] = true"></td><td> <input type="radio" name="rad2_5" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_5'] = false"></td><td>Patients with hypernatremia > 155 mmol/L. (= exclusion to be randomized in HSS group)</td></tr>
+                            <tr><td>6.</td><td><input type="radio" name="rad2_6" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_6'] = true"></td><td> <input type="radio" name="rad2_6" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_6'] = false"></td><td> Patients with Albumin level > 25g/L. (= exclusion to be randomized in albumin 20 % group)</td></tr>
+                            <tr><td>7.</td><td><input type="radio" name="rad2_7" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_7'] = true"></td><td> <input type="radio" name="rad2_7" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_7'] = false"></td> <td>Patients with body weight < 40 kg (measured or estimated) </td></tr>
+                            <tr><td>8.</td><td><input type="radio" name="rad2_8" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_8'] = true"></td><td> <input type="radio" name="rad2_8" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_8'] = false"></td> <td>Patients with hyperchloremia > 115 mmol/l. (= exclusion to be randomized in HSS group)</td></tr>
+                            <tr><td>9.</td><td><input type="radio" name="rad2_9" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_9'] = true"></td><td> <input type="radio" name="rad2_9" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_9'] = false"></td> <td>Start of deresuscitation beyond day 5</td></tr>
+                            <tr><td>10.</td><td><input type="radio" name="rad2_10" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_10'] = true"></td><td> <input type="radio" name="rad2_10" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_10'] = false"></td> <td>Female patient is pregnant/breastfeeding</td></tr>
+                            <tr><td>11.</td><td><input type="radio" name="rad2_11" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_11'] = true"></td><td> <input type="radio" name="rad2_11" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_11'] = false"></td> <td>Diabetic ketoacidosis or hyperosmolar hyperglycemic state</td></tr>
+                            <tr><td>12.</td><td><input type="radio" name="rad2_12" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_12'] = true"></td><td> <input type="radio" name="rad2_12" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_12'] = false"></td> <td>Non-traumatic subarachnoid hemorrhage</td></tr>
+                            <tr><td>13.</td><td><input type="radio" name="rad2_13" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_13'] = true"></td><td> <input type="radio" name="rad2_13" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_13'] = false"></td> <td>Cardiogenic shock</td></tr>
+                            <tr><td>14.</td><td><input type="radio" name="rad2_14" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_14'] = true"></td><td> <input type="radio" name="rad2_14" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_14'] = false"></td> <td>Suspected or proven active diabetes insipidus (administration of desmopressin within 24 hours)</td></tr>
+                            <tr><td>15.</td><td><input type="radio" name="rad2_15" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_15'] = true"></td><td> <input type="radio" name="rad2_15" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_15'] = false"></td> <td>Suspected or proven SIADH</td></tr>
+                            <tr><td>16.</td><td><input type="radio" name="rad2_16" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_16'] = true"></td><td> <input type="radio" name="rad2_16" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_16'] = false"></td> <td>Expected to die within 24 hours</td></tr>
+                            <tr><td>17.</td><td><input type="radio" name="rad2_17" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_17'] = true"></td><td> <input type="radio" name="rad2_17" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_17'] = false"></td> <td>Refusal of consent</td></tr>
+                            <tr><td>18.</td><td><input type="radio" name="rad2_18" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_18'] = true"></td><td> <input type="radio" name="rad2_18" class="info-selection" ng-click="Form.ExclusionCriteria['rad2_18'] = false"></td> <td>Inability of personal consulted to understand written verbal information and for whom no interpreter is available </td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -117,7 +122,7 @@
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
                                     <div class='input-group date' id='dtInformedConsent'>
-                                        <input type='text' class="form-control" />
+                                        <input type='text' class="form-control" id="indtInformedConsent" ng-model="Form.InformedConsent.DateTime" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -153,7 +158,7 @@
                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                             <div class="form-group">
                                                 <div class='input-group date' id='dtPhysicalAssessment'>
-                                                    <input type='text' class="form-control" />
+                                                    <input type='text' class="form-control" id='indtPhysicalAssessment' ng-model="Form.PhysicalAssessment.DateTime" />
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
@@ -173,7 +178,7 @@
                             </div>
 
                             <div class="col-md-9 input-item">
-                                <input type="number" name="txtPhysicalAssessmentHeight" placeholder="12" class="form-control" />
+                                <input type="number" name="txtPhysicalAssessmentHeight" placeholder="12" class="form-control" ng-model="Form.PhysicalAssessment.Height" />
                             </div>
                         </div>
 
@@ -184,7 +189,7 @@
                             </div>
 
                             <div class="col-md-9 input-item">
-                                <input type="number" name="txtPhysicalAssessmentHeight" placeholder="12" class="form-control" />
+                                <input type="number" name="txtPhysicalAssessmentWeight" placeholder="12" class="form-control" ng-model="Form.PhysicalAssessment.Weight" />
                             </div>
                         </div>
 
@@ -195,7 +200,7 @@
                             </div>
 
                             <div class="col-md-9 input-item">
-                                <input type="number" name="txtPhysicalAssessmentHeight" placeholder="12" class="form-control" />
+                                <input type="number" name="txtPhysicalAssessmentHeartRate" placeholder="12" class="form-control" ng-model="Form.PhysicalAssessment.HeartRate" />
                             </div>
                         </div>
 
@@ -209,7 +214,7 @@
                                 <div class="container-fluid ">
                                     <div class="row">
                                         <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                                            <input type="number" name="txtPhysicalAssessmentHeight" placeholder="12" class="form-control" />
+                                            <input type="number" name="txtPhysicalAssessmentBloodPressure1" placeholder="12" class="form-control" ng-model="Form.PhysicalAssessment.SystolicPressure" />
                                         </div>
 
                                         <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
@@ -217,7 +222,7 @@
                                         </div>
 
                                         <div class="col-5 col-sm-5 col-md-5 col-lg-5 col-xl-5">
-                                            <input type="number" name="txtPhysicalAssessmentHeight" placeholder="12" class="form-control" />
+                                            <input type="number" name="txtPhysicalAssessmentBloodPressure2" placeholder="12" class="form-control" ng-model="Form.PhysicalAssessment.DiastolicPressure" />
                                         </div>
 
                                         <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1">
@@ -249,9 +254,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>No infection</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Infection Verified</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Infection suspected</td></tr>
+                            <tr><td><input type="radio" name="rad5_1" class="info-selection" ng-click="Form.InfectionAssessmentAtHospitalAdmission['rad5_1'] = 'No Infection'"></td><td>No infection</td></tr>
+                            <tr><td><input type="radio" name="rad5_1" class="info-selection" ng-click="Form.InfectionAssessmentAtHospitalAdmission['rad5_1'] = 'Infection Verified'"></td><td>Infection Verified</td></tr>
+                            <tr><td><input type="radio" name="rad5_1" class="info-selection" ng-click="Form.InfectionAssessmentAtHospitalAdmission['rad5_1'] = 'Infection Suspected'"></td><td>Infection suspected</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -274,9 +279,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>No infection</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Infection Verified</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Infection suspected</td></tr>
+                            <tr><td><input type="radio" name="rad6_1" class="info-selection" ng-click="Form.InfectionAssessmentAtICUAdmission['rad6_1'] = 'No Infection'"></td><td>No infection</td></tr>
+                            <tr><td><input type="radio" name="rad6_1" class="info-selection" ng-click="Form.InfectionAssessmentAtICUAdmission['rad6_1'] = 'Infection Verified'"></td><td>Infection Verified</td></tr>
+                            <tr><td><input type="radio" name="rad6_1" class="info-selection" ng-click="Form.InfectionAssessmentAtICUAdmission['rad6_1'] = 'Infection Suspected'"></td><td>Infection suspected</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -297,7 +302,7 @@
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
                                     <div class='input-group date' id='dtStudyRandomization'>
-                                        <input type='text' class="form-control" />
+                                        <input type='text' class="form-control" id='indtStudyRandomization' ng-model="Form.StudyRandomisation.DateTime" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -322,15 +327,15 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                <input type="radio" name="chk8_1" class="" style="margin: 5px;" value="1" /><label>1</label>
+                                <input type="radio" name="rad8_1" class="" style="margin: 5px;" value="1" ng-click="Form.StudyGroup['rad8_1'] = '1'" /><label>1</label>
                             </div>
 
                             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                <input type="radio" name="chk8_1" class="" style="margin: 5px;" value="2" /><label>2</label>
+                                <input type="radio" name="rad8_1" class="" style="margin: 5px;" value="2" ng-click="Form.StudyGroup['rad8_1'] = '2'" /><label>2</label>
                             </div>
 
                             <div class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
-                                <input type="radio" name="chk8_1" class="" style="margin: 5px;" value="3" /><label>3</label>
+                                <input type="radio" name="rad8_1" class="" style="margin: 5px;" value="3" ng-click="Form.StudyGroup['rad8_1'] = '3'" /><label>3</label>
                             </div>
                         </div>
                     </div>
@@ -349,11 +354,11 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <input type="radio" name="chk10_1" class="" style="margin: 5px;" value="Female" /><label>Male</label>
+                                <input type="radio" name="rad10_1" class="" style="margin: 5px;" value="Female" ng-click="Form.Gender['rad10_1'] = 'Male'" /><label>Male</label>
                             </div>
 
                             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                                <input type="radio" name="chk10_1" class="" style="margin: 5px;" value="Male" /><label>Female</label>
+                                <input type="radio" name="rad10_1" class="" style="margin: 5px;" value="Male" ng-click="Form.Gender['rad10_1'] = 'Female'" /><label>Female</label>
                             </div>
                         </div>
                     </div>
@@ -377,15 +382,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Systemic Hypertension</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Pulmonary Hypertension</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Hypercholesterolemia</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Diabetes</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Obesity</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Current Smoker</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Prior Smoker, Quit more than 6 months ago</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'None')"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Unknown')"></td><td>Unknown</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Systemic Hypertension')"></td><td>Systemic Hypertension</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Pulmonary Hypertension')"></td><td>Pulmonary Hypertension</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Hypercholesterolemia')"></td><td>Hypercholesterolemia</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Diabetes')"></td><td>Diabetes</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Obesity')"></td><td>Obesity</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Current Smoker')"></td><td>Current Smoker</td></tr>
+                            <tr><td><input type="checkbox" name="chk1_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacRiskFactors', 'Prior Smoker, Quit more than 6 months ago')"></td><td>Prior Smoker, Quit more than 6 months ago</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -408,18 +413,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Angina</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Congestive Heart Failure</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Coronary Artery Disease</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Myocardial Infarction</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Cardiomyopathy</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Valvular Heart Disease</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Endocarditis</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfCardiacDiseaseOther')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'None')"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Unknown')"></td><td>Unknown</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Angina')"></td><td>Angina</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Congestive Heart Failure')"></td><td>Congestive Heart Failure</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Coronary Artery Disease')"></td><td>Coronary Artery Disease</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Myocardial Infarction')"></td><td>Myocardial Infarction</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Cardiomyopathy')"></td><td>Cardiomyopathy</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Valvular Heart Disease')"></td><td>Valvular Heart Disease</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Endocarditis')"></td><td>Endocarditis</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfCardiacDiseaseOther')" ng-click="ToggleCheckbox('HistoryOfCardiacDisease', 'Other')"></td><td>Other*</td></tr>
                             <tr id="divHistoryOfCardiacDiseaseOther" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" ng-model="Form.HistoryOfCardiacDisease.Other.Text" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -443,15 +448,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Emphysema</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>COPD</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Asthma</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Lung Cancer</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('txtHistoryOfRespiratoryDiseaseOther')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRespiratoryDisease', 'None')"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRespiratoryDisease', 'Unknown')"></td><td>Unknown</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRespiratoryDisease', 'Emphysema')"></td><td>Emphysema</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRespiratoryDisease', 'COPD')"></td><td>COPD</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRespiratoryDisease', 'Asthma')"></td><td>Asthma</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRespiratoryDisease', 'Cancer')"></td><td>Lung Cancer</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('txtHistoryOfRespiratoryDiseaseOther')" ng-click="ToggleCheckbox('HistoryOfRespiratoryDisease', 'Other')"></td><td>Other*</td></tr>
                             <tr id="txtHistoryOfRespiratoryDiseaseOther" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfRespiratoryDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfRespiratoryDiseaseOther" ng-model="Form.HistoryOfRespiratoryDisease.Other.Text" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -475,13 +480,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Renal Failure</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Hemodialysis</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('txtHistoryOfRenalDiseaseOther')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRenalDisease', 'None')"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRenalDisease', 'Unknown')"></td><td>Unknown</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRenalDisease', 'Renal Failure')"></td><td>Renal Failure</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfRenalDisease', 'Hemodialysis')"></td><td>Hemodialysis</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('txtHistoryOfRenalDiseaseOther')" ng-click="ToggleCheckbox('HistoryOfRenalDisease', 'Other')"></td><td>Other*</td></tr>
                             <tr id="txtHistoryOfRenalDiseaseOther" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfRenalDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfRenalDiseaseOther" ng-model="Form.HistoryOfRenalDisease.Other.Text" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -505,11 +510,11 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Peripheral Vascular Disease (Arterial)</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Transient Ischemic Attack</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfVascularDiseaseStroke')"></td><td>Stroke*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfVascularDisease', 'None')"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfVascularDisease', 'None')"></td><td>Unknown</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfVascularDisease', 'None')"></td><td>Peripheral Vascular Disease (Arterial)</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfVascularDisease', 'None')"></td><td>Transient Ischemic Attack</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfVascularDiseaseStroke')" ng-click="ToggleCheckbox('HistoryOfVascularDisease', 'Stroke')"></td><td>Stroke*</td></tr>
                             <tr id="divHistoryOfVascularDiseaseStroke" class="additional-info-required-dialog">
                                 <td colspan="2">
                                     <!-- Bootstrap date time picker -->
@@ -518,7 +523,7 @@
                                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                                 <div class="form-group">
                                                     <div class='input-group date' id='dtHistoryOfVascularDiseaseStroke'>
-                                                        <input type='text' class="form-control" />
+                                                        <input type='text' class="form-control" id='indtHistoryOfVascularDiseaseStroke' ng-model="Form.HistoryOfVascularDisease.Stroke.DateTime" />
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
                                                         </span>
@@ -530,9 +535,9 @@
                                     <!-- End of Bootstrap date time picker -->
                                 </td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfVascularDiseaseOther')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfVascularDiseaseOther')" ng-click="ToggleCheckbox('HistoryOfVascularDisease', 'Other')"></td><td>Other*</td></tr>
                             <tr id="divHistoryOfVascularDiseaseOther" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfVascularDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfVascularDiseaseOther" ng-model="Form.HistoryOfVascularDisease.Other.Text" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -556,18 +561,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Bleeding Disorder</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfOtherDiseaseCancer')"></td><td>Cancer*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfOtherDiseases', 'None')"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfOtherDiseases', 'Unknown')"></td><td>Unknown</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfOtherDiseases', 'Bleeding Disorder')"></td><td>Bleeding Disorder</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfOtherDiseaseCancer')" ng-click="ToggleCheckbox('HistoryOfOtherDiseases', 'Cancer')"></td><td>Cancer*</td></tr>
                             <tr id="divHistoryOfOtherDiseaseCancer" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfOtherDiseaseCancer" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfOtherDiseaseCancer" ng-model="Form.HistoryOfOtherDiseasesCancer.Other.Text" /></td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Gastrointestinal Disease</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Liver Disease</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfOtherDiseaseOther')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfOtherDiseases', 'None')"></td><td>Gastrointestinal Disease</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('HistoryOfOtherDiseases', 'None')"></td><td>Liver Disease</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divHistoryOfOtherDiseaseOther')" ng-click="ToggleCheckbox('HistoryOfOtherDiseases', 'Other')"></td><td>Other*</td></tr>
                             <tr id="divHistoryOfOtherDiseaseOther" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfOtherDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfOtherDiseaseOther" ng-model="Form.HistoryOfOtherDiseasesOther.Other.Text" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -591,9 +596,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divSurgicalInterventionsCardiacSurgery')"></td><td>Cardiac Surgery*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('SurgicalInterventions', 'None')"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('SurgicalInterventions', 'Unknown')"></td><td>Unknown</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divSurgicalInterventionsCardiacSurgery')" ng-click="ToggleCheckbox('SurgicalInterventions', 'Cardiac Surgery')"></td><td>Cardiac Surgery*</td></tr>
                             <tr id="divSurgicalInterventionsCardiacSurgery" class="additional-info-required-dialog">
                                 <td colspan="2">
                                     <div class="container-fluid">
@@ -603,7 +608,7 @@
                                             </div>
 
                                             <div class="col-md-10">
-                                                <input type="text" placeholder="" class="form-control" name="txtSurgicalInterventionCardiacSurgery" />
+                                                <input type="text" placeholder="" class="form-control" name="txtSurgicalInterventionCardiacSurgery" ng-model="Form.SurgicalInterventions.CardiacSurgery.Text" />
                                             </div>
                                         </div>
 
@@ -619,7 +624,7 @@
                                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                                             <div class="form-group">
                                                                 <div class='input-group date' id='dtSurgicalInterventionCardiacSurgery'>
-                                                                    <input type='text' class="form-control" />
+                                                                    <input type='text' class="form-control" id='indtSurgicalInterventionCardiacSurgery' ng-model="Form.SurgicalInterventions.CardiacSurgery.DateTime" />
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                                     </span>
@@ -634,7 +639,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divSurgicalInterventionsCarotidSurgery')"></td><td>Carotid Surgery*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divSurgicalInterventionsCarotidSurgery')" ng-click="ToggleCheckbox('SurgicalInterventions', 'Carotid Surgery')"></td><td>Carotid Surgery*</td></tr>
                             <tr id="divSurgicalInterventionsCarotidSurgery" class="additional-info-required-dialog">
                                 <td colspan="2">
                                     <div class="container-fluid">
@@ -644,7 +649,7 @@
                                             </div>
 
                                             <div class="col-md-10">
-                                                <input type="text" placeholder="" class="form-control" name="txtSurgicalInterventionCarotidSurgery" />
+                                                <input type="text" placeholder="" class="form-control" name="txtSurgicalInterventionCarotidSurgery" ng-model="Form.SurgicalInterventions.CarotidSurgery.Text" />
                                             </div>
                                         </div>
 
@@ -660,7 +665,7 @@
                                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                                             <div class="form-group">
                                                                 <div class='input-group date' id='dtSurgicalInterventionCarotidSurgery'>
-                                                                    <input type='text' class="form-control" />
+                                                                    <input type='text' class="form-control" id='indtSurgicalInterventionCarotidSurgery' ng-model="Form.SurgicalInterventions.CarotidSurgery.DateTime" />
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                                     </span>
@@ -675,7 +680,7 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divSurgicalInterventionsOtherSurgery')"></td><td>Other Surgery*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divSurgicalInterventionsOtherSurgery')" ng-click="ToggleCheckbox('SurgicalInterventions', 'Other Surgery')"></td><td>Other Surgery*</td></tr>
                             <tr id="divSurgicalInterventionsOtherSurgery" class="additional-info-required-dialog">
                                 <td colspan="2">
                                     <div class="container-fluid">
@@ -685,7 +690,7 @@
                                             </div>
 
                                             <div class="col-md-10">
-                                                <input type="text" placeholder="" class="form-control" name="txtSurgicalInterventionOtherSurgery" />
+                                                <input type="text" placeholder="" class="form-control" name="txtSurgicalInterventionOtherSurgery" ng-model="Form.SurgicalInterventions.OtherSurgery.Text" />
                                             </div>
                                         </div>
 
@@ -701,7 +706,7 @@
                                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                                             <div class="form-group">
                                                                 <div class='input-group date' id='dtSurgicalInterventionOtherSurgery'>
-                                                                    <input type='text' class="form-control" />
+                                                                    <input type='text' class="form-control" id='indtSurgicalInterventionOtherSurgery' ng-model="Form.SurgicalInterventions.OtherSurgery.DateTime" />
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                                     </span>
@@ -732,11 +737,12 @@
             </div>
 
             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
-                
+
             </div>
 
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+                <!--<button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>-->
+                <button class="btn btn-success" ng-click="PostDataToServer('Form1', Form)">View Object ></button>
             </div>
         </div>
     </div>
@@ -753,7 +759,7 @@
             $('#' + $Element).toggle();
         }
 
-        var DateTimePickers = ["dtInformedConsent", "dtPhysicalAssessment", "dtStudyRandomization", "dtHistoryOfVascularDiseaseStroke", "dtSurgicalInterventionCardiacSurgery", "dtSurgicalInterventionCarotidSurgery", "dtSurgicalInterventionOtherSurgery", "datetimepicker1"];
+        var DateTimePickers = ["dtInformedConsent", "dtPhysicalAssessment", "dtStudyRandomization", "dtHistoryOfVascularDiseaseStroke", "dtSurgicalInterventionCardiacSurgery", "dtSurgicalInterventionCarotidSurgery", "dtSurgicalInterventionOtherSurgery"];
 
         $(function () {
             for (i = 0; i < DateTimePickers.length; i++) {
