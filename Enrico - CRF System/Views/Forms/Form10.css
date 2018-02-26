@@ -1,0 +1,110 @@
+﻿body, html {
+    background-color: whitesmoke;
+}
+
+.row {
+    margin: 10px;
+}
+
+.form-grouping {
+    /*border-radius: 15px;*/
+    background-color: whitesmoke;
+    padding: 0px;
+    border: 2px solid #f90;
+}
+
+.form-header {
+    background-color: #f90;
+    color: #fff;
+    text-align: center;
+    /*border-radius: 15px 15px 0px 0px;*/
+    padding: 5px;
+}
+
+tr {
+    margin-left: 7px;
+}
+
+.table {
+    margin-bottom: 0px;
+}
+
+.input-item input {
+    width: 75%;
+}
+
+.big-checkbox {
+    width: 30px;
+    height: 30px;
+}
+
+.flex-container {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.flex-item {
+    background: tomato;
+    padding: 5px;
+    width: 200px;
+    height: 150px;
+    margin-top: 10px;
+    line-height: 150px;
+    color: white;
+    font-weight: bold;
+    font-size: 3em;
+    text-align: center;
+}
+
+.label-align {
+    vertical-align : text-bottom;
+}
+
+#blood-pressure input {
+    width: 100%;
+}
+
+
+#blood-pressure .container-fluid, #blood-pressure .col-md-9 {
+    margin: 0px;
+    padding: 0px;
+}
+
+.additional-info-required-dialog {
+    display: none;
+}
+
+/*tr td:first-child {
+    width: 60px;
+}*/
+
+footer {
+    padding: 7px;
+    text-align: center;
+    width: 100%;
+    background-color: black;
+    color: whitesmoke;
+}
+
+#navButtons button {
+    width: 100%;
+}
+
+.navbar-fixed {
+    bottom: 0;
+    z-index: 100;
+    position: fixed;
+    width: 100%;
+}
+
+h2 {
+    text-decoration: underline;
+}
