@@ -534,7 +534,7 @@
                                                     <div class='input-group date' id='dtHistoryOfVascularDiseaseStroke'>
                                                         <input type='date' class="form-control" 
                                                                id='indtHistoryOfVascularDiseaseStroke'
-                                                                value="{{ Form.HistoryOfVascularDisease.DateTime | date: 'dd-mm-yyyy' }}" 
+                                                                value="{{ Form.HistoryOfVascularDisease.Stroke.DateTime | date: 'dd-mm-yyyy' }}" 
                                                                ng-model="Form.HistoryOfVascularDisease.Stroke.DateTime" />
                                                         <span class="input-group-addon">
                                                             <span class="glyphicon glyphicon-calendar"></span>
@@ -636,7 +636,10 @@
                                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                                             <div class="form-group">
                                                                 <div class='input-group date' id='dtSurgicalInterventionCardiacSurgery'>
-                                                                    <input type='text' class="form-control" id='indtSurgicalInterventionCardiacSurgery' ng-model="Form.SurgicalInterventions.CardiacSurgery.DateTime" />
+                                                                    <input type='date' class="form-control" 
+                                                                    id='indtSurgicalInterventionCardiacSurgery'
+                                                                    value="{{ Form.SurgicalInterventions.CardiacSurgery.DateTime | date: 'dd-mm-yyyy' }}" 
+                                                                    ng-model="Form.SurgicalInterventions.CardiacSurgery.DateTime" />
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                                     </span>
@@ -677,7 +680,10 @@
                                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                                             <div class="form-group">
                                                                 <div class='input-group date' id='dtSurgicalInterventionCarotidSurgery'>
-                                                                    <input type='text' class="form-control" id='indtSurgicalInterventionCarotidSurgery' ng-model="Form.SurgicalInterventions.CarotidSurgery.DateTime" />
+                                                                    <input type='date' class="form-control" 
+                                                                    id='indtSurgicalInterventionCarotidSurgery' 
+                                                                    value="{{ Form.SurgicalInterventions.CarotidSurgery.DateTime | date: 'dd-mm-yyyy' }}" 
+                                                                    ng-model="Form.SurgicalInterventions.CarotidSurgery.DateTime" />
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                                     </span>
@@ -718,9 +724,9 @@
                                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                                             <div class="form-group">
                                                                 <div class='input-group date' id='dtSurgicalInterventionOtherSurgery'>
-                                                                    <input type='text' class="form-control" 
+                                                                    <input type='date' class="form-control" 
                                                                            id='indtSurgicalInterventionOtherSurgery' 
-                                                                           value="{{ Form.SurgicalInterventions.DateTime | date: 'dd-mm-yyyy' }}" 
+                                                                           value="{{ Form.SurgicalInterventions.OtherSurgery.DateTime | date: 'dd-mm-yyyy' }}" 
                                                                            ng-model="Form.SurgicalInterventions.OtherSurgery.DateTime" />
                                                                     <span class="input-group-addon">
                                                                         <span class="glyphicon glyphicon-calendar"></span>
