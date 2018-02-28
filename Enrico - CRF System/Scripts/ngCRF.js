@@ -86,17 +86,22 @@ AngularModule.controller('formController', function ($scope, ApiCall) {
         { Name: 'dtSurgicalInterventionCarotidSurgery', containers: { Section: 'SurgicalInterventions', idInner: 'indtSurgicalInterventionCarotidSurgery', Subsection: 'CarotidSurgery' } },
         { Name: 'dtSurgicalInterventionOtherSurgery', containers: { Section: 'SurgicalInterventions', idInner: 'indtSurgicalInterventionOtherSurgery', Subsection: 'OtherSurgery' } }
     ];
-    
-    $(function () {
+
+   
+   /* $(function () {
+
         for (var i = 0; i < DateTimePickers2.length; i++) {
             var dateTimePicker = DateTimePickers2[i];
-
+           
             $("#" + dateTimePicker.Name).on("dp.change", function () {
                 if (dateTimePicker.containers.Subsection == null) {
+                    console.log(document.getElementById(DateTimePickers2.Name));       
                     $scope.Form[dateTimePicker.containers.Section] = {};
                     $scope.Form[dateTimePicker.containers.Section].DateTime = $("#" + dateTimePicker.containers.idInner).val();
                 }
                 else {
+                    console.log(document.getElementById(dateTimePicker.Name));
+                   // console.log(DateTimePickers2)
                     $scope.Form[dateTimePicker.containers.Section][dateTimePicker.containers.Subsection] = {};
                     $scope.Form[dateTimePicker.containers.Section][dateTimePicker.containers.Subsection].DateTime = $("#" + dateTimePicker.containers.idInner).val();
                 }
@@ -108,15 +113,20 @@ AngularModule.controller('formController', function ($scope, ApiCall) {
         //    $scope.Form.SurgicalInterventions.OtherSurgery.DateTime = $("#indtSurgicalInterventionOtherSurgery").val();
         //});
 
+   
+
+
     });
+    */
     
-    $scope.SubmitForm = function (formInputs) {
+$scope.SubmitForm = function (formInputs) {
         ApiCall.Post('formController', formInputs);
     }
 
     $scope.PostDataToServer = function (formName, form) {
         form.Name = formName;
         console.log(form);
+        console.log($scope.Form);
     };
 
     $scope.ToggleCheckbox = function (nameOfArray, nameOfElement) {
