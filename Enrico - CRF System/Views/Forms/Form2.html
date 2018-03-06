@@ -21,7 +21,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
-                    <h2>Dails follow-up Day 1 form</h2>
+                    <h2>Dailys follow-up Day 1 form</h2>
                 </div>
             </div>
         </div>
@@ -44,7 +44,8 @@
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
                                     <div class='input-group date' id='dateofFollowUp'>
-                                        <input type='date' class="form-control" />
+                                        <input type='date' class="form-control" 
+                                                ng-model="Form.DateFollowUp.DateTime" />
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -71,9 +72,12 @@
                         <div class="row">
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
-                                    <input type="checkbox" name="chk2_1" class="info-selection"> <label>Albumin 20%</label>
-                                    <input type="checkbox" name="chk2_2" class="info-selection"> <label>6 g HSS</label>
-                                    <input type="checkbox" name="chk2_3" class="info-selection"> <label>12 g HSS</label>
+                                    <input type="checkbox" name="chk2_1" class="info-selection"
+                                        ng-model="Form.RandomizedTo.chk2_1" > <label>Albumin 20%</label>
+                                    <input type="checkbox" name="chk2_2" class="info-selection"
+                                        ng-model="Form.RandomizedTo.chk2_2" > <label>6 g HSS</label>
+                                    <input type="checkbox" name="chk2_3" class="info-selection"
+                                        ng-model="Form.RandomizedTo.chk2_3"> <label>12 g HSS</label>
                                 </div>
                             </div>
                         </div>
@@ -100,14 +104,18 @@
                                     <ol>
                                         <li>
                                             <h6>a. Vasopressors</h6>
-                                            <input type="radio" name="chk3_a" class="info-selection"> <label>Yes</label>
-                                            <input type="radio" name="chk3_a" class="info-selection"> <label>No</label>
+                                            <input type="radio" name="chk3_a" class="info-selection"
+                                                ng-model="Form.RandomizedTo.chk3_a"> <label>Yes</label>
+                                            <input type="radio" name="chk3_a" class="info-selection"
+                                                ng-model="Form.RandomizedTo.chk3_a"> <label>No</label>
                                         </li>
 
                                         <li>
                                             <h6>b. Mechanical Ventilation</h6>
-                                            <input type="radio" name="chk3_b" class="info-selection"> <label>Yes</label>
-                                            <input type="radio" name="chk3_b" class="info-selection"> <label>No</label>
+                                            <input type="radio" name="chk3_b" class="info-selection"
+                                                 ng-model="Form.RandomizedTo.chk3_b"> <label>Yes</label>
+                                            <input type="radio" name="chk3_b" class="info-selection"
+                                                 ng-model="Form.RandomizedTo.chk3_b"> <label>No</label>
                                         </li>
                                     </ol>
 
@@ -148,37 +156,37 @@
                             <tr>
                                 <td> <b> Time(HH:MM)</b> </td>
                                 <td></td>
-                                <td> <input type="time" class="form-control" name="time2"></td>
-                                <td> <input type="time" class="form-control" name="time3"></td>
+                                <td> <input type="time" class="form-control" name="time2" ng-model="Form.FollowUp.Time.time2"></td>
+                                <td> <input type="time" class="form-control" name="time3" ng-model="Form.FollowUp.Time.time3"></td>
                                 <td></td>
-                                <td> <input type="time" class="form-control" name="time5"> </td>
-                                <td> <input type="time" class="form-control" name="time6"></td>
+                                <td> <input type="time" class="form-control" name="time5" ng-model="Form.FollowUp.Time.time5"> </td>
+                                <td> <input type="time" class="form-control" name="time6" ng-model="Form.FollowUp.Time.time6"></td>
                                 <td></td>
-                                <td> <input type="time" class="form-control" name="time8"></td>
-                                <td> <input type="time" class="form-control" name="time9"></td>
+                                <td> <input type="time" class="form-control" name="time8" ng-model="Form.FollowUp.Time.time8"></td>
+                                <td> <input type="time" class="form-control" name="time9" ng-model="Form.FollowUp.Time.time9"></td>
                             </tr>
                             <tr><td> <b> Treatment</b> </td> </tr>
                             <tr>
                                 <td> Start (HH:MM) </td>
-                                <td> <input type="time" class="form-control" name="start1"></td>
+                                <td> <input type="time" class="form-control" name="start1" ng-model="Form.FollowUp.Treatment.start1"></td>
                                 <td></td>
                                 <td></td>
-                                <td> <input type="time" class="form-control" name="start4"></td>
+                                <td> <input type="time" class="form-control" name="start4" ng-model="Form.FollowUp.Treatment.start4"></td>
                                 <td> </td>
                                 <td> </td>
-                                <td> <input type="time" class="form-control" name="start7"> </td>
+                                <td> <input type="time" class="form-control" name="start7" ng-model="Form.FollowUp.Treatment.start7"> </td>
                                 <td> </td>
                                 <td> </td>
                             </tr>
                             <tr>
                                 <td> Stop (HH:MM) </td>
-                                <td> <input type="time" class="form-control" name="stop1"></td>
+                                <td> <input type="time" class="form-control" name="stop1" ng-model="Form.FollowUp.Treatment.stop1"></td>
                                 <td></td>
                                 <td></td>
-                                <td> <input type="time" class="form-control" name="stop4"></td>
+                                <td> <input type="time" class="form-control" name="stop4" ng-model="Form.FollowUp.Treatment.stop4"></td>
                                 <td> </td>
                                 <td> </td>
-                                <td> <input type="time" class="form-control" name="stop7"> </td>
+                                <td> <input type="time" class="form-control" name="stop7" ng-model="Form.FollowUp.Treatment.stop7"> </td>
                                 <td> </td>
                                 <td> </td>
                             </tr>
@@ -187,571 +195,571 @@
                             <tr><td> <b> Treatment </b> </td></tr>
                             <tr>
                                 <td>BD (mmHg)</td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)1"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)2"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)3"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)4"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)5"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)6"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)7"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)8"> </td>
-                                <td> <input type="text" class="form-control" name="BD(mmHg)9"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)1" ng-model="Form.FollowUp.Treatment.BDmmHg1"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)2" ng-model="Form.FollowUp.Treatment.BDmmHg2"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)3" ng-model="Form.FollowUp.Treatment.BDmmHg3"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)4" ng-model="Form.FollowUp.Treatment.BDmmHg4"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)5" ng-model="Form.FollowUp.Treatment.BDmmHg5"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)6" ng-model="Form.FollowUp.Treatment.BDmmHg6"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)7" ng-model="Form.FollowUp.Treatment.BDmmHg7"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)8" ng-model="Form.FollowUp.Treatment.BDmmHg8"> </td>
+                                <td> <input type="text" class="form-control" name="BD(mmHg)9" ng-model="Form.FollowUp.Treatment.BDmmHg9"> </td>
                             </tr>
                             <tr>
                                 <td>HR (/min)</td>
-                                <td> <input type="text" class="form-control" name="HR(/min)1"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)2"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)3"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)4"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)5"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)6"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)7"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)8"> </td>
-                                <td> <input type="text" class="form-control" name="HR(/min)9"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)1" ng-model="Form.FollowUp.Treatment.HRmin1"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)2" ng-model="Form.FollowUp.Treatment.HRmin2"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)3" ng-model="Form.FollowUp.Treatment.HRmin3"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)4" ng-model="Form.FollowUp.Treatment.HRmin4"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)5" ng-model="Form.FollowUp.Treatment.HRmin5"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)6" ng-model="Form.FollowUp.Treatment.HRmin6"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)7" ng-model="Form.FollowUp.Treatment.HRmin7"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)8" ng-model="Form.FollowUp.Treatment.HRmin8"> </td>
+                                <td> <input type="text" class="form-control" name="HR(/min)9" ng-model="Form.FollowUp.Treatment.HRmin9"> </td>
                             </tr>
                             <tr>
                                 <td>CVP (mmHg)</td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)1"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)2"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)3"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)4"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)5"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)6"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)7"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)8"> </td>
-                                <td> <input type="text" class="form-control" name="CVP(mmHg)9"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)1" ng-model="Form.FollowUp.Treatment.CVPmmHg1"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)2" ng-model="Form.FollowUp.Treatment.CVPmmHg2"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)3" ng-model="Form.FollowUp.Treatment.CVPmmHg3"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)4" ng-model="Form.FollowUp.Treatment.CVPmmHg4"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)5" ng-model="Form.FollowUp.Treatment.CVPmmHg5"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)6" ng-model="Form.FollowUp.Treatment.CVPmmHg6"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)7" ng-model="Form.FollowUp.Treatment.CVPmmHg7"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)8" ng-model="Form.FollowUp.Treatment.CVPmmHg8"> </td>
+                                <td> <input type="text" class="form-control" name="CVP(mmHg)9" ng-model="Form.FollowUp.Treatment.CVPmmHg9"> </td>
                             </tr>
                             <tr>
                                 <td>Weight (kg)</td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)1"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)2"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)3"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)4"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)5"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)6"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)7"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)8"> </td>
-                                <td> <input type="text" class="form-control" name="Weight(kg)9"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)1" ng-model="Form.FollowUp.Treatment.Weightkg1"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)2" ng-model="Form.FollowUp.Treatment.Weightkg2"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)3" ng-model="Form.FollowUp.Treatment.Weightkg3"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)4" ng-model="Form.FollowUp.Treatment.Weightkg4"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)5" ng-model="Form.FollowUp.Treatment.Weightkg5"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)6" ng-model="Form.FollowUp.Treatment.Weightkg6"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)7" ng-model="Form.FollowUp.Treatment.Weightkg7"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)8" ng-model="Form.FollowUp.Treatment.Weightkg8"> </td>
+                                <td> <input type="text" class="form-control" name="Weight(kg)9" ng-model="Form.FollowUp.Treatment.Weightkg9"> </td>
                             </tr>
                             <tr><td> <b> Lab </b> </td></tr>
                             <tr>
                                 <td>ABG</td>
-                                <td> <input type="text" class="form-control" name="ABG1"> </td>
-                                <td> <input type="text" class="form-control" name="ABG2"> </td>
-                                <td> <input type="text" class="form-control" name="ABG3"> </td>
-                                <td> <input type="text" class="form-control" name="ABG4"> </td>
-                                <td> <input type="text" class="form-control" name="ABG5"> </td>
-                                <td> <input type="text" class="form-control" name="ABG6"> </td>
-                                <td> <input type="text" class="form-control" name="ABG7"> </td>
-                                <td> <input type="text" class="form-control" name="ABG8"> </td>
-                                <td> <input type="text" class="form-control" name="ABG9"> </td>
+                                <td> <input type="text" class="form-control" name="ABG1" ng-model="Form.FollowUp.Lab.ABG1"> </td>
+                                <td> <input type="text" class="form-control" name="ABG2" ng-model="Form.FollowUp.Lab.ABG2"> </td>
+                                <td> <input type="text" class="form-control" name="ABG3" ng-model="Form.FollowUp.Lab.ABG3"> </td>
+                                <td> <input type="text" class="form-control" name="ABG4" ng-model="Form.FollowUp.Lab.ABG4"> </td>
+                                <td> <input type="text" class="form-control" name="ABG5" ng-model="Form.FollowUp.Lab.ABG5"> </td>
+                                <td> <input type="text" class="form-control" name="ABG6" ng-model="Form.FollowUp.Lab.ABG6"> </td>
+                                <td> <input type="text" class="form-control" name="ABG7" ng-model="Form.FollowUp.Lab.ABG7"> </td>
+                                <td> <input type="text" class="form-control" name="ABG8" ng-model="Form.FollowUp.Lab.ABG8"> </td>
+                                <td> <input type="text" class="form-control" name="ABG9" ng-model="Form.FollowUp.Lab.ABG9"> </td>
                             </tr>
                             <tr>
                                 <td>pH</td>
-                                <td> <input type="text" class="form-control" name="pH1"> </td>
-                                <td> <input type="text" class="form-control" name="pH2"> </td>
-                                <td> <input type="text" class="form-control" name="pH3"> </td>
-                                <td> <input type="text" class="form-control" name="pH4"> </td>
-                                <td> <input type="text" class="form-control" name="pH5"> </td>
-                                <td> <input type="text" class="form-control" name="pH6"> </td>
-                                <td> <input type="text" class="form-control" name="pH7"> </td>
-                                <td> <input type="text" class="form-control" name="pH8"> </td>
-                                <td> <input type="text" class="form-control" name="pH9"> </td>
+                                <td> <input type="text" class="form-control" name="pH1" ng-model="Form.FollowUp.Lab.pH1"> </td>
+                                <td> <input type="text" class="form-control" name="pH2" ng-model="Form.FollowUp.Lab.pH2"> </td>
+                                <td> <input type="text" class="form-control" name="pH3" ng-model="Form.FollowUp.Lab.pH3"> </td>
+                                <td> <input type="text" class="form-control" name="pH4" ng-model="Form.FollowUp.Lab.pH4"> </td>
+                                <td> <input type="text" class="form-control" name="pH5" ng-model="Form.FollowUp.Lab.pH5"> </td>
+                                <td> <input type="text" class="form-control" name="pH6" ng-model="Form.FollowUp.Lab.pH6"> </td>
+                                <td> <input type="text" class="form-control" name="pH7" ng-model="Form.FollowUp.Lab.pH7"> </td>
+                                <td> <input type="text" class="form-control" name="pH8" ng-model="Form.FollowUp.Lab.pH8"> </td>
+                                <td> <input type="text" class="form-control" name="pH9" ng-model="Form.FollowUp.Lab.pH9"> </td>
                             </tr>
                             <tr>
                                 <td>PaCO2 (mmHg)</td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)1"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)2"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)3"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)4"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)5"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)6"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)7"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)8"> </td>
-                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)9"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)1" ng-model="Form.FollowUp.Lab.PaCO2mmHg1"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)2" ng-model="Form.FollowUp.Lab.PaCO2mmHg2"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)3" ng-model="Form.FollowUp.Lab.PaCO2mmHg3"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)4" ng-model="Form.FollowUp.Lab.PaCO2mmHg4"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)5" ng-model="Form.FollowUp.Lab.PaCO2mmHg5"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)6" ng-model="Form.FollowUp.Lab.PaCO2mmHg6"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)7" ng-model="Form.FollowUp.Lab.PaCO2mmHg7"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)8" ng-model="Form.FollowUp.Lab.PaCO2mmHg8"> </td>
+                                <td> <input type="text" class="form-control" name="PaCO2(mmHg)9" ng-model="Form.FollowUp.Lab.PaCO2mmHg9"> </td>
                             </tr>
                             <tr>
                                 <td>PaO2 (mmHg)</td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)1"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)2"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)3"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)4"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)5"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)6"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)7"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)8"> </td>
-                                <td> <input type="text" class="form-control" name="PaO2(mmHg)9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)1" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)2" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)3" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)4" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)5" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)6" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)7" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)8" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
+                                <td> <input type="text" class="form-control" name="PaO2(mmHg)9" ng-model="Form.FollowUp.Lab.PaO2mmHg9"> </td>
                             </tr>
                             <tr>
                                 <td>HCO3 (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)1" ng-model="Form.FollowUp.Lab.HCO3mmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)2" ng-model="Form.FollowUp.Lab.HCO3mmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)3" ng-model="Form.FollowUp.Lab.HCO3mmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)4" ng-model="Form.FollowUp.Lab.HCO3mmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)5" ng-model="Form.FollowUp.Lab.HCO3mmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)6" ng-model="Form.FollowUp.Lab.HCO3mmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)7" ng-model="Form.FollowUp.Lab.HCO3mmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)8" ng-model="Form.FollowUp.Lab.HCO3mmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3(mmol/L)9" ng-model="Form.FollowUp.Lab.HCO3mmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>Base Excess (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)1=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)2=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)3=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)4=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)5=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)6=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)7=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)8=""> </td>
-                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)9=""> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)1="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll1"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)2="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll2"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)3="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll3"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)4="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll4"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)5="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll5"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)6="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll6"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)7="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll7"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)8="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll8"> </td>
+                                <td> <input type="text" class="form-control" name="BaseExcess" (mmol="" l)9="" ng-model="Form.FollowUp.Lab.BaseExcessmmoll9"> </td>
                             </tr>
                             <tr>
                                 <td>O2-sat (%)</td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)1"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)2"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)3"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)4"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)5"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)6"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)7"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)8"> </td>
-                                <td> <input type="text" class="form-control" name="O2-sat(%)9"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)1"  ng-model="Form.FollowUp.Lab.O2sat1"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)2" ng-model="Form.FollowUp.Lab.O2sat2"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)3" ng-model="Form.FollowUp.Lab.O2sat3"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)4" ng-model="Form.FollowUp.Lab.O2sat4"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)5" ng-model="Form.FollowUp.Lab.O2sat5"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)6" ng-model="Form.FollowUp.Lab.O2sat6"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)7" ng-model="Form.FollowUp.Lab.O2sat7"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)8" ng-model="Form.FollowUp.Lab.O2sat8"> </td>
+                                <td> <input type="text" class="form-control" name="O2-sat(%)9" ng-model="Form.FollowUp.Lab.O2sat9"> </td>
                             </tr>
                             <tr>
                                 <td>Renal_function</td>
-                                <td> <input type="text" class="form-control" name="Renal_function1"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function2"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function3"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function4"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function5"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function6"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function7"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function8"> </td>
-                                <td> <input type="text" class="form-control" name="Renal_function9"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function1" ng-model="Form.FollowUp.Lab.Renal_function1"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function2" ng-model="Form.FollowUp.Lab.Renal_function2"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function3" ng-model="Form.FollowUp.Lab.Renal_function3"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function4" ng-model="Form.FollowUp.Lab.Renal_function4"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function5" ng-model="Form.FollowUp.Lab.Renal_function5"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function6" ng-model="Form.FollowUp.Lab.Renal_function6"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function7" ng-model="Form.FollowUp.Lab.Renal_function7"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function8" ng-model="Form.FollowUp.Lab.Renal_function8"> </td>
+                                <td> <input type="text" class="form-control" name="Renal_function9" ng-model="Form.FollowUp.Lab.Renal_function9"> </td>
                             </tr>
                             <tr>
                                 <td>ureum (mg/dL)</td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)1"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)2"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)3"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)4"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)5"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)6"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)7"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)8"> </td>
-                                <td> <input type="text" class="form-control" name="ureum(mg/dL)9"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)1" ng-model="Form.FollowUp.Lab.ureummgdL1"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)2" ng-model="Form.FollowUp.Lab.ureummgdL2"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)3" ng-model="Form.FollowUp.Lab.ureummgdL3"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)4" ng-model="Form.FollowUp.Lab.ureummgdL4"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)5" ng-model="Form.FollowUp.Lab.ureummgdL5"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)6" ng-model="Form.FollowUp.Lab.ureummgdL6"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)7" ng-model="Form.FollowUp.Lab.ureummgdL7"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)8" ng-model="Form.FollowUp.Lab.ureummgdL8"> </td>
+                                <td> <input type="text" class="form-control" name="ureum(mg/dL)9" ng-model="Form.FollowUp.Lab.ureummgdL9"> </td>
                             </tr>
                             <tr>
                                 <td>creatine (mg/dL)</td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)1"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)2"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)3"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)4"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)5"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)6"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)7"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)8"> </td>
-                                <td> <input type="text" class="form-control" name="creatine(mg/dL)9"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)1" ng-model="Form.FollowUp.Lab.creatinemgdL1"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)2" ng-model="Form.FollowUp.Lab.creatinemgdL2"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)3" ng-model="Form.FollowUp.Lab.creatinemgdL3"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)4" ng-model="Form.FollowUp.Lab.creatinemgdL4"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)5" ng-model="Form.FollowUp.Lab.creatinemgdL5"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)6" ng-model="Form.FollowUp.Lab.creatinemgdL6"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)7" ng-model="Form.FollowUp.Lab.creatinemgdL7"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)8" ng-model="Form.FollowUp.Lab.creatinemgdL8"> </td>
+                                <td> <input type="text" class="form-control" name="creatine(mg/dL)9" ng-model="Form.FollowUp.Lab.creatinemgdL9"> </td>
                             </tr>
                             <tr>
                                 <td>GFR (ml/min)</td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)1"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)2"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)3"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)4"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)5"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)6"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)7"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)8"> </td>
-                                <td> <input type="text" class="form-control" name="GFR(ml/min)9"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)1" ng-model="Form.FollowUp.Lab.GFRmlmin1"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)2" ng-model="Form.FollowUp.Lab.GFRmlmin2"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)3" ng-model="Form.FollowUp.Lab.GFRmlmin3"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)4" ng-model="Form.FollowUp.Lab.GFRmlmin4"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)5" ng-model="Form.FollowUp.Lab.GFRmlmin5"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)6" ng-model="Form.FollowUp.Lab.GFRmlmin6"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)7" ng-model="Form.FollowUp.Lab.GFRmlmin7"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)8" ng-model="Form.FollowUp.Lab.GFRmlmin8"> </td>
+                                <td> <input type="text" class="form-control" name="GFR(ml/min)9" ng-model="Form.FollowUp.Lab.GFRmlmin9"> </td>
                             </tr>
                             <tr>
                                 <td>ionogram</td>
-                                <td> <input type="text" class="form-control" name="ionogram1"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram2"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram3"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram4"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram5"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram6"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram7"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram8"> </td>
-                                <td> <input type="text" class="form-control" name="ionogram9"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram1" ng-model="Form.FollowUp.Lab.ionogram1"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram2" ng-model="Form.FollowUp.Lab.ionogram2"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram3" ng-model="Form.FollowUp.Lab.ionogram3"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram4" ng-model="Form.FollowUp.Lab.ionogram4"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram5" ng-model="Form.FollowUp.Lab.ionogram5"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram6" ng-model="Form.FollowUp.Lab.ionogram6"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram7" ng-model="Form.FollowUp.Lab.ionogram7"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram8" ng-model="Form.FollowUp.Lab.ionogram8"> </td>
+                                <td> <input type="text" class="form-control" name="ionogram9" ng-model="Form.FollowUp.Lab.ionogram9"> </td>
                             </tr>
                             <tr>
                                 <td>Na+ (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="Na+(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)1" ng-model="Form.FollowUp.Lab.NammolL1"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)2" ng-model="Form.FollowUp.Lab.NammolL2"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)3" ng-model="Form.FollowUp.Lab.NammolL3"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)4" ng-model="Form.FollowUp.Lab.NammolL4"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)5" ng-model="Form.FollowUp.Lab.NammolL5"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)6" ng-model="Form.FollowUp.Lab.NammolL6"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)7" ng-model="Form.FollowUp.Lab.NammolL7"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)8" ng-model="Form.FollowUp.Lab.NammolL8"> </td>
+                                <td> <input type="text" class="form-control" name="Na+(mmol/L)9" ng-model="Form.FollowUp.Lab.NammolL9"> </td>
                             </tr>
                             <tr>
                                 <td>K+ (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="K+(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)1" ng-model="Form.FollowUp.Lab.KmmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)2" ng-model="Form.FollowUp.Lab.KmmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)3" ng-model="Form.FollowUp.Lab.KmmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)4" ng-model="Form.FollowUp.Lab.KmmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)5" ng-model="Form.FollowUp.Lab.KmmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)6" ng-model="Form.FollowUp.Lab.KmmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)7" ng-model="Form.FollowUp.Lab.KmmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)8" ng-model="Form.FollowUp.Lab.KmmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="K+(mmol/L)9" ng-model="Form.FollowUp.Lab.KmmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>Cl- (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)1" ng-model="Form.FollowUp.Lab.ClmmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)2" ng-model="Form.FollowUp.Lab.ClmmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)3" ng-model="Form.FollowUp.Lab.ClmmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)4" ng-model="Form.FollowUp.Lab.ClmmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)5" ng-model="Form.FollowUp.Lab.ClmmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)6" ng-model="Form.FollowUp.Lab.ClmmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)7" ng-model="Form.FollowUp.Lab.ClmmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)8" ng-model="Form.FollowUp.Lab.ClmmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="Cl-(mmol/L)9" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>HCO3^2- (mmmol/L)</td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)1" ng-model="Form.FollowUp.Lab.HCO32mmmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)2" ng-model="Form.FollowUp.Lab.HCO32mmmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)3" ng-model="Form.FollowUp.Lab.HCO32mmmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)4" ng-model="Form.FollowUp.Lab.HCO32mmmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)5" ng-model="Form.FollowUp.Lab.HCO32mmmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)6" ng-model="Form.FollowUp.Lab.HCO32mmmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)7" ng-model="Form.FollowUp.Lab.HCO32mmmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)8" ng-model="Form.FollowUp.Lab.HCO32mmmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="HCO3^2-(mmmol/L)9" ng-model="Form.FollowUp.Lab.HCO32mmmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>albumin (g/L)</td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="albumin(g/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)1" ng-model="Form.FollowUp.Lab.albumingL1"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)2" ng-model="Form.FollowUp.Lab.albumingL2"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)3" ng-model="Form.FollowUp.Lab.albumingL3"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)4" ng-model="Form.FollowUp.Lab.albumingL4"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)5" ng-model="Form.FollowUp.Lab.albumingL5"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)6" ng-model="Form.FollowUp.Lab.albumingL6"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)7" ng-model="Form.FollowUp.Lab.albumingL7"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)8" ng-model="Form.FollowUp.Lab.albumingL8"> </td>
+                                <td> <input type="text" class="form-control" name="albumin(g/L)9" ng-model="Form.FollowUp.Lab.albumingL9"> </td>
                             </tr>
                             <tr>
                                 <td>anion gap (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)1=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)2=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)3=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)4=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)5=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)6=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)7=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)8=""> </td>
-                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)9=""> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)1="" ng-model="Form.FollowUp.Lab.aniongapmmoll1"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)2="" ng-model="Form.FollowUp.Lab.aniongapmmoll2"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)3="" ng-model="Form.FollowUp.Lab.aniongapmmoll3"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)4="" ng-model="Form.FollowUp.Lab.aniongapmmoll4"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)5="" ng-model="Form.FollowUp.Lab.aniongapmmoll5"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)6="" ng-model="Form.FollowUp.Lab.aniongapmmoll6"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)7="" ng-model="Form.FollowUp.Lab.aniongapmmoll7"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)8="" ng-model="Form.FollowUp.Lab.aniongapmmoll8"> </td>
+                                <td> <input type="text" class="form-control" name="aniongap" (mmol="" l)9="" ng-model="Form.FollowUp.Lab.aniongapmmoll9"> </td>
                             </tr>
                             <tr>
                                 <td>iCa (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="iCa(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)1" ng-model="Form.FollowUp.Lab.iCammolL1"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)2" ng-model="Form.FollowUp.Lab.iCammolL2"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)3" ng-model="Form.FollowUp.Lab.iCammolL3"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)4" ng-model="Form.FollowUp.Lab.iCammolL4"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)5" ng-model="Form.FollowUp.Lab.iCammolL5"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)6" ng-model="Form.FollowUp.Lab.iCammolL6"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)7" ng-model="Form.FollowUp.Lab.iCammolL7"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)8" ng-model="Form.FollowUp.Lab.iCammolL8"> </td>
+                                <td> <input type="text" class="form-control" name="iCa(mmol/L)9" ng-model="Form.FollowUp.Lab.iCammolL9"> </td>
                             </tr>
                             <tr>
                                 <td>Ca2+ (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)1" ng-model="Form.FollowUp.Lab.Ca2mmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)2" ng-model="Form.FollowUp.Lab.Ca2mmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)3" ng-model="Form.FollowUp.Lab.Ca2mmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)4" ng-model="Form.FollowUp.Lab.Ca2mmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)5" ng-model="Form.FollowUp.Lab.Ca2mmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)6" ng-model="Form.FollowUp.Lab.Ca2mmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)7" ng-model="Form.FollowUp.Lab.Ca2mmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)8" ng-model="Form.FollowUp.Lab.Ca2mmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="Ca2+(mmol/L)9" ng-model="Form.FollowUp.Lab.Ca2mmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>P (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="P(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)1" ng-model="Form.FollowUp.Lab.PmmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)2" ng-model="Form.FollowUp.Lab.PmmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)3" ng-model="Form.FollowUp.Lab.PmmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)4" ng-model="Form.FollowUp.Lab.PmmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)5" ng-model="Form.FollowUp.Lab.PmmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)6" ng-model="Form.FollowUp.Lab.PmmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)7" ng-model="Form.FollowUp.Lab.PmmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)8" ng-model="Form.FollowUp.Lab.PmmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="P(mmol/L)9" ng-model="Form.FollowUp.Lab.PmmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>Mg (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="Mg(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)1" ng-model="Form.FollowUp.Lab.MgmmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)2" ng-model="Form.FollowUp.Lab.MgmmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)3" ng-model="Form.FollowUp.Lab.MgmmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)4" ng-model="Form.FollowUp.Lab.MgmmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)5" ng-model="Form.FollowUp.Lab.MgmmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)6" ng-model="Form.FollowUp.Lab.MgmmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)7" ng-model="Form.FollowUp.Lab.MgmmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)8" ng-model="Form.FollowUp.Lab.MgmmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="Mg(mmol/L)9" ng-model="Form.FollowUp.Lab.MgmmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>chemistry</td>
-                                <td> <input type="text" class="form-control" name="chemistry1"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry2"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry3"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry4"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry5"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry6"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry7"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry8"> </td>
-                                <td> <input type="text" class="form-control" name="chemistry9"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry1" ng-model="Form.FollowUp.Lab.chemistry1"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry2" ng-model="Form.FollowUp.Lab.chemistry2"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry3" ng-model="Form.FollowUp.Lab.chemistry3"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry4" ng-model="Form.FollowUp.Lab.chemistry4"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry5" ng-model="Form.FollowUp.Lab.chemistry5"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry6" ng-model="Form.FollowUp.Lab.chemistry6"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry7" ng-model="Form.FollowUp.Lab.chemistry7"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry8" ng-model="Form.FollowUp.Lab.chemistry8"> </td>
+                                <td> <input type="text" class="form-control" name="chemistry9" ng-model="Form.FollowUp.Lab.chemistry9"> </td>
                             </tr>
                             <tr>
                                 <td>lactate (mmol/L)</td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="lactate(mmol/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)1" ng-model="Form.FollowUp.Lab.lactatemmolL1"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)2" ng-model="Form.FollowUp.Lab.lactatemmolL2"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)3" ng-model="Form.FollowUp.Lab.lactatemmolL3"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)4" ng-model="Form.FollowUp.Lab.lactatemmolL4"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)5" ng-model="Form.FollowUp.Lab.lactatemmolL5"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)6" ng-model="Form.FollowUp.Lab.lactatemmolL6"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)7" ng-model="Form.FollowUp.Lab.lactatemmolL7"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)8" ng-model="Form.FollowUp.Lab.lactatemmolL8"> </td>
+                                <td> <input type="text" class="form-control" name="lactate(mmol/L)9" ng-model="Form.FollowUp.Lab.lactatemmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>CRP (mg/L)</td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)1"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)2"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)3"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)4"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)5"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)6"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)7"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)8"> </td>
-                                <td> <input type="text" class="form-control" name="CRP(mg/L)9"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)1" ng-model="Form.FollowUp.Lab.CRPmgL1"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)2" ng-model="Form.FollowUp.Lab.CRPmgL2"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)3" ng-model="Form.FollowUp.Lab.CRPmgL3"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)4" ng-model="Form.FollowUp.Lab.CRPmgL4"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)5" ng-model="Form.FollowUp.Lab.CRPmgL5"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)6" ng-model="Form.FollowUp.Lab.CRPmgL6"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)7" ng-model="Form.FollowUp.Lab.CRPmgL7"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)8" ng-model="Form.FollowUp.Lab.CRPmgL8"> </td>
+                                <td> <input type="text" class="form-control" name="CRP(mg/L)9" ng-model="Form.FollowUp.Lab.CRPmgL9"> </td>
                             </tr>
                             <tr>
                                 <td>osmolaliteit (mOsm/kg H2O)</td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)1=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)2=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)3=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)4=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)5=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)6=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)7=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)8=""> </td>
-                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)9=""> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)1="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o1"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)2="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o2"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)3="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o3"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)4="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o4"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)5="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o5"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)6="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o6"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)7="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o7"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)8="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o8"> </td>
+                                <td> <input type="text" class="form-control" name="osmolaliteit(mOsm/kg" h2o)9="" ng-model="Form.FollowUp.Lab.osmolaliteitmOsmkgh2o9"> </td>
                             </tr>
                             <tr>
                                 <td>capillary leak index (CRP/alb)</td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)1=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)2=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)3=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)4=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)5=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)6=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)7=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)8=""> </td>
-                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)9=""> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)1="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)2="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)3="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)4="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)5="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)6="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)7="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)8="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
+                                <td> <input type="text" class="form-control" name="capillaryleak" index="" (crp="" alb)9="" ng-model="Form.FollowUp.Lab.ClmmolL9"> </td>
                             </tr>
                             <tr>
                                 <td>Fluidbalance</td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance1"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance2"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance3"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance4"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance5"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance6"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance7"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance8"> </td>
-                                <td> <input type="text" class="form-control" name="Fluidbalance9"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance1" ng-model="Form.FollowUp.Lab.Fluidbalance1"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance2" ng-model="Form.FollowUp.Lab.Fluidbalance2"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance3" ng-model="Form.FollowUp.Lab.Fluidbalance3"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance4" ng-model="Form.FollowUp.Lab.Fluidbalance4"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance5" ng-model="Form.FollowUp.Lab.Fluidbalance5"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance6" ng-model="Form.FollowUp.Lab.Fluidbalance6"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance7" ng-model="Form.FollowUp.Lab.Fluidbalance7"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance8" ng-model="Form.FollowUp.Lab.Fluidbalance8"> </td>
+                                <td> <input type="text" class="form-control" name="Fluidbalance9" ng-model="Form.FollowUp.Lab.Fluidbalance9"> </td>
                             </tr>
                             <tr><td> <b> CVVH </b> </td></tr>
                             <tr>
                                 <td>PBP (mi/u)</td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)1"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)2"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)3"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)4"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)5"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)6"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)7"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)8"> </td>
-                                <td> <input type="text" class="form-control" name="PBP(mi/u)9"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)1" ng-model="Form.FollowUp.Lab.PBPmiu1"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)2" ng-model="Form.FollowUp.Lab.PBPmiu2"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)3" ng-model="Form.FollowUp.Lab.PBPmiu3"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)4" ng-model="Form.FollowUp.Lab.PBPmiu4"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)5" ng-model="Form.FollowUp.Lab.PBPmiu5"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)6" ng-model="Form.FollowUp.Lab.PBPmiu6"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)7" ng-model="Form.FollowUp.Lab.PBPmiu7"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)8" ng-model="Form.FollowUp.Lab.PBPmiu8"> </td>
+                                <td> <input type="text" class="form-control" name="PBP(mi/u)9" ng-model="Form.FollowUp.Lab.PBPmiu9"> </td>
                             </tr>
                             <tr>
                                 <td>Substitude (ml/u)</td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)1"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)2"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)3"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)4"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)5"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)6"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)7"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)8"> </td>
-                                <td> <input type="text" class="form-control" name="Substitude(ml/u)9"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)1" ng-model="Form.FollowUp.Lab.Substitudemlu1"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)2" ng-model="Form.FollowUp.Lab.Substitudemlu2"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)3" ng-model="Form.FollowUp.Lab.Substitudemlu3"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)4" ng-model="Form.FollowUp.Lab.Substitudemlu4"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)5" ng-model="Form.FollowUp.Lab.Substitudemlu5"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)6" ng-model="Form.FollowUp.Lab.Substitudemlu6"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)7" ng-model="Form.FollowUp.Lab.Substitudemlu7"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)8" ng-model="Form.FollowUp.Lab.Substitudemlu8"> </td>
+                                <td> <input type="text" class="form-control" name="Substitude(ml/u)9" ng-model="Form.FollowUp.Lab.Substitudemlu9"> </td>
                             </tr>
                             <tr>
                                 <td>UF (ml/U)</td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)1"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)2"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)3"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)4"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)5"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)6"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)7"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)8"> </td>
-                                <td> <input type="text" class="form-control" name="UF(ml/U)9"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)1" ng-model="Form.FollowUp.Lab.UFmlU1"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)2" ng-model="Form.FollowUp.Lab.UFmlU2"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)3" ng-model="Form.FollowUp.Lab.UFmlU3"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)4" ng-model="Form.FollowUp.Lab.UFmlU4"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)5" ng-model="Form.FollowUp.Lab.UFmlU5"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)6" ng-model="Form.FollowUp.Lab.UFmlU6"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)7" ng-model="Form.FollowUp.Lab.UFmlU7"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)8" ng-model="Form.FollowUp.Lab.UFmlU8"> </td>
+                                <td> <input type="text" class="form-control" name="UF(ml/U)9" ng-model="Form.FollowUp.Lab.UFmlU9"> </td>
                             </tr>
                             <tr><td> <b> PICCO </b> </td></tr>
                             <tr>
                                 <td>GEDI (ml/m2)</td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)1"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)2"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)3"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)4"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)5"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)6"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)7"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)8"> </td>
-                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)9"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)1" ng-model="Form.FollowUp.Lab.GEDImlm21"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)2" ng-model="Form.FollowUp.Lab.GEDImlm22"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)3" ng-model="Form.FollowUp.Lab.GEDImlm23"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)4" ng-model="Form.FollowUp.Lab.GEDImlm24"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)5" ng-model="Form.FollowUp.Lab.GEDImlm25"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)6" ng-model="Form.FollowUp.Lab.GEDImlm26"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)7" ng-model="Form.FollowUp.Lab.GEDImlm27"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)8" ng-model="Form.FollowUp.Lab.GEDImlm28"> </td>
+                                <td> <input type="text" class="form-control" name="GEDI(ml/m2)9" ng-model="Form.FollowUp.Lab.GEDImlm29"> </td>
                             </tr>
                             <tr>
                                 <td>CI (I/min/m2)</td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)1"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)2"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)3"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)4"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)5"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)6"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)7"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)8"> </td>
-                                <td> <input type="text" class="form-control" name="CI(I/min/m2)9"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)1" ng-model="Form.FollowUp.Lab.CIIminm21"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)2" ng-model="Form.FollowUp.Lab.CIIminm22"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)3" ng-model="Form.FollowUp.Lab.CIIminm23"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)4" ng-model="Form.FollowUp.Lab.CIIminm24"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)5" ng-model="Form.FollowUp.Lab.CIIminm25"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)6" ng-model="Form.FollowUp.Lab.CIIminm26"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)7" ng-model="Form.FollowUp.Lab.CIIminm27"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)8" ng-model="Form.FollowUp.Lab.CIIminm28"> </td>
+                                <td> <input type="text" class="form-control" name="CI(I/min/m2)9" ng-model="Form.FollowUp.Lab.CIIminm29"> </td>
                             </tr>
                             <tr>
                                 <td>EVLWI (-ml/kg)</td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)1"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)2"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)3"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)4"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)5"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)6"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)7"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)8"> </td>
-                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)9"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)1" ng-model="Form.FollowUp.Lab.EVLWImlkg1"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)2" ng-model="Form.FollowUp.Lab.EVLWImlkg2"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)3" ng-model="Form.FollowUp.Lab.EVLWImlkg3"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)4" ng-model="Form.FollowUp.Lab.EVLWImlkg4"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)5" ng-model="Form.FollowUp.Lab.EVLWImlkg5"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)6" ng-model="Form.FollowUp.Lab.EVLWImlkg6"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)7" ng-model="Form.FollowUp.Lab.EVLWImlkg7"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)8" ng-model="Form.FollowUp.Lab.EVLWImlkg8"> </td>
+                                <td> <input type="text" class="form-control" name="EVLWI(-ml/kg)9" ng-model="Form.FollowUp.Lab.EVLWImlkg9"> </td>
                             </tr>
                             <tr>
                                 <td>SVRI (dyn/s/cm-5)</td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)1"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)2"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)3"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)4"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)5"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)6"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)7"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)8"> </td>
-                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)9"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)1" ng-model="Form.FollowUp.Lab.SVRIdynscm51"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)2" ng-model="Form.FollowUp.Lab.SVRIdynscm52"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)3" ng-model="Form.FollowUp.Lab.SVRIdynscm53"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)4" ng-model="Form.FollowUp.Lab.SVRIdynscm54"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)5" ng-model="Form.FollowUp.Lab.SVRIdynscm55"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)6" ng-model="Form.FollowUp.Lab.SVRIdynscm56"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)7" ng-model="Form.FollowUp.Lab.SVRIdynscm57"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)8" ng-model="Form.FollowUp.Lab.SVRIdynscm58"> </td>
+                                <td> <input type="text" class="form-control" name="SVRI(dyn/s/cm-5)9" ng-model="Form.FollowUp.Lab.SVRIdynscm59"> </td>
                             </tr>
                             <tr>
                                 <td>SVV (%)</td>
-                                <td> <input type="text" class="form-control" name="SVV(%)1"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)2"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)3"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)4"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)5"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)6"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)7"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)8"> </td>
-                                <td> <input type="text" class="form-control" name="SVV(%)9"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)1" ng-model="Form.FollowUp.Lab.SVV1"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)2" ng-model="Form.FollowUp.Lab.SVV2"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)3" ng-model="Form.FollowUp.Lab.SVV3"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)4" ng-model="Form.FollowUp.Lab.SVV4"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)5" ng-model="Form.FollowUp.Lab.SVV5"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)6" ng-model="Form.FollowUp.Lab.SVV6"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)7" ng-model="Form.FollowUp.Lab.SVV7"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)8" ng-model="Form.FollowUp.Lab.SVV8"> </td>
+                                <td> <input type="text" class="form-control" name="SVV(%)9" ng-model="Form.FollowUp.Lab.SVV9"> </td>
                             </tr>
                             <tr><td> <b> BIA </b> </td></tr>
                             <tr>
                                 <td>Total Body water</td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water1=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water2=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water3=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water4=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water5=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water6=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water7=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water8=""> </td>
-                                <td> <input type="text" class="form-control" name="TotalBody" water9=""> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water1="" ng-model="Form.FollowUp.Lab.TotalBody1"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water2="" ng-model="Form.FollowUp.Lab.TotalBody2"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water3="" ng-model="Form.FollowUp.Lab.TotalBody3"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water4="" ng-model="Form.FollowUp.Lab.TotalBody4"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water5="" ng-model="Form.FollowUp.Lab.TotalBody5"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water6="" ng-model="Form.FollowUp.Lab.TotalBody6"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water7="" ng-model="Form.FollowUp.Lab.TotalBody7"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water8="" ng-model="Form.FollowUp.Lab.TotalBody8"> </td>
+                                <td> <input type="text" class="form-control" name="TotalBody" water9="" ng-model="Form.FollowUp.Lab.TotalBody9"> </td>
                             </tr>
                             <tr>
                                 <td>Extracellulair water</td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater1"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater2"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater3"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater4"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater5"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater6"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater7"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater8"> </td>
-                                <td> <input type="text" class="form-control" name="Extracellulairwater9"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater1" ng-model="Form.FollowUp.Lab.Extracellulairwater1"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater2" ng-model="Form.FollowUp.Lab.Extracellulairwater2"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater3" ng-model="Form.FollowUp.Lab.Extracellulairwater3"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater4" ng-model="Form.FollowUp.Lab.Extracellulairwater4"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater5" ng-model="Form.FollowUp.Lab.Extracellulairwater5"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater6" ng-model="Form.FollowUp.Lab.Extracellulairwater6"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater7" ng-model="Form.FollowUp.Lab.Extracellulairwater7"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater8" ng-model="Form.FollowUp.Lab.Extracellulairwater8"> </td>
+                                <td> <input type="text" class="form-control" name="Extracellulairwater9" ng-model="Form.FollowUp.Lab.Extracellulairwater9"> </td>
                             </tr>
                             <tr>
                                 <td>Intracellulair water</td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater1"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater2"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater3"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater4"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater5"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater6"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater7"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater8"> </td>
-                                <td> <input type="text" class="form-control" name="Intracellulairwater9"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater1" ng-model="Form.FollowUp.Lab.Intracellulairwater1"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater2" ng-model="Form.FollowUp.Lab.Intracellulairwater2"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater3" ng-model="Form.FollowUp.Lab.Intracellulairwater3"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater4" ng-model="Form.FollowUp.Lab.Intracellulairwater4"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater5" ng-model="Form.FollowUp.Lab.Intracellulairwater5"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater6" ng-model="Form.FollowUp.Lab.Intracellulairwater6"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater7" ng-model="Form.FollowUp.Lab.Intracellulairwater7"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater8" ng-model="Form.FollowUp.Lab.Intracellulairwater8"> </td>
+                                <td> <input type="text" class="form-control" name="Intracellulairwater9" ng-model="Form.FollowUp.Lab.Intracellulairwater9"> </td>
                             </tr>
                             <tr>
                                 <td>I/E ratio</td>
-                                <td> <input type="text" class="form-control" name="I/Eratio1"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio2"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio3"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio4"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio5"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio6"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio7"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio8"> </td>
-                                <td> <input type="text" class="form-control" name="I/Eratio9"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio1" ng-model="Form.FollowUp.Lab.IEratio1"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio2" ng-model="Form.FollowUp.Lab.IEratio2"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio3" ng-model="Form.FollowUp.Lab.IEratio3"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio4" ng-model="Form.FollowUp.Lab.IEratio4"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio5" ng-model="Form.FollowUp.Lab.IEratio5"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio6" ng-model="Form.FollowUp.Lab.IEratio6"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio7" ng-model="Form.FollowUp.Lab.IEratio7"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio8" ng-model="Form.FollowUp.Lab.IEratio8"> </td>
+                                <td> <input type="text" class="form-control" name="I/Eratio9" ng-model="Form.FollowUp.Lab.IEratio9"> </td>
                             </tr>
                             <tr>
                                 <td>Volume excess</td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess1"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess2"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess3"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess4"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess5"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess6"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess7"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess8"> </td>
-                                <td> <input type="text" class="form-control" name="Volumeexcess9"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess1" ng-model="Form.FollowUp.Lab.Volumeexcess1"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess2" ng-model="Form.FollowUp.Lab.Volumeexcess2"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess3" ng-model="Form.FollowUp.Lab.Volumeexcess3"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess4" ng-model="Form.FollowUp.Lab.Volumeexcess3"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess5" ng-model="Form.FollowUp.Lab.Volumeexcess5"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess6" ng-model="Form.FollowUp.Lab.Volumeexcess6"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess7" ng-model="Form.FollowUp.Lab.Volumeexcess7"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess8" ng-model="Form.FollowUp.Lab.Volumeexcess8"> </td>
+                                <td> <input type="text" class="form-control" name="Volumeexcess9" ng-model="Form.FollowUp.Lab.Volumeexcess9"> </td>
                             </tr>
                             <tr>
                                 <td>Passive leg test</td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test1=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test2=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test3=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test4=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test5=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test6=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test7=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test8=""> </td>
-                                <td> <input type="text" class="form-control" name="Passiveleg" test9=""> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test1="" ng-model="Form.FollowUp.Lab.Passiveleg1"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test2="" ng-model="Form.FollowUp.Lab.Passiveleg2"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test3="" ng-model="Form.FollowUp.Lab.Passiveleg3"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test4="" ng-model="Form.FollowUp.Lab.Passiveleg4"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test5="" ng-model="Form.FollowUp.Lab.Passiveleg5"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test6="" ng-model="Form.FollowUp.Lab.Passiveleg6"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test7="" ng-model="Form.FollowUp.Lab.Passiveleg7"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test8="" ng-model="Form.FollowUp.Lab.Passiveleg8"> </td>
+                                <td> <input type="text" class="form-control" name="Passiveleg" test9="" ng-model="Form.FollowUp.Lab.Passiveleg9"> </td>
                             </tr>
                             <tr>
                                 <td>Intra-Abdominal Pressure (mmHg)</td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)1=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)2=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)3=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)4=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)5=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)6=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)7=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)8=""> </td>
-                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)9=""> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)1="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure1"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)2="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure2"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)3="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure3"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)4="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure4"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)5="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure5"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)6="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure6"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)7="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure7"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)8="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure8"> </td>
+                                <td> <input type="text" class="form-control" name="Intra-AbdominalPressure" (mmhg)9="" ng-model="Form.FollowUp.Lab.IntraAbdominalPressure9"> </td>
                             </tr>
 
                         </tbody>

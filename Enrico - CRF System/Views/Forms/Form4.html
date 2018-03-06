@@ -44,10 +44,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chkVistPeriode" class="info-selection"></td><td>28 days</td></tr>
-                            <tr><td><input type="radio" name="chkVistPeriode" class="info-selection"></td><td>90 days</td></tr>
-                            <tr><td><input type="radio" name="chkVistPeriode" class="info-selection"></td><td>6 Months</td></tr>
-                            <tr><td><input type="radio" name="chkVistPeriode" class="info-selection"></td><td>1 Year</td></tr>
+                            <tr><td><input type="radio" name="chkVistPeriode" ng-model="Form.FollowUpForm.chkVistPeriode.rad1" class="info-selection"></td><td>28 days</td></tr>
+                            <tr><td><input type="radio" name="chkVistPeriode" ng-model="Form.FollowUpForm.chkVistPeriode.rad2" class="info-selection"></td><td>90 days</td></tr>
+                            <tr><td><input type="radio" name="chkVistPeriode" ng-model="Form.FollowUpForm.chkVistPeriode.rad3" class="info-selection"></td><td>6 Months</td></tr>
+                            <tr><td><input type="radio" name="chkVistPeriode" ng-model="Form.FollowUpForm.chkVistPeriode.rad4" class="info-selection"></td><td>1 Year</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -75,7 +75,7 @@
                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                             <div class="form-group">
                                                 <div class='input-group date' id='dtGeneralInformation'>
-                                                    <input type='date' class="form-control" />
+                                                    <input type='date'  ng-model="Form.FollowUpForm.dtGeneralInformation.datetime"  class="form-control" />
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
@@ -99,11 +99,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkAssessmentType" class="info-selection"></td><td>Clinic</td></tr>
-                                <tr><td><input type="radio" name="chkAssessmentType" class="info-selection"></td><td>Phone/Email/Letter</td></tr>
-                                <tr><td><input type="radio" name="chkAssessmentType" class="info-selection" onchange="toggleVisibility('txtOtherAssessmentType')"></td><td>Other</td></tr>
+                                <tr><td><input type="radio" name="chkAssessmentType" ng-model="Form.FollowUpForm.chkAssessmentType.chk1" class="info-selection"></td><td>Clinic</td></tr>
+                                <tr><td><input type="radio" name="chkAssessmentType" ng-model="Form.FollowUpForm.chkAssessmentType.chk2" class="info-selection"></td><td>Phone/Email/Letter</td></tr>
+                                <tr><td><input type="radio" name="chkAssessmentType" ng-model="Form.FollowUpForm.chkAssessmentType.chk3" class="info-selection" onchange="toggleVisibility('txtOtherAssessmentType')"></td><td>Other</td></tr>
                                 <tr id="txtOtherAssessmentType" class="additional-info-required-dialog">
-                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherAssessmentType" /></td>
+                                    <td colspan="2"><input class="form-control" type="text" ng-model="Form.FollowUpForm.txtOtherAssessmentType.text1" placeholder="Specify" name="txtOtherAssessmentType" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -119,10 +119,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkAssessmentStatus" class="info-selection"></td><td>Alive</td></tr>
-                                <tr><td><input type="radio" name="chkAssessmentStatus" class="info-selection"></td><td>Expired(Fill out expiration data form, AE form and study exit amount)</td></tr>
-                                <tr><td><input type="radio" name="chkAssessmentStatus" class="info-selection"></td><td>Lost to follow-up(Fill out study exit form)</td></tr>
-                                <tr><td><input type="radio" name="chkAssessmentStatus" class="info-selection"></td><td>Withdrawn(fill out study exit form)</td></tr>
+                                <tr><td><input type="radio" name="chkAssessmentStatus" ng-model="Form.FollowUpForm.chkAssessmentStatus.rad1" class="info-selection"></td><td>Alive</td></tr>
+                                <tr><td><input type="radio" name="chkAssessmentStatus" ng-model="Form.FollowUpForm.chkAssessmentStatus.rad2" class="info-selection"></td><td>Expired(Fill out expiration data form, AE form and study exit amount)</td></tr>
+                                <tr><td><input type="radio" name="chkAssessmentStatus" ng-model="Form.FollowUpForm.chkAssessmentStatus.rad3" class="info-selection"></td><td>Lost to follow-up(Fill out study exit form)</td></tr>
+                                <tr><td><input type="radio" name="chkAssessmentStatus" ng-model="Form.FollowUpForm.chkAssessmentStatus.rad4" class="info-selection"></td><td>Withdrawn(fill out study exit form)</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -148,8 +148,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chkAdverseEvent" class="info-selection" value="Yes"></td><td>Yes</td></tr>
-                            <tr><td><input type="radio" name="chkAdverseEvent" class="info-selection" value="No"></td><td>No</td></tr>
+                            <tr><td><input type="radio" name="chkAdverseEvent" ng-model="Form.FollowUpForm.chkAdverseEvent.rad1" class="info-selection" value="Yes"></td><td>Yes</td></tr>
+                            <tr><td><input type="radio" name="chkAdverseEvent" ng-model="Form.FollowUpForm.chkAdverseEvent.rad2" class="info-selection" value="No"></td><td>No</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -174,10 +174,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td>1.</td><td><input type="radio" name="radMoca" class="info-selection"></td><td> <input checked type="radio" name="radMoca" class="info-selection"></td> <td>Is MoCA- blind completed</td></tr>
-                            <tr><td>2.</td><td><input type="radio" name="radEQ" class="info-selection"></td><td> <input checked type="radio" name="radEQ" class="info-selection"></td> <td>Is EQ-5D completed</td></tr>
-                            <tr><td>3.</td><td><input type="radio" name="radHADS" class="info-selection"></td><td> <input checked type="radio" name="radHADS" class="info-selection"></td> <td>Is HADS completed</td></tr>
-                            <tr><td>4.</td><td><input type="radio" name="radIES" class="info-selection"></td><td> <input checked type="radio" name="radIES" class="info-selection"></td> <td>Is IES-R completed</td></tr>
+                            <tr><td>1.</td><td><input type="radio" name="radMoca" ng-model="Form.FollowUpForm.eventtreatment.radMoca1"  class="info-selection"></td>
+                            <td> <input checked type="radio" name="radMoca"  ng-model="Form.FollowUpForm.eventtreatment.radMoca2"  class="info-selection"></td> <td>Is MoCA- blind completed</td></tr>
+                            <tr><td>2.</td><td><input type="radio" name="radEQ"  ng-model="Form.FollowUpForm.eventtreatment.radEQ1" class="info-selection"></td>
+                            <td> <input checked type="radio" name="radEQ" ng-model="Form.FollowUpForm.eventtreatment.radEQ2"  class="info-selection"></td> <td>Is EQ-5D completed</td></tr>
+                            <tr><td>3.</td><td><input type="radio" name="radHADS" ng-model="Form.FollowUpForm.eventtreatment.radHADS1"  class="info-selection"></td>
+                            <td> <input checked type="radio" name="radHADS" ng-model="Form.FollowUpForm.eventtreatment.radHADS2"  class="info-selection"></td> <td>Is HADS completed</td></tr>
+                            <tr><td>4.</td><td><input type="radio" name="radIES" ng-model="Form.FollowUpForm.eventtreatment.radIES1"  class="info-selection"></td>
+                            <td> <input checked type="radio" name="radIES" ng-model="Form.FollowUpForm.eventtreatment.radIES2" class="info-selection"></td> <td>Is IES-R completed</td></tr>
                         </tbody>
                     </table>
                 </div>

@@ -50,7 +50,7 @@
                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                             <div class="form-group">
                                                 <div class='input-group date' id='dtExit'>
-                                                    <input type='date' class="form-control" />
+                                                    <input type='date' ng-model="Form.StudyExitForm.DateofStudyExit.datetime" class="form-control" />
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
@@ -84,12 +84,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chkExitReason" class="info-selection"></td><td>Completed all required procedures</td></tr>
-                            <tr><td><input type="checkbox" name="chkExitReason" class="info-selection"></td><td>Withdrew Consent</td></tr>
-                            <tr><td><input type="checkbox" name="chkExitReason" class="info-selection"></td><td>Death</td></tr>                         
-                            <tr><td><input type="checkbox" name="chkExitReason" class="info-selection" onchange="toggleVisibility('txtOtherReason')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk1" class="info-selection"></td><td>Completed all required procedures</td></tr>
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk2" class="info-selection"></td><td>Withdrew Consent</td></tr>
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk3" class="info-selection"></td><td>Death</td></tr>                         
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk4" class="info-selection" onchange="toggleVisibility('txtOtherReason')"></td><td>Other*</td></tr>
                             <tr id="txtOtherReason" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherReason" /></td>
+                                <td colspan="2"><input class="form-control" type="text" ng-model="Form.StudyExitForm.txtOtherReason.text" placeholder="Specify" name="txtOtherReason" /></td>
                             </tr>
                         </tbody>
                     </table>

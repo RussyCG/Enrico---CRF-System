@@ -49,7 +49,7 @@
                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                             <div class="form-group">
                                                 <div class='input-group date' id='dtDischarge'>
-                                                    <input type='date' class="form-control" />
+                                                    <input type='date' class="form-control"  ng-model="Form.Discharge.Dateofdischarge.datetime" />
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
@@ -84,15 +84,15 @@
                             <tbody>
                                 <tr>
                                     <td colspan="2">Length of stay in ICU (from day of index procedure)</td>
-                                    <td><input type="number" /> days</td>
+                                    <td><input type="number" ng-model="Form.Discharge.Hospitalization.text1" /> days</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">Length of stay in intermediate care (from day of index procedure)</td>
-                                    <td><input type="number" /> days</td>
+                                    <td><input type="number" ng-model="Form.Discharge.Hospitalization.text2" /> days</td>
                                 </tr>
                                 <tr>
                                     <td colspan="2">Length of stay in General Ward (from day of index procedure)</td>
-                                    <td><input type="number" /> days</td>
+                                    <td><input type="number" ng-model="Form.Discharge.Hospitalization.text3" /> days</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -106,12 +106,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkDischargeTo" class="info-selection" value=""></td><td>Home</td></tr>
-                                <tr><td><input type="radio" name="chkDischargeTo" class="info-selection" value=""></td><td>Another hospital</td></tr>
-                                <tr><td><input type="radio" name="chkDischargeTo" class="info-selection" value=""></td><td>Extended care</td></tr>
-                                <tr><td><input type="radio" name="chkDischargeTo" class="info-selection" value=""></td><td>Rehabilitation unit</td></tr>
-                                <tr><td><input type="radio" name="chkDischargeTo" class="info-selection" value=""></td><td>Nursing home (permanent)</td></tr>
-                                <tr><td><input type="radio" name="chkDischargeTo" class="info-selection" value=""></td><td>Patient Died* (Enter date of death as date of discharge)</td></tr>
+                                <tr><td><input type="radio" name="chkDischargeTo" ng-model="Form.Discharge.chkDischargeTo.text1" class="info-selection" value=""></td><td>Home</td></tr>
+                                <tr><td><input type="radio" name="chkDischargeTo" ng-model="Form.Discharge.chkDischargeTo.text2" class="info-selection" value=""></td><td>Another hospital</td></tr>
+                                <tr><td><input type="radio" name="chkDischargeTo" ng-model="Form.Discharge.chkDischargeTo.text3" class="info-selection" value=""></td><td>Extended care</td></tr>
+                                <tr><td><input type="radio" name="chkDischargeTo" ng-model="Form.Discharge.chkDischargeTo.text4" class="info-selection" value=""></td><td>Rehabilitation unit</td></tr>
+                                <tr><td><input type="radio" name="chkDischargeTo" ng-model="Form.Discharge.chkDischargeTo.text5" class="info-selection" value=""></td><td>Nursing home (permanent)</td></tr>
+                                <tr><td><input type="radio" name="chkDischargeTo" ng-model="Form.Discharge.chkDischargeTo.text6" class="info-selection" value=""></td><td>Patient Died* (Enter date of death as date of discharge)</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -135,8 +135,8 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chkAdverseEvent" class="info-selection" value="Yes"></td><td>Yes</td></tr>
-                            <tr><td><input type="radio" name="chkAdverseEvent" class="info-selection" value="No"></td><td>No</td></tr>
+                            <tr><td><input type="radio" name="chkAdverseEvent" ng-model="Form.Discharge.chkAdverseEvent.chk1" class="info-selection" value="Yes"></td><td>Yes</td></tr>
+                            <tr><td><input type="radio" name="chkAdverseEvent" ng-model="Form.Discharge.chkAdverseEvent.chk2" class="info-selection" value="No"></td><td>No</td></tr>
                         </tbody>
                     </table>
                 </div>
