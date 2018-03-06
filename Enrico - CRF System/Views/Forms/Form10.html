@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="ngCRF">
 <head>
     <meta charset="utf-8" />
     <title>MoCA - Blind</title>
@@ -20,7 +20,7 @@
     <script src="../../Scripts/moment-with-locales.js"></script>
     <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
 </head>
-<body>
+<body ng-controller="formController">
     <header style="text-align: center;">
         <div class="container-fluid">
             <div class="row">
@@ -48,7 +48,7 @@
                                 <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                     <div class="form-group">
                                         <div class='input-group date' id='dtInformedConsent'>
-                                            <input type='date' class="form-control" />
+                                            <input type='date' class="form-control" ng-model="Form.DateTimeofAssessment.DateTime"/>
                                             <span class="input-group-addon">
                                                 <span class="glyphicon glyphicon-calendar"></span>
                                             </span>
@@ -241,7 +241,7 @@
 
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input style="text-align:left" type="checkbox" name="chk2_1" class="info-selection"><h4 style="text-align:left"><label><b>F B A C M N A A J K L B A F A K D E A A A J A M O F A A B </b></label></h4>
+                                <input style="text-align:left" type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('AlaphabeticIdentification','Correct')"><h4 style="text-align:left"><label><b>F B A C M N A A J K L B A F A K D E A A A J A M O F A A B </b></label></h4>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
