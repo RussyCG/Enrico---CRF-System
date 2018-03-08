@@ -72,9 +72,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Cardiac</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Non-Cardiac</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Cardiac}}"></td><td>Cardiac</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Non-Cardiac}}"></td><td>Non-Cardiac</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Unknown}}"></td><td>Unknown</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -97,14 +97,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Index Hospitalization</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Re-hospitalized to Index Hospital</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Home</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Another Hospital</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Extended Care</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Rehabilitation Unit</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Nursing Home (permanent)</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection" onchange="toggleVisibility('divDeathLocation')"></td><td>Other*</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{IndexHospitalization}}"></td><td>Index Hospitalization</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Re-hospitalizedtoindexHospital}}"></td><td>Re-hospitalized to Index Hospital</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Home}}"></td><td>Home</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{AnotherHospital}}"></td><td>Another Hospital</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{TextendedCase}}"></td><td>Extended Care</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{RehabilitationUnit}}"></td><td>Rehabilitation Unit</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{HursingHome(permanent)}}"></td><td>Nursing Home (permanent)</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" onchange="toggleVisibility('divDeathLocation')" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Other*}}"></td><td>Other*</td></tr>
                             <tr id="divDeathLocation" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtDeathLocationOther" /></td>
                             </tr>
@@ -130,37 +130,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Myocardial Infarction</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Annular Dissection</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Aortic Dissection</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Arrhythmia</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Bleeding Event, Major</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Cancer</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Cardiac Arrest</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Cardiac Tamponade</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Endocarditis</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Gastro-Intestinal Complications</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Heart Failure</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Infection/Inflammation</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Multiple Organ Failure</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Non-struct Valve Dysf.</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Pneumonia</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Pulmonary Embolism</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Renal Failure</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Respiratory Failure</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Sepsis</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Hemorrhagic Stroke</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Non-Hemorrhagic Stroke</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Stroke - Cause Unknown</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Sudden Death</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Suicide</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Thromboembolic Event</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Thrombus</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Unknown</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Vascular Complication (not access-related)</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Vascular Access-Related Complication</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Valve Migration</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection" onchange="toggleVisibility('divMainCauseOfDeath')"></td><td>Other*</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{MyocardialInfarction}}"></td><td>Myocardial Infarction</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{AnnularDissection}}"></td><td>Annular Dissection</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{AorticDissection}}"></td><td>Aortic Dissection</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Arrthuthmia}}"></td><td>Arrhythmia</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{BelledingEventMajor}}"></td><td>Bleeding Event, Major</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Cancer}}"></td><td>Cancer</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{CardiacArrest}}"></td><td>Cardiac Arrest</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{CardiacTamponade}}"></td><td>Cardiac Tamponade</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Andocarditis}}"></td><td>Endocarditis</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{GastroIntestinalComplications}}"></td><td>Gastro-Intestinal Complications</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{HeartFailure}}"></td><td>Heart Failure</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Infection/Inflammation}}"></td><td>Infection/Inflammation</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{MultipleOrganFailure}}"></td><td>Multiple Organ Failure</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{NonStructValveDysf}}"></td><td>Non-struct Valve Dysf.</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Pneumonia}}"></td><td>Pneumonia</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{PulmonaryEmbolism}}"></td><td>Pulmonary Embolism</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{RenalFailure}}"></td><td>Renal Failure</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Respiratory Failure}}"></td><td>Respiratory Failure</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Sepsis}}"></td><td>Sepsis</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Hemorrhagic Stroke}}"></td><td>Hemorrhagic Stroke</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Non-Hemorrhagic Stroke}}"></td><td>Non-Hemorrhagic Stroke</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Stroke - Cause Unknown}}"></td><td>Stroke - Cause Unknown</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Sudden Death}}"></td><td>Sudden Death</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Suicide}}"></td><td>Suicide</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Thromboembolic Event}}"></td><td>Thromboembolic Event</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Thrombus}}"></td><td>Thrombus</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Unknown}}"></td><td>Unknown</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Vascular Complication (not access-related)}}"></td><td>Vascular Complication (not access-related)</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Vascular Access-Related Complication}}"></td><td>Vascular Access-Related Complication</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Valve Migration}}"></td><td>Valve Migration</td></tr>
+                            <tr><td><input type="radio" name="chk5_1" class="info-selection" onchange="toggleVisibility('divMainCauseOfDeath')" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Other*}}"></td><td>Other*</td></tr>
                             <tr id="divMainCauseOfDeath" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtDeathLocationOther" /></td>
                             </tr>
@@ -186,7 +186,7 @@
                             </div>
 
                             <div class="col-md-9 input-item">
-                                <input style="height: 7em" type="text" name="txtPhysicalAssessmentHeight" placeholder="" class="form-control" />
+                                <input style="height: 7em" type="text" name="txtPhysicalAssessmentHeight" placeholder="" class="form-control" ng-model="PhysicalAssessmentHeight" value="{{PhysicalAssessmentHeight}}"/>
                             </div>
                         </div>
                     </div>
