@@ -84,10 +84,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk1" class="info-selection"></td><td>Completed all required procedures</td></tr>
-                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk2" class="info-selection"></td><td>Withdrew Consent</td></tr>
-                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk3" class="info-selection"></td><td>Death</td></tr>                         
-                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk4" class="info-selection" onchange="toggleVisibility('txtOtherReason')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk1" value="{{Form.StudyExitForm.chkExitReason.chk1}}" class="info-selection"></td><td>Completed all required procedures</td></tr>
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk2" value="{{Form.StudyExitForm.chkExitReason.chk2}}" class="info-selection"></td><td>Withdrew Consent</td></tr>
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk3" value="{{Form.StudyExitForm.chkExitReason.chk3}}" class="info-selection"></td><td>Death</td></tr>                         
+                            <tr><td><input type="checkbox" name="chkExitReason" ng-model="Form.StudyExitForm.chkExitReason.chk4" value="{{Form.StudyExitForm.chkExitReason.chk4}}" class="info-selection" onchange="toggleVisibility('txtOtherReason')"></td><td>Other*</td></tr>
                             <tr id="txtOtherReason" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" ng-model="Form.StudyExitForm.txtOtherReason.text" placeholder="Specify" name="txtOtherReason" /></td>
                             </tr>
@@ -112,7 +112,7 @@
             </div>
 
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+                <button class="btn btn-success" ng-click="PostDataToServer('Form5', Form)">Continue ></button>
             </div>
         </div>
     </div>

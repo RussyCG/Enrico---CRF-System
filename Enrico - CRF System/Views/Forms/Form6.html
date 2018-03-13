@@ -50,7 +50,7 @@
                                         <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                             <div class="form-group">
                                                 <div class='input-group date' id='dtGeneralInformation'>
-                                                    <input type='date' class="form-control" />
+                                                    <input type='date' ng-model="Form.AdverseEvent.EventOnSet.datetime" value="{{Form.AdverseEvent.EventOnSet.datetime}}" class="form-control" />
                                                     <span class="input-group-addon">
                                                         <span class="glyphicon glyphicon-calendar"></span>
                                                     </span>
@@ -74,9 +74,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkEventOccurred" class="info-selection"></td><td>Intraprocedural</td></tr>
-                                <tr><td><input type="radio" name="chkEventOccurred" class="info-selection"></td><td>Pre-discharge</td></tr>
-                                <tr><td><input type="radio" name="chkEventOccurred" class="info-selection"></td><td>Post-discharge</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk1" value="{{Form.AdverseEvent.chkEventOccurred.chk1}}" class="info-selection"></td><td>Intraprocedural</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk2" value="{{Form.AdverseEvent.chkEventOccurred.chk2}}" class="info-selection"></td><td>Pre-discharge</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk3" value="{{Form.AdverseEvent.chkEventOccurred.chk3}}" class="info-selection"></td><td>Post-discharge</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -91,11 +91,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>SAE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>SADE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>AE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>ADE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" class="info-selection"></td><td>UADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk1" value="{{Form.AdverseEvent.chkEventType.chk1}}" class="info-selection"></td><td>SAE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk2" value="{{Form.AdverseEvent.chkEventType.chk2}}" class="info-selection"></td><td>SADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk3" value="{{Form.AdverseEvent.chkEventType.chk3}}" class="info-selection"></td><td>AE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk4" value="{{Form.AdverseEvent.chkEventType.chk4}}" class="info-selection"></td><td>ADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk5" value="{{Form.AdverseEvent.chkEventType.chk5}}" class="info-selection"></td><td>UADE</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -110,12 +110,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Procedure"></td><td>Procedure</td></tr>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Comorbidities"></td><td>Comorbidities</td></tr>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" value="Device Malfunction"></td><td>Device Malfunction</td></tr>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" class="info-selection" onchange="toggleVisibility('txtOtherEventRelatedTo')"></td><td>Other*</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk1" value="{{Form.AdverseEvent.chkEventRelatedTo.chk1}}" class="info-selection"></td><td>Procedure</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk2" value="{{Form.AdverseEvent.chkEventRelatedTo.chk2}}" class="info-selection"></td><td>Comorbidities</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk3" value="{{Form.AdverseEvent.chkEventRelatedTo.chk3}}" class="info-selection" ></td><td>Device Malfunction</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk4" value="{{Form.AdverseEvent.chkEventRelatedTo.chk4}}" class="info-selection" onchange="toggleVisibility('txtOtherEventRelatedTo')"></td><td>Other*</td></tr>
                                 <tr id="txtOtherEventRelatedTo" class="additional-info-required-dialog">
-                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherEventRelatedTo" /></td>
+                                    <td colspan="2"><input class="form-control" type="text" ng-model="Form.AdverseEvent.txtOtherEventRelatedTo.text" placeholder="Specify" name="txtOtherEventRelatedTo" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -143,111 +143,111 @@
                             </thead>
                             <tbody>
                                 <tr><th colspan="2">Cardiac Events:</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>MYOCARDIAL INFARCTION</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ARRHYTHMIA WITHOUT PACEMAKER REQUIRED</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ARRHYTHMIA WITH PACEMAKER DUE TO AV BLOCK</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ARRHYTHMIA WITH PACEMAKER NOT DUE TO AV BLOCK</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CARDIAC ARREST</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CARDIAC TAMPONADE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ENDOCARDITIS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERICARDIAL EFFUSION DRAINED</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERICARDIAL EFFUSION NOT DRAINED</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERICARDITUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SUDDEN DEATH</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMODYNAMIC COLLAPSE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad1}}" class="info-selection"></td><td>MYOCARDIAL INFARCTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad2}}" class="info-selection" </td><td>ARRHYTHMIA WITHOUT PACEMAKER REQUIRED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad3}}" class="info-selection"></td><td>ARRHYTHMIA WITH PACEMAKER DUE TO AV BLOCK</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad4" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad4}}" class="info-selection" ></td><td>ARRHYTHMIA WITH PACEMAKER NOT DUE TO AV BLOCK</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad5" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad5}}" class="info-selection"></td><td>CARDIAC ARREST</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad6" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad6}}" class="info-selection" ></td><td>CARDIAC TAMPONADE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad7" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad7}}" class="info-selection" ></td><td>ENDOCARDITIS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad8" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad8}}" class="info-selection" ></td><td>PERICARDIAL EFFUSION DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad9" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad9}}" class="info-selection" ></td><td>PERICARDIAL EFFUSION NOT DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad10" value="{{Form.AdverseEvent.chkAdverseEventDardiacDescription.rad10}}" class="info-selection" ></td><td>PERICARDITUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad11" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad11}}" class="info-selection" ></td><td>SUDDEN DEATH</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventCardiacDescription" ng-model="Form.AdverseEvent.chkAdverseEventCardiacDescription.rad12" value="{{Form.AdverseEvent.chkAdverseEventCardiacDescription.rad12}}" class="info-selection" ></td><td>HEMODYNAMIC COLLAPSE</td></tr>
 
                                 <tr><th colspan="2">Renal Events:</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL IMUFFICIENCY</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING TEMPORARY DIALYSIS (<30 DAYS)</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING PERMANENT DIALYSIS (>30 DAYS)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventRenalDescription" ng-model="Form.AdverseEvent.chkAdverseEventRenalDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventRenalDescription.rad1}}" class="info-selection" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL IMUFFICIENCY</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventRenalDescription" ng-model="Form.AdverseEvent.chkAdverseEventRenalDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventRenalDescription.rad2}}" class="info-selection" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING TEMPORARY DIALYSIS (<30 DAYS)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventRenalDescription" ng-model="Form.AdverseEvent.chkAdverseEventRenalDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventRenalDescription.rad3}}" class="info-selection" onchange="toggleVisibility('txtRenalEventsDetails')"></td><td>RENAL FAILURE REQUIRING PERMANENT DIALYSIS (>30 DAYS)</td></tr>
                                 <tr id="txtRenalEventsDetails" class="additional-info-required-dialog">
                                     <td colspan="2">
-                                        Max creatinine <input class="form-control" type="text" placeholder="Specify" name="txtMaxCreatinine" /> mg/dL
-                                        <input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /> UMOI
+                                        Max creatinine <input class="form-control" type="text" ng-model="Form.AdverseEvent.txtMaxCreatinine.text" placeholder="Specify" name="txtMaxCreatinine" /> mg/dL
+                                        <input class="form-control" type="text" ng-model="Form.AdverseEvent.txtOtherGastroInstunalEvents1.text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /> UMOI
                                         If the difference is an increase of at least 0.5mg/dl(44mmol/L) compared to baseline
-                                        GFR <input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" />mL/min
+                                        GFR <input class="form-control" ng-model="Form.AdverseEvent.txtOtherGastroInstunalEvents2.text" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" />mL/min
                                     </td>
                                 </tr>
 
                                 <tr><th colspan="2">Pulmonary Events:</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PNEUMOTHORAX</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PLEURAL EFFUSION DRAINED</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PLEURAL EFFUSION NOT DRAINED</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>RESPIRATORY COMP / FAILURE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PNEUMONIA</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PULMONARY EMBOLISM</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventPulmonaryDescription" ng-model="Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad1}}" class="info-selection" ></td><td>PNEUMOTHORAX</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventPulmonaryDescription" ng-model="Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad2}}" class="info-selection" ></td><td>PLEURAL EFFUSION DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventPulmonaryDescription" ng-model="Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad3}}" class="info-selection" ></td><td>PLEURAL EFFUSION NOT DRAINED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventPulmonaryDescription" ng-model="Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad4" value="{{Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad4}}" class="info-selection" ></td><td>RESPIRATORY COMP / FAILURE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventPulmonaryDescription" ng-model="Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad5" value="{{Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad5}}" class="info-selection"></td><td>PNEUMONIA</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventPulmonaryDescription" ng-model="Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad6" value="{{Form.AdverseEvent.chkAdverseEventPulmonaryDescription.rad6}}" class="info-selection"></td><td>PULMONARY EMBOLISM</td></tr>
 
                                 <tr><th colspan="2">Neurlogical Events:</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>NEUROLOGICAL EVENT SEVERE NOT A STROKE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>NEUROLOGICAL EVENT MINOR NOT A STROKE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMORRHAGIC STROKE SEVERE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>NON-HEMORRHAGIC STROKE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>STROKE - CAUSE UNKNOWN</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SYNCOPE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>TRANSITORY PSYCHOTIC SYNDROME</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>TRANSITORY ISCHEMIC ATTACK (TIA)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad1}}" class="info-selection"></td><td>NEUROLOGICAL EVENT SEVERE NOT A STROKE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad2}}" class="info-selection" ></td><td>NEUROLOGICAL EVENT MINOR NOT A STROKE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad3}}" class="info-selection"></td><td>HEMORRHAGIC STROKE SEVERE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad4" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad4}}" class="info-selection" ></td><td>NON-HEMORRHAGIC STROKE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad5" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad5}}" class="info-selection" ></td><td>STROKE - CAUSE UNKNOWN</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad6" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad6}}" class="info-selection" ></td><td>SYNCOPE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad7" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad7}}" class="info-selection" ></td><td>TRANSITORY PSYCHOTIC SYNDROME</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventNeurlogicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad8" value="{{Form.AdverseEvent.chkAdverseEventNeurlogicalDescription.rad8}}" class="info-selection" </td><td>TRANSITORY ISCHEMIC ATTACK (TIA)</td></tr>
 
                                 <tr><th colspan="2">Gastro Instunal Events:</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ULCER</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>PERFORATION</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>ISCHEMIC BOWL</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherGastroInstunalEvents')"></td><td>Other*</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventGastroDescription" ng-model="Form.AdverseEvent.chkAdverseEventGastroDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventGastroDescription.rad1}}" class="info-selection"></td><td>ULCER</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventGastroDescription" ng-model="Form.AdverseEvent.chkAdverseEventGastroDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventGastroDescription.rad2}}" class="info-selection"></td><td>PERFORATION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventGastroDescription" ng-model="Form.AdverseEvent.chkAdverseEventGastroDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventGastroDescription.rad3}}" class="info-selection" ></td><td>ISCHEMIC BOWL</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventGastroDescription" ng-model="Form.AdverseEvent.chkAdverseEventGastroDescription.rad4" value="{{Form.AdverseEvent.chkAdverseEventGastroDescription.rad4}}" class="info-selection" onchange="toggleVisibility('txtOtherGastroInstunalEvents')"></td><td>Other*</td></tr>
                                 <tr id="txtOtherGastroInstunalEvents" class="additional-info-required-dialog">
-                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /></td>
+                                    <td colspan="2"><input class="form-control" type="text" ng-model="Form.AdverseEvent.txtOtherGastroInstunalEvents3.text" placeholder="Specify" name="txtOtherGastroInstunalEvents" /></td>
                                 </tr>
 
                                 <tr><th colspan="2">Hematological Disorders: see VARC definition</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>MAJOR BLEEDING EVENT (transfusion > 2 units)</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>LIFE-THREATENING BLEEDING EVENT (transfusion > 4 units)</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>COAGULOPATHY / HEMATOLOGICAL DISORDER - THROMBOSIS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>COAGULOPATHY / HEMATOLOGICAL DISORDER - HIT</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>HEMOLYSIS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventHematologicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad1}}" class="info-selection"></td><td>MAJOR BLEEDING EVENT (transfusion > 2 units)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventHematologicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad2}}" class="info-selection" ></td><td>LIFE-THREATENING BLEEDING EVENT (transfusion > 4 units)</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventHematologicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad3}}" class="info-selection" ></td><td>COAGULOPATHY / HEMATOLOGICAL DISORDER - THROMBOSIS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventHematologicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad4" value="{{Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad4}}" class="info-selection" ></td><td>COAGULOPATHY / HEMATOLOGICAL DISORDER - HIT</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventHematologicalDescription" ng-model="Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad5" value="{{Form.AdverseEvent.chkAdverseEventHematologicalDescription.rad5}}" class="info-selection" ></td><td>HEMOLYSIS</td></tr>
 
                                 <tr><th colspan="2">Thromboembolic Event (Other than heart)</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>OCULAR THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>RENAL THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>GASTRO-INTESTINAL THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>SPLENETIC THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>HEPATIC THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>ARM THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>LEG THROMBUS</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value="" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>NEUROLOGICAL</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherThromboembolicEvents'); toggleVisibility('txtThromboembolicEventsDetails')"></td><td>Other*</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad1}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>OCULAR THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad2}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>RENAL THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad3}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>GASTRO-INTESTINAL THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad4" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad4}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>SPLENETIC THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad5" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad5}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>HEPATIC THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad6" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad6}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>ARM THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad7" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad7}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>LEG THROMBUS</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad8" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad8}}" class="info-selection" onchange="toggleVisibility('txtThromboembolicEventsDetails')"></td><td>NEUROLOGICAL</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventThromboembolicDescription" ng-model="Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad9" value="{{Form.AdverseEvent.chkAdverseEventThromboembolicDescription.rad9}}" class="info-selection" onchange="toggleVisibility('txtOtherThromboembolicEvents'); toggleVisibility('txtThromboembolicEventsDetails')"></td><td>Other*</td></tr>
                                 <tr id="txtOtherThromboembolicEvents" class="additional-info-required-dialog">
-                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherThromboembolicEvents" /></td>
+                                    <td colspan="2"><input class="form-control" type="text" ng-model="Form.AdverseEvent.txtOtherThromboembolicEvents.text" placeholder="Specify" name="txtOtherThromboembolicEvents" /></td>
                                 </tr>
                                 <tr id="txtThromboembolicEventsDetails" class="additional-info-required-dialog">
                                     <td colspan="2">
                                         Lab results before initiating event driven anticoagulation
                                         <br /><br />
                                         PTT
-                                        <input class="form-control" type="text" placeholder="Specify" name="txtPTTSec" /> sec
+                                        <input class="form-control" type="text" ng-model="Form.AdverseEvent.txtPTTSec.text" placeholder="Specify" name="txtPTTSec" /> sec
                                         <br /><br />
                                         INR
-                                        <input class="form-control" type="text" placeholder="Specify" name="txtINR" />
+                                        <input class="form-control" type="text" ng-model="Form.AdverseEvent.txtINR.text" placeholder="Specify" name="txtINR" />
                                         <br /><br />
                                         Platelet
-                                        <input class="form-control" type="text" placeholder="Specify" name="txtPlatelet" />cells/mmⁿ
+                                        <input class="form-control" type="text" ng-model="Form.AdverseEvent.txtPlatelet.text" placeholder="Specify" name="txtPlatelet" />cells/mmⁿ
                                     </td>
                                 </tr>
 
                                 <tr><th colspan="2">Miscellaneous</th></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>BONE FRACTURE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CANCER NEW DIAGNOSED</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>CANCER EXPECTED</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>DRUG REACTION</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>INFLAMMATION / INFECTION</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>METABOLIC COMPLICATION</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SEPSIS DUE TO PROLONGED HOSPITAL STAY</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SEPSIS AFTER DISCHARGE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>SUICIDE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>MULTIPLE ORGAN FAILURE</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>THORACIC WOUND COMP</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>URINARY TRACT INFECTION</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" value=""></td><td>VISION DISORDER</td></tr>
-                                <tr><td><input type="radio" name="chkAdverseEventDescription" class="info-selection" onchange="toggleVisibility('txtOtherMiscellaneousEvents')"></td><td>Other*</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad1" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad1}}" class="info-selection" ></td><td>BONE FRACTURE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad2" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad2}}" class="info-selection" ></td><td>CANCER NEW DIAGNOSED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad3" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad3}}" class="info-selection" ></td><td>CANCER EXPECTED</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad4" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad4}}" class="info-selection" ></td><td>DRUG REACTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad5" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad5}}" class="info-selection" ></td><td>INFLAMMATION / INFECTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad6" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad6}}" class="info-selection" ></td><td>METABOLIC COMPLICATION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad7" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad7}}" class="info-selection" ></td><td>SEPSIS DUE TO PROLONGED HOSPITAL STAY</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad8" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad8}}" class="info-selection" ></td><td>SEPSIS AFTER DISCHARGE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad9" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad9}}" class="info-selection" ></td><td>SUICIDE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad10" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad10}}" class="info-selection" ></td><td>MULTIPLE ORGAN FAILURE</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad11" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad11}}" class="info-selection" ></td><td>THORACIC WOUND COMP</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad12" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad12}}" class="info-selection" ></td><td>URINARY TRACT INFECTION</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad13" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad13}}" class="info-selection" ></td><td>VISION DISORDER</td></tr>
+                                <tr><td><input type="radio" name="chkAdverseEventMiscellaneousDescription" ng-model="Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad14" value="{{Form.AdverseEvent.chkAdverseEventMiscellaneousDescription.rad14}}" class="info-selection" onchange="toggleVisibility('txtOtherMiscellaneousEvents')"></td><td>Other*</td></tr>
                                 <tr id="txtOtherMiscellaneousEvents" class="additional-info-required-dialog">
-                                    <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtOtherMiscellaneousEvents" /></td>
+                                    <td colspan="2"><input class="form-control" type="text" ng-model="Form.AdverseEvent.txtOtherMiscellaneousEvents.text" placeholder="Specify" name="txtOtherMiscellaneousEvents" /></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -272,12 +272,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>None</td></tr>
-                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Medical Therapy</td></tr>
-                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Surgical Intervention</td></tr>
-                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Hospital Readmission</td></tr>
-                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection"></td><td>Transfusion</td></tr>
-                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" class="info-selection" ng-value="eventTreatmentOther"></td><td>Other: <input type="text" ng-model=[eventTreatmentOther]></td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" ng-model="Form.AdverseEvent.chkAdverseEventTreatment.chk1" value="{{Form.AdverseEvent.chkAdverseEventTreatment.chk1}}" class="info-selection"></td><td>None</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" ng-model="Form.AdverseEvent.chkAdverseEventTreatment.chk2" value="{{Form.AdverseEvent.chkAdverseEventTreatment.chk2}}" class="info-selection"></td><td>Medical Therapy</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" ng-model="Form.AdverseEvent.chkAdverseEventTreatment.chk3" value="{{Form.AdverseEvent.chkAdverseEventTreatment.chk3}}" class="info-selection"></td><td>Surgical Intervention</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" ng-model="Form.AdverseEvent.chkAdverseEventTreatment.chk4" value="{{Form.AdverseEvent.chkAdverseEventTreatment.chk4}}" class="info-selection"></td><td>Hospital Readmission</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" ng-model="Form.AdverseEvent.chkAdverseEventTreatment.chk5" value="{{Form.AdverseEvent.chkAdverseEventTreatment.chk5}}" class="info-selection"></td><td>Transfusion</td></tr>
+                            <tr><td><input type="checkbox" name="chkAdverseEventTreatment" ng-model="Form.AdverseEvent.chkAdverseEventTreatment.chk6" value="{{Form.AdverseEvent.chkAdverseEventTreatment.chk6}}" class="info-selection" ng-value="eventTreatmentOther"></td><td>Other: <input type="text" ng-model=[eventTreatmentOther]></td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -300,9 +300,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Minor</td></tr>
-                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Mild</td></tr>
-                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Major</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="{{Form.AdverseEvent.chkEventSeverity.chk1}}" class="info-selection"></td><td>Minor</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" ng-model="Form.AdverseEvent.chkEventSeverity.chk2" value="{{Form.AdverseEvent.chkEventSeverity.chk2}}" class="info-selection"></td><td>Mild</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverity" ng-model="Form.AdverseEvent.chkEventSeverity.chk3" value="{{Form.AdverseEvent.chkEventSeverity.chk3}}" class="info-selection"></td><td>Major</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -325,10 +325,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Resolved</td></tr>
-                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Resolved with sequelea</td></tr>
-                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>On-going</td></tr>
-                            <tr><td><input type="radio" name="chkEventSeverity" class="info-selection"></td><td>Death (Add death form if death is selected)</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverityOutcome" ng-model="Form.AdverseEvent.chkEventSeverityOutcome.chk1" value="{{Form.AdverseEvent.chkEventSeverityOutcome.chk1}}" class="info-selection"></td><td>Resolved</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverityOutcome" ng-model="Form.AdverseEvent.chkEventSeverityOutcome.chk2" value="{{Form.AdverseEvent.chkEventSeverityOutcome.chk2}}" class="info-selection"></td><td>Resolved with sequelea</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverityOutcome" ng-model="Form.AdverseEvent.chkEventSeverityOutcome.chk3" value="{{Form.AdverseEvent.chkEventSeverityOutcome.chk3}}" class="info-selection"></td><td>On-going</td></tr>
+                            <tr><td><input type="radio" name="chkEventSeverityOutcome" ng-model="Form.AdverseEvent.chkEventSeverityOutcome.chk4" value="{{Form.AdverseEvent.chkEventSeverityOutcome.chk4}}" class="info-selection"></td><td>Death (Add death form if death is selected)</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -347,7 +347,7 @@
                 </div>
                 
                 <div class="form-body">
-                    <textarea style="width: 70%; height: 300px;"></textarea>
+                    <textarea name="txtNarrativeDescription" ng-model="Form.AdverseEvent.txtNarrativeDescription.text" style="width: 70%; height: 300px;"></textarea>
                 </div>
             </div>
         </div>
@@ -367,7 +367,7 @@
             </div>
 
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+                <button class="btn btn-success" ng-click="PostDataToServer('Form6', Form)">Continue ></button>
             </div>
         </div>
     </div>

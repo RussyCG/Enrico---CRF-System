@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="ngCRF">
 <head>
     <meta charset="utf-8" />
     <title>Protocol Deviation</title>
@@ -16,7 +16,7 @@
     <script src="../../Scripts/moment-with-locales.js"></script>
     <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
 </head>
-<body>
+<body ng-controller="formController">
     <header style="text-align: center;">
         <div class="container-fluid">
             <div class="row">
@@ -42,7 +42,7 @@
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
                                     <div class='input-group date' id='dtOccurence'>
-                                        <input type='date' class="form-control" />
+                                        <input type='date' class="form-control" ng-model="Form.DateOfOccurance.DateTime"/>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -72,13 +72,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Baseline</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Procedure</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Discharge</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>28 DFU</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>90 DFU</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>6 MFU</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>1 YFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="Baseline"></td><td>Baseline</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="Procedure"></td><td>Procedure</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="Discharge"></td><td>Discharge</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="28 DFU"></td><td>28 DFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="90 DFU"></td><td>90 DFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="6 MFU"></td><td>6 MFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="1 YFU"></td><td>1 YFU</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -101,30 +101,30 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInclusionCriteria')"></td><td>Inclusion Criteria*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInclusionCriteria')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Inclusion Criteria*"></td><td>Inclusion Criteria*</td></tr>
                             <tr id="divInclusionCriteria" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divExclusionCriteria')"></td><td>Exclusion Criteria*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divExclusionCriteria')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Exclusion Criteria*"></td><td>Exclusion Criteria*</td></tr>
                             <tr id="divExclusionCriteria" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Informed Consent not signed by subject</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Informed Consent signed after procedure</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Informed Consent not signed by the PI</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Protocol Mandated Clinical Follow Up Visit</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Physical Exam</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divLabratoryValuesNotCollected')"></td><td>Labratory values not collected*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Informed Consent not signed by subject*"></td><td>Informed Consent not signed by subject</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Informed Consent signed after procedure"></td><td>Informed Consent signed after procedure</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Informed Consent not signed by the PI*"></td><td>Informed Consent not signed by the PI</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Protocol Mandated Clinical Follow Up Visit"></td><td>Protocol Mandated Clinical Follow Up Visit</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Physical Exam"></td><td>Physical Exam</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divLabratoryValuesNotCollected')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Labratory values not collected*"></td><td>Labratory values not collected*</td></tr>
                             <tr id="divLabratoryValuesNotCollected" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Invasive Hemodynamics Assessment</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInvasiveHemodynamicsParameters')"></td><td>Invasive Hemodynamics parameters not collected*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Invasive Hemodynamics Assessment"></td><td>Invasive Hemodynamics Assessment</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInvasiveHemodynamicsParameters')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Invasive Hemodynamics parameters not collected*"></td><td>Invasive Hemodynamics parameters not collected*</td></tr>
                             <tr id="divInvasiveHemodynamicsParameters" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
                             </tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection"></td><td>Protocol mandated medications not given</td></tr>
-                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divOther')"></td><td>Other*</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Protocol mandated medications not given"></td><td>Protocol mandated medications not given</td></tr>
+                            <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divOther')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Other*"></td><td>Other*</td></tr>
                             <tr id="divOther" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
                             </tr>
@@ -150,12 +150,12 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Not Done</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Out of time window</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Out of range</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Physician preference</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection"></td><td>Does not apply</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection" onchange="toggleVisibility('divOtherReason')"></td><td>Other*</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_1'] = true" value="Not done"></td><td>Not Done</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_2'] = true" value="Out of time window"></td><td>Out of time window</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_3'] = true" value="Out of range"></td><td>Out of range</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_4'] = true" value="Physician Preference"></td><td>Physician preference</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_5'] = true" value="Does not apply"></td><td>Does not apply</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" onchange="toggleVisibility('divOtherReason')" ng-click="Form.ReasonforDeviation['rad4_6'] = true" value="Other*"></td><td>Other*</td></tr>
                             <tr id="divOtherReason" class="additional-info-required-dialog">
                                 <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
                             </tr>
@@ -227,7 +227,7 @@
             </div>
 
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+                <button class="btn btn-success" ng-click="PostDataToServer('Form8', Form)">Continue ></button>
             </div>
         </div>
     </div>

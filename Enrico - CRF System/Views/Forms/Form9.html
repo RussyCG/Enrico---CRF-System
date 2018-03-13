@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html ng-app="ngCRF">
 <head>
     <meta charset="utf-8" />
     <title>EQ-5D</title>
@@ -16,7 +16,7 @@
     <script src="../../Scripts/moment-with-locales.js"></script>
     <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
 </head>
-<body>
+<body ng-controller="formController">
     <header style="text-align: center;">
         <div class="container-fluid">
             <div class="row">
@@ -42,7 +42,7 @@
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
                                     <div class='input-group date' id='dtInformedConsent'>
-                                        <input type='date' class="form-control" />
+                                        <input type='date' class="form-control" ng-model="Form.InclusionCriteria.DateTime"/>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -72,9 +72,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have no problem in walking about</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have some problems in walking about</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I am confined to bed</td></tr>
+                            <tr><td><input type="radio" name="Mobility_Option" class="info-selection" ng-click="Form.Mobility['Mobility_Option'] = true" value="I have no problem in walking about"></td><td>I have no problem in walking about</td></tr>
+                            <tr><td><input type="radio" name="Mobility_Option" class="info-selection" ng-click="Form.Mobility['Mobility_Option'] = true" value="I have some problems in walking about"></td><td>I have some problems in walking about</td></tr>
+                            <tr><td><input type="radio" name="Mobility_Option" class="info-selection" ng-click="Form.Mobility['Mobility_Option'] = true" value="I am confined to bed"></td><td>I am confined to bed</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -97,9 +97,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have no problem with self-care</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have some problems washing and drying myself</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I am unable to wash or dry myself</td></tr>
+                            <tr><td><input type="radio" name="Self-Care_Option" class="info-selection"  ng-click="Form.Self-Care_Option['Self-Care_Option'] = true" value="I have no problem with self-care"></td><td>I have no problem with self-care</td></tr>
+                            <tr><td><input type="radio" name="Self-Care_Option" class="info-selection"  ng-click="Form.Self-Care_Option['Self-Care_Option'] = true" value="I have some problems washing and drying myself"></td><td>I have some problems washing and drying myself</td></tr>
+                            <tr><td><input type="radio" name="Self-Care_Option" class="info-selection"  ng-click="Form.Self-Care_Option['Self-Care_Option'] = true" value="I am unable to wash or dry myself"></td><td>I am unable to wash or dry myself</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -122,9 +122,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have no problem performing my usual activities</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have some problems performing my usual activities</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I am unable to perform my usual activities</td></tr>
+                            <tr><td><input type="radio" name="Usual_Activites_Option" class="info-selection"  ng-click="Form.Usual_Activites_Option['Usual_Activites_Option'] = true" value="I have no problem performing my usual activities"></td><td>I have no problem performing my usual activities</td></tr>
+                            <tr><td><input type="radio" name="Usual_Activites_Option" class="info-selection"  ng-click="Form.Usual_Activites_Option['Usual_Activites_Option'] = true" value="I have some problems performing my usual activities"></td><td>I have some problems performing my usual activities</td></tr>
+                            <tr><td><input type="radio" name="Usual_Activites_Option" class="info-selection"  ng-click="Form.Usual_Activites_Option['Usual_Activites_Option'] = true" value="I am unable to perform my usual activities"></td><td>I am unable to perform my usual activities</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -147,9 +147,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have no pain or discomfort</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have moderate pain or discomfort</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I have extreme pain or discomfort</td></tr>
+                            <tr><td><input type="radio" name="Pain_Discomfort_Option" class="info-selection"  ng-click="Form.Pain_Discomfort_Option['Pain_Discomfort_Option'] = true" value="I have no pain or discomfort"></td><td>I have no pain or discomfort</td></tr>
+                            <tr><td><input type="radio" name="Pain_Discomfort_Option" class="info-selection"  ng-click="Form.Pain_Discomfort_Option['Pain_Discomfort_Option'] = true" value="I have moderate pain or discomfort"></td><td>I have moderate pain or discomfort</td></tr>
+                            <tr><td><input type="radio" name="Pain_Discomfort_Option" class="info-selection"  ng-click="Form.Pain_Discomfort_Option['Pain_Discomfort_Option'] = true" value="I have extreme pain or discomfort"></td><td>I have extreme pain or discomfort</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -172,9 +172,9 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I am not anxious or depressed</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I am moderately anxious or depressed</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I am extremely anxious or depressed</td></tr>
+                            <tr><td><input type="radio" name="Anxiety_Depression_Option" class="info-selection"  ng-click="Form.Anxiety_Depression_Option['Anxiety_Depression_Option'] = true" value="I am not anxious or depressed"></td><td>I am not anxious or depressed</td></tr>
+                            <tr><td><input type="radio" name="Anxiety_Depression_Option" class="info-selection"  ng-click="Form.Anxiety_Depression_Option['Anxiety_Depression_Option'] = true" value="I am moderately anxious or depressed"></td><td>I am moderately anxious or depressed</td></tr>
+                            <tr><td><input type="radio" name="Anxiety_Depression_Option" class="info-selection"  ng-click="Form.Anxiety_Depression_Option['Anxiety_Depression_Option'] = true" value="I am extremely anxious or depressed"></td><td>I am extremely anxious or depressed</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -218,7 +218,7 @@
             </div>
 
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+                <button class="btn btn-success" ng-click="PostDataToServer('Form9', Form)">Continue ></button>
             </div>
         </div>
     </div>
