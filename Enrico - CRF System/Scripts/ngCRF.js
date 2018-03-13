@@ -87,24 +87,48 @@ AngularModule.service('ApiCall', ['$http', function ($http) {
 
 AngularModule.config(function ($routeProvider) {
     $routeProvider
-        .when("/", { templateUrl: "/Views/main.html" })
-        .when("/GetPatientCaseNumber", { templateUrl: "/Views/Forms/GetPatientCaseNumber.html" })
-        .when("/FormIndex", { templateUrl: "/Views/Forms/index.html" })
+        .when("/", { templateUrl: "/Views/main.html", controller: "mainController" })
+        .when("/GetPatientCaseNumber", { templateUrl: "/Views/Forms/GetPatientCaseNumber.html", controller: "patientCaseNumberController" })
+        .when("/FormIndex", { templateUrl: "/Views/Forms/index.html", controller: "formIndexController" })
+        .when("/Form1", { templateUrl: "/Views/Forms/Form1.html", controller: "formController" })
+        .when("/Form2", { templateUrl: "/Views/Forms/Form2.html", controller: "formController" })
+        .when("/Form3", { templateUrl: "/Views/Forms/Form3.html", controller: "formController" })
+        .when("/Form4", { templateUrl: "/Views/Forms/Form4.html", controller: "formController" })
+        .when("/Form5", { templateUrl: "/Views/Forms/Form5.html", controller: "formController" })
+        .when("/Form6", { templateUrl: "/Views/Forms/Form6.html", controller: "formController" })
+        .when("/Form7", { templateUrl: "/Views/Forms/Form7.html", controller: "formController" })
+        .when("/Form8", { templateUrl: "/Views/Forms/Form8.html", controller: "formController" })
+        .when("/Form9", { templateUrl: "/Views/Forms/Form9.html", controller: "formController" })
+        .when("/Form10", { templateUrl: "/Views/Forms/Form10.html", controller: "formController" })
+        .when("/Form11", { templateUrl: "/Views/Forms/Form11.html", controller: "formController" })
+        .when("/Form12", { templateUrl: "/Views/Forms/Form12.html", controller: "formController" })
+        .when("/Form1CSS", { templateUrl: "/Views/Forms/Form1.css" })
+        .when("/Form10CSS", { templateUrl: "/Views/Forms/Form10.css" })
+        .when("/FormBaseCSS", { templateUrl: "/Views/Forms/FormBaseCSS.css" })
         .otherwise({ templateUrl: "/Views/main.html" });
 });
 
 AngularModule.controller('mainController', function () {
 });
 
-AngularModule.controller('patientCaseNumberController', function ($location) {
+AngularModule.controller('patientCaseNumberController', function ($scope, PatientCaseNumber, $location) {
     $scope.MoveToFormIndex = function () {
-        $location.path('/FormIndex');
+        if ($scope.Form.PatientCaseNum != undefined && $scope.Form.PatientCaseNum != "") {
+            PatientCaseNumber.set($scope.Form.PatientCaseNum);
+            console.log('Moving');
+            $location.path('/FormIndex');
+        }
     };
+});
+
+AngularModule.controller('formIndexController', function () {
+
 });
 
 AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiCall', function (PatientCaseNumber, $scope, ApiCall, $location) {
     $scope.Form = {};
     console.log(PatientCaseNumber.get());
+    $scope.Form.PatientCaseNum = PatientCaseNumber.get();
 
     $scope.SubmitForm = function (formInputs) {
         ApiCall.Post('formController', formInputs);
@@ -130,13 +154,6 @@ AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiC
         }
         else {
             $scope.Form[nameOfArray].push(nameOfElement);
-        }
-    };
-
-    $scope.MoveToFormIndex = function () {
-        if ($scope.Form.PatientCaseNum != undefined || $scope.Form.PatientCaseNum != "") {
-            PatientCaseNumber.set($scope.Form.PatientCaseNum);
-            $location.path('/FormIndex');
         }
     };
 }]);
