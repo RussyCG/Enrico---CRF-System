@@ -118,9 +118,9 @@ AngularModule.config(function ($routeProvider) {
         .when("/Form10", { templateUrl: "/Views/Forms/Form10.html", controller: "formController" })
         .when("/Form11", { templateUrl: "/Views/Forms/Form11.html", controller: "formController" })
         .when("/Form12", { templateUrl: "/Views/Forms/Form12.html", controller: "formController" })
-        .when("/Form1CSS", { templateUrl: "/Views/Forms/Form1.css" })
-        .when("/Form10CSS", { templateUrl: "/Views/Forms/Form10.css" })
-        .when("/FormBaseCSS", { templateUrl: "/Views/Forms/FormBaseCSS.css" })
+        .when("/Form1CSS", { templateUrl: "./Views/Forms/Form1.css" })
+        .when("/Form10CSS", { templateUrl: "./Views/Forms/Form10.css" })
+        .when("/FormBaseCSS", { templateUrl: "./Views/Forms/FormBaseCSS.css" })
         .otherwise({ templateUrl: "/Views/main.html" });
 });
 
