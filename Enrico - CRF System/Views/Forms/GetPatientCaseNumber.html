@@ -1,0 +1,52 @@
+﻿<html ng-app="ngCRF">
+<head>
+    <meta charset="utf-8" />
+    <title>eCRF - Patient Case Number</title>
+
+    <script src="../../Scripts/moment-with-locales.js"></script>
+    <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script>
+    <script src="../../Scripts/datetime-picker.js"></script>
+</head>
+<body ng-controller="patientCaseNumberController" style="background-color: white;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+
+            </div>
+
+            <div class="col-md-6">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Patient Case Number:</h3>
+                            <div id="patientCaseNumber">
+                                <label class="text-center">Please enter the Patient Case Number: </label>
+                                <input class="form-control" type="text" ng-model="Form.PatientCaseNum"/>
+                            </div>
+                            <div id="patientCaseNumberButtons">
+                                <div class="col-md-3">
+                                    <button style="width:100%" class="btn btn-danger" onclick="window.location = '../index.html';">Cancel</button>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                </div>
+
+                                <div class="col-md-3">
+                                    <button style="width:100%" class="btn btn-success" ng-click="MoveToFormIndex()">Proceed</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

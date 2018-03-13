@@ -1,5 +1,4 @@
-﻿<!DOCTYPE html>
-<html>
+﻿<html ng-app="ngCRF">
 <head>
     <meta charset="utf-8" />
     <title>HADS Questionnaire</title>
@@ -12,11 +11,16 @@
     <link rel="stylesheet" href="Form1.css" />
 
     <script src="../../Scripts/jquery-2.1.1.min.js"></script>
+    <script src="../../Scripts/angular.js"></script>
+    <script src="../../Scripts/ngCRF.js"></script>
     <script src="../../Scripts/bootstrap.min.js"></script>
     <script src="../../Scripts/moment-with-locales.js"></script>
     <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.2.0/ui-bootstrap-tpls.js"></script>
+    <script src="../../Scripts/datetime-picker.js"></script>
 </head>
-<body>
+<body ng-controller="formController">
     <header style="text-align: center;">
         <div class="container-fluid">
             <div class="row">
@@ -42,7 +46,7 @@
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
                                     <div class='input-group date' id='dtInformedConsent'>
-                                        <input type='date' class="form-control" />
+                                        <input type='date' class="form-control" ng-model="Form.DateTimeOfAssessment.DateTime"/>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -72,10 +76,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Most of the time</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>A lot of the time</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>From time to time, occasionally</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" value="Most of the time" ng-model="Form.rad2_1"></td><td>Most of the time</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" value="A lot of the time" ng-model="Form.rad2_1"><td>A lot of the time</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" value="From time to time, occasionally" ng-model="Form.rad2_1"><td>From time to time, occasionally</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" value="Not at all" ng-model="Form.rad2_1"><td>Not at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -98,10 +102,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Definitely as much</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not quite so much</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Only a little</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Hardly at all</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" value="Definitely as much" ng-model="Form.rad3_1"></td><td>Definitely as much</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" value="Not quite so much" ng-model="Form.rad3_1"></td><td>Not quite so much</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" value="Only a little" ng-model="Form.rad3_1"></td><td>Only a little</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" value="Hardly at all" ng-model="Form.rad3_1"></td><td>Hardly at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -124,10 +128,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Very definitely and quite badly</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Yes, but not too badly</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>A little but it doesn't worry me</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad4_1" class="info-selection" value="Very definitely and quite badly" ng-model="Form.rad4_1"></td><td>Very definitely and quite badly</td></tr>
+                            <tr><td><input type="radio" name="rad4_1" class="info-selection" value="Yes, but not too badly" ng-model="Form.rad4_1"></td><td>Yes, but not too badly</td></tr>
+                            <tr><td><input type="radio" name="rad4_1" class="info-selection" value="A little but it doesn't worry me" ng-model="Form.rad4_1"></td><td>A little but it doesn't worry me</td></tr>
+                            <tr><td><input type="radio" name="rad4_1" class="info-selection" value="Not at all" ng-model="Form.rad4_1"></td><td>Not at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -150,10 +154,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>As much as I could</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not quite so much now</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Definitely not so much now</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad5_1" class="info-selection" value="As much as I could" ng-model="Form.rad5_1"></td><td>As much as I could</td></tr>
+                            <tr><td><input type="radio" name="rad5_1" class="info-selection" value="Not quite so much now" ng-model="Form.rad5_1"></td><td>Not quite so much now</td></tr>
+                            <tr><td><input type="radio" name="rad5_1" class="info-selection" value="Definitely not so much now" ng-model="Form.rad5_1"></td><td>Definitely not so much now</td></tr>
+                            <tr><td><input type="radio" name="rad5_1" class="info-selection" value="Not at all" ng-model="Form.rad5_1"></td><td>Not at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -176,10 +180,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>A great deal of the time</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>A lot of the time</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>From time to time, but not too often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Only occasionally</td></tr>
+                            <tr><td><input type="radio" name="rad6_1" class="info-selection" value="A great deal of the time" ng-model="Form.rad6_1"></td><td>A great deal of the time</td></tr>
+                            <tr><td><input type="radio" name="rad6_1" class="info-selection" value="A lot of the time" ng-model="Form.rad6_1"></td><td>A lot of the time</td></tr>
+                            <tr><td><input type="radio" name="rad6_1" class="info-selection" value="From time to time, but not too often" ng-model="Form.rad6_1"></td><td>From time to time, but not too often</td></tr>
+                            <tr><td><input type="radio" name="rad6_1" class="info-selection" value="Only occasionally" ng-model="Form.rad6_1"></td><td>Only occasionally</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -202,10 +206,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Sometimes</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Most of the time</td></tr>
+                            <tr><td><input type="radio" name="rad7_1" class="info-selection" value="Not at all" ng-model="Form.rad7_1"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad7_1" class="info-selection" value="Not often" ng-model="Form.rad7_1"></td><td>Not often</td></tr>
+                            <tr><td><input type="radio" name="rad7_1" class="info-selection" value="Sometimes" ng-model="Form.rad7_1"></td><td>Sometimes</td></tr>
+                            <tr><td><input type="radio" name="rad7_1" class="info-selection" value="Most of the time" ng-model="Form.rad7_1"></td><td>Most of the time</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -228,10 +232,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Nearly all the time</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Very often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Sometimes</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad8_1" class="info-selection" value="Nearly all the time" ng-model="Form.rad8_1"></td><td>Nearly all the time</td></tr>
+                            <tr><td><input type="radio" name="rad8_1" class="info-selection" value="Very often" ng-model="Form.rad8_1"></td><td>Very often</td></tr>
+                            <tr><td><input type="radio" name="rad8_1" class="info-selection" value="Sometimes" ng-model="Form.rad8_1"></td><td>Sometimes</td></tr>
+                            <tr><td><input type="radio" name="rad8_1" class="info-selection" value="Not at all" ng-model="Form.rad8_1"></td><td>Not at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -254,10 +258,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Occasionally</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Quite Often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Very Often</td></tr>
+                            <tr><td><input type="radio" name="rad9_1" class="info-selection" value="Not at all" ng-model="Form.rad9_1"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad9_1" class="info-selection" value="Occasionally" ng-model="Form.rad9_1"></td><td>Occasionally</td></tr>
+                            <tr><td><input type="radio" name="rad9_1" class="info-selection" value="Quite Often" ng-model="Form.rad9_1"></td><td>Quite Often</td></tr>
+                            <tr><td><input type="radio" name="rad9_1" class="info-selection" value="Very Often" ng-model="Form.rad9_1"></td><td>Very Often</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -280,10 +284,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Definitely</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I don't take as much care as I should</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I may not take quite as much care</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>I take just as much care as ever</td></tr>
+                            <tr><td><input type="radio" name="rad10_1" class="info-selection" value="Definitely" ng-model="Form.rad10_1"></td><td>Definitely</td></tr>
+                            <tr><td><input type="radio" name="rad10_1" class="info-selection" value="I don't take as much care as I should" ng-model="Form.rad10_1"></td><td>I don't take as much care as I should</td></tr>
+                            <tr><td><input type="radio" name="rad10_1" class="info-selection" value="I may not take quite as much care" ng-model="Form.rad10_1"></td><td>I may not take quite as much care</td></tr>
+                            <tr><td><input type="radio" name="rad10_1" class="info-selection" value="I take just as much care as ever" ng-model="Form.rad10_1"></td><td>I take just as much care as ever</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -306,10 +310,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Very much indeed</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Quite a lot</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not very much</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad11_1" class="info-selection" value="Very much indeed" ng-model="Form.rad11_1"></td><td>Very much indeed</td></tr>
+                            <tr><td><input type="radio" name="rad11_1" class="info-selection" value="Quite a lot" ng-model="Form.rad11_1"></td><td>Quite a lot</td></tr>
+                            <tr><td><input type="radio" name="rad11_1" class="info-selection" value="Not very much" ng-model="Form.rad11_1"></td><td>Not very much</td></tr>
+                            <tr><td><input type="radio" name="rad11_1" class="info-selection" value="Not at all" ng-model="Form.rad11_1"></td><td>Not at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -332,10 +336,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>As much as I ever did</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Rather less than I used to</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Definitely less than I used to</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Hardly at all</td></tr>
+                            <tr><td><input type="radio" name="rad12_1" class="info-selection" value="As much as I ever did" ng-model="Form.rad12_1"></td><td>As much as I ever did</td></tr>
+                            <tr><td><input type="radio" name="rad12_1" class="info-selection" value="Rather less than I used to" ng-model="Form.rad12_1"></td><td>Rather less than I used to</td></tr>
+                            <tr><td><input type="radio" name="rad12_1" class="info-selection" value="Definitely less than I used to" ng-model="Form.rad12_1"></td><td>Definitely less than I used to</td></tr>
+                            <tr><td><input type="radio" name="rad12_1" class="info-selection" value="Hardly at all" ng-model="Form.rad12_1"></td><td>Hardly at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -358,10 +362,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Very often indeed</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Quite Often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not very often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not at all</td></tr>
+                            <tr><td><input type="radio" name="rad13_1" class="info-selection" value="Very often indeed" ng-model="Form.rad13_1"></td><td>Very often indeed</td></tr>
+                            <tr><td><input type="radio" name="rad13_1" class="info-selection" value="Quite Often" ng-model="Form.rad13_1"></td><td>Quite Often</td></tr>
+                            <tr><td><input type="radio" name="rad13_1" class="info-selection" value="Not very often" ng-model="Form.rad13_1"></td><td>Not very often</td></tr>
+                            <tr><td><input type="radio" name="rad13_1" class="info-selection" value="Not at all" ng-model="Form.rad13_1"></td><td>Not at all</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -384,10 +388,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Sometimes</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Not often</td></tr>
-                            <tr><td><input type="radio" name="chk5_1" class="info-selection"></td><td>Very seldom</td></tr>
+                            <tr><td><input type="radio" name="rad14_1" class="info-selection" value="Often" ng-model="Form.rad14_1"></td><td>Often</td></tr>
+                            <tr><td><input type="radio" name="rad14_1" class="info-selection" value="Sometimes" ng-model="Form.rad14_1"></td><td>Sometimes</td></tr>
+                            <tr><td><input type="radio" name="rad14_1" class="info-selection" value="Not often" ng-model="Form.rad14_1"></td><td>Not often</td></tr>
+                            <tr><td><input type="radio" name="rad14_1" class="info-selection" value="Very seldom" ng-model="Form.rad14_1"></td><td>Very seldom</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -408,7 +412,7 @@
             </div>
 
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-success" onclick="window.location='../Forms/index.html'">Continue ></button>
+                <button class="btn btn-success" ng-click="PostDataToServer('Form 11', Form)">Continue ></button>
             </div>
         </div>
     </div>

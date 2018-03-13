@@ -1,4 +1,20 @@
-﻿var AngularModule = angular.module('ngCRF', ['ui.bootstrap', 'ui.bootstrap.datetimepicker']);
+﻿var AngularModule = angular.module('ngCRF', ['ngRoute']);
+
+AngularModule.factory('PatientCaseNumber', function () {
+    var data = {};
+    return {
+        get: get,
+        set: set
+    };
+
+    function set(newValue) {
+        data = newValue;
+    };
+
+    function get() {
+        return data;
+    };
+});
 
 AngularModule.service('ApiCall', ['$http', function ($http) {
     var result;
@@ -69,64 +85,42 @@ AngularModule.service('ApiCall', ['$http', function ($http) {
     };
 }]);
 
-AngularModule.controller('formController', function ($scope, ApiCall) {
+AngularModule.config(function ($routeProvider) {
+    $routeProvider
+        .when("/", { templateUrl: "/Views/main.html" })
+        .when("/GetPatientCaseNumber", { templateUrl: "/Views/Forms/GetPatientCaseNumber.html" })
+        .when("/FormIndex", { templateUrl: "/Views/Forms/index.html" })
+        .otherwise({ templateUrl: "/Views/main.html" });
+});
+
+AngularModule.controller('mainController', function () {
+});
+
+AngularModule.controller('patientCaseNumberController', function ($location) {
+    $scope.MoveToFormIndex = function () {
+        $location.path('/FormIndex');
+    };
+});
+
+AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiCall', function (PatientCaseNumber, $scope, ApiCall, $location) {
     $scope.Form = {};
+    console.log(PatientCaseNumber.get());
 
-    var CheckBoxContainers = ['HistoryOfCardiacRiskFactors', 'HistoryOfCardiacDisease', 'HistoryOfRespiratoryDisease', 'HistoryOfRenalDisease', 'HistoryOfVascularDisease', 'HistoryOfOtherDiseases', 'SurgicalInterventions'];
-
-    for (var i = 0; i < CheckBoxContainers.length; i++) {
-        $scope.Form[CheckBoxContainers[i]] = [];
-    }
-
-    var DateTimePickers2 = [{ Name: 'dtInformedConsent', containers: { Section: 'InformedConsent', idInner: 'indtInformedConsent', Subsection: null } },
-        { Name: 'dtPhysicalAssessment', containers: { Section: 'PhysicalAssessment', idInner: 'indtPhysicalAssessment', Subsection: null } },
-        { Name: 'dtStudyRandomization', containers: { Section: 'StudyRandomisation', idInner: 'indtStudyRandomization', Subsection: null } },
-        { Name: 'dtHistoryOfVascularDiseaseStroke', containers: { Section: 'HistoryOfVascularDisease', idInner: 'indtHistoryOfVascularDiseaseStroke', Subsection: 'Stroke' } },
-        { Name: 'dtSurgicalInterventionCardiacSurgery', containers: { Section: 'SurgicalInterventions', idInner: 'indtSurgicalInterventionCardiacSurgery', Subsection: 'CardiacSurgery' } },
-        { Name: 'dtSurgicalInterventionCarotidSurgery', containers: { Section: 'SurgicalInterventions', idInner: 'indtSurgicalInterventionCarotidSurgery', Subsection: 'CarotidSurgery' } },
-        { Name: 'dtSurgicalInterventionOtherSurgery', containers: { Section: 'SurgicalInterventions', idInner: 'indtSurgicalInterventionOtherSurgery', Subsection: 'OtherSurgery' } }
-    ];
-
-   
-   /* $(function () {
-
-        for (var i = 0; i < DateTimePickers2.length; i++) {
-            var dateTimePicker = DateTimePickers2[i];
-           
-            $("#" + dateTimePicker.Name).on("dp.change", function () {
-                if (dateTimePicker.containers.Subsection == null) {
-                    console.log(document.getElementById(DateTimePickers2.Name));       
-                    $scope.Form[dateTimePicker.containers.Section] = {};
-                    $scope.Form[dateTimePicker.containers.Section].DateTime = $("#" + dateTimePicker.containers.idInner).val();
-                }
-                else {
-                    console.log(document.getElementById(dateTimePicker.Name));
-                   // console.log(DateTimePickers2)
-                    $scope.Form[dateTimePicker.containers.Section][dateTimePicker.containers.Subsection] = {};
-                    $scope.Form[dateTimePicker.containers.Section][dateTimePicker.containers.Subsection].DateTime = $("#" + dateTimePicker.containers.idInner).val();
-                }
-            });
-        }
-
-        //$("#dtSurgicalInterventionOtherSurgery").on("dp.change", function () {
-        //    $scope.Form.SurgicalInterventions.OtherSurgery = {};
-        //    $scope.Form.SurgicalInterventions.OtherSurgery.DateTime = $("#indtSurgicalInterventionOtherSurgery").val();
-        //});
-
-   
-
-
-    });
-    */
-    
-$scope.SubmitForm = function (formInputs) {
+    $scope.SubmitForm = function (formInputs) {
         ApiCall.Post('formController', formInputs);
     }
 
     $scope.PostDataToServer = function (formName, form) {
-        form.Name = formName;
-        console.log(form);
-        console.log($scope.Form);
+        console.log(PatientCaseNumber.get());
+        if (form.PatientCaseNum == undefined || form.PatientCaseNum == '') {
+            alert('No patient Case Number entered');
+            form.Name = formName;
+            console.log(form);
+        }
+        else {
+            form.Name = formName;
+            console.log(form);
+        }
     };
 
     $scope.ToggleCheckbox = function (nameOfArray, nameOfElement) {
@@ -138,4 +132,11 @@ $scope.SubmitForm = function (formInputs) {
             $scope.Form[nameOfArray].push(nameOfElement);
         }
     };
-});
+
+    $scope.MoveToFormIndex = function () {
+        if ($scope.Form.PatientCaseNum != undefined || $scope.Form.PatientCaseNum != "") {
+            PatientCaseNumber.set($scope.Form.PatientCaseNum);
+            $location.path('/FormIndex');
+        }
+    };
+}]);
