@@ -16,6 +16,22 @@ AngularModule.factory('PatientCaseNumber', function () {
     };
 });
 
+AngularModule.factory('Page', function () {
+    var data = {};
+    return {
+        get: get,
+        set: set
+    };
+
+    function set(key, value) {
+        data[key] = value;
+    };
+
+    function get(key) {
+        return data[key];
+    };
+});
+
 AngularModule.service('ApiCall', ['$http', function ($http) {
     var result;
     var ErrorMessage;
@@ -108,10 +124,14 @@ AngularModule.config(function ($routeProvider) {
         .otherwise({ templateUrl: "/Views/main.html" });
 });
 
-AngularModule.controller('mainController', function () {
+AngularModule.controller('mainController', function ($scope, Page) {
+    Page.set("Name", "Dashboard");
+    $scope.Page = Page;
 });
 
-AngularModule.controller('patientCaseNumberController', function ($scope, PatientCaseNumber, $location) {
+AngularModule.controller('patientCaseNumberController', function ($scope, PatientCaseNumber, $location, Page) {
+    Page.set("Name", "Get Patient Case Number");
+
     $scope.MoveToFormIndex = function () {
         if ($scope.Form.PatientCaseNum != undefined && $scope.Form.PatientCaseNum != "") {
             PatientCaseNumber.set($scope.Form.PatientCaseNum);
@@ -121,11 +141,11 @@ AngularModule.controller('patientCaseNumberController', function ($scope, Patien
     };
 });
 
-AngularModule.controller('formIndexController', function () {
-
+AngularModule.controller('formIndexController', function (Page) {
+    Page.set("Name", "Form Index");
 });
 
-AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiCall', function (PatientCaseNumber, $scope, ApiCall, $location) {
+AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiCall', function (PatientCaseNumber, $scope, ApiCall, $location, Page) {
     $scope.Form = {};
     console.log(PatientCaseNumber.get());
     $scope.Form.PatientCaseNum = PatientCaseNumber.get();
@@ -155,5 +175,9 @@ AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiC
         else {
             $scope.Form[nameOfArray].push(nameOfElement);
         }
+    };
+
+    $scope.SetTitle = function (title) {
+        Page.set("Name", title);
     };
 }]);
