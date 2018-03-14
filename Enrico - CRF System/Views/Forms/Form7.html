@@ -38,7 +38,7 @@
                             <div class='col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12'>
                                 <div class="form-group">
                                     <div class='input-group date' id='dtDateOfDeath'>
-                                        <input type='date' class="form-control"  ng-model="Form.InclusionCriteria.DateTime"/>
+                                        <input type='date' class="form-control"  ng-model="Form.DateOfDeath.DateTime"/>
                                         <span class="input-group-addon">
                                             <span class="glyphicon glyphicon-calendar"></span>
                                         </span>
@@ -94,15 +94,15 @@
                         </thead>
                         <tbody>
                             <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="IndexHospitalization"></td><td>Index Hospitalization</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="Re-hospitalizedtoindexHospital"></td><td>Re-hospitalized to Index Hospital</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="Re-hospitalizedtoIndexHospital"></td><td>Re-hospitalized to Index Hospital</td></tr>
                             <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="Home"></td><td>Home</td></tr>
                             <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="AnotherHospital"></td><td>Another Hospital</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="TextendedCase"></td><td>Extended Care</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="ExtendedCase"></td><td>Extended Care</td></tr>
                             <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="RehabilitationUnit"></td><td>Rehabilitation Unit</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="HursingHome(permanent)"></td><td>Nursing Home (permanent)</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" onchange="toggleVisibility('divDeathLocation')" ng-model="Form.AdverseEvent.chkEventSeverity.chk1" value="Other*"></td><td>Other*</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-model="Form.LocationOfDeath" value="NursingHome(permanent)"></td><td>Nursing Home (permanent)</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" onchange="toggleVisibility('divDeathLocation')" value="Other*"></td><td>Other*</td></tr>
                             <tr id="divDeathLocation" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtDeathLocationOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtDeathLocationOther" ng-model="Form.LocationOfDeath"/></td>
                             </tr>
                         </tbody>
                     </table>
@@ -126,23 +126,23 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="MyocardialInfarction"></td><td>Myocardial Infarction</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="AnnularDissection"></td><td>Annular Dissection</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="AorticDissection"></td><td>Aortic Dissection</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Arrthuthmia"></td><td>Arrhythmia</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="BelledingEventMajor"></td><td>Bleeding Event, Major</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Myocardial Infarction"></td><td>Myocardial Infarction</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Annular Dissection"></td><td>Annular Dissection</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Aortic Dissection"></td><td>Aortic Dissection</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Arrhythmia"></td><td>Arrhythmia</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Bleeding Event Major"></td><td>Bleeding Event, Major</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Cancer"></td><td>Cancer</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="CardiacArrest"></td><td>Cardiac Arrest</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="CardiacTamponade"></td><td>Cardiac Tamponade</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Cardiac Arrest"></td><td>Cardiac Arrest</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Cardiac Tamponade"></td><td>Cardiac Tamponade</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Andocarditis"></td><td>Endocarditis</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="GastroIntestinalComplications"></td><td>Gastro-Intestinal Complications</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="HeartFailure"></td><td>Heart Failure</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="GastroIntestinal Complications"></td><td>Gastro-Intestinal Complications</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Heart Failure"></td><td>Heart Failure</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Infection/Inflammation"></td><td>Infection/Inflammation</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="MultipleOrganFailure"></td><td>Multiple Organ Failure</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="NonStructValveDysf"></td><td>Non-struct Valve Dysf.</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Multiple Organ Failure"></td><td>Multiple Organ Failure</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="NonStruct Valve Dysf"></td><td>Non-struct Valve Dysf.</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Pneumonia"></td><td>Pneumonia</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="PulmonaryEmbolism"></td><td>Pulmonary Embolism</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="RenalFailure"></td><td>Renal Failure</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Pulmonary Embolism"></td><td>Pulmonary Embolism</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Renal Failure"></td><td>Renal Failure</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Respiratory Failure"></td><td>Respiratory Failure</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Sepsis"></td><td>Sepsis</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Hemorrhagic Stroke"></td><td>Hemorrhagic Stroke</td></tr>
@@ -156,9 +156,9 @@
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Vascular Complication (not access-related)"></td><td>Vascular Complication (not access-related)</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Vascular Access-Related Complication"></td><td>Vascular Access-Related Complication</td></tr>
                             <tr><td><input type="radio" name="rad3_1" class="info-selection" ng-model="Form.MainCauseOfDeath" value="Valve Migration"></td><td>Valve Migration</td></tr>
-                            <tr><td><input type="radio" name="rad3_1" class="info-selection" onchange="toggleVisibility('divMainCauseOfDeath')" ng-model="Form.MainCauseOfDeath" value="Other*"></td><td>Other*</td></tr>
+                            <tr><td><input type="radio" name="rad3_1" class="info-selection" onchange="toggleVisibility('divMainCauseOfDeath')" value="Other*"></td><td>Other*</td></tr>
                             <tr id="divMainCauseOfDeath" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtDeathLocationOther" ng-model="Form.MainCauseOfDeath.Other" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtDeathLocationOther" ng-model="Form.MainCauseOfDeath" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -196,7 +196,7 @@
     <div class="container-fluid navbar-fixed" id="navButtons">
         <div class="row">
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-warning" onclick="window.location='../Forms/index.html'">< Back to Forms</button>
+                <button class="btn btn-warning" ng-click="ReturnToFormIndex()">< Back to Forms</button>
             </div>
 
             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">

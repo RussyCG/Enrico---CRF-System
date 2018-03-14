@@ -132,10 +132,13 @@ AngularModule.controller('mainController', function ($scope, Page) {
 AngularModule.controller('patientCaseNumberController', function ($scope, PatientCaseNumber, $location, Page) {
     Page.set("Name", "Get Patient Case Number");
 
+    $scope.Cancel = function () {
+        $location.path('/');
+    };
+
     $scope.MoveToFormIndex = function () {
         if ($scope.Form.PatientCaseNum != undefined && $scope.Form.PatientCaseNum != "") {
             PatientCaseNumber.set($scope.Form.PatientCaseNum);
-            console.log('Moving');
             $location.path('/FormIndex');
         }
     };
@@ -180,4 +183,8 @@ AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiC
     $scope.SetTitle = function (title) {
         Page.set("Name", title);
     };
+
+    $scope.ReturnToFormIndex = function(){
+        $location.path('/FormIndex');
+    }
 }]);

@@ -16,11 +16,11 @@
                             <h3>Patient Case Number:</h3>
                             <div id="patientCaseNumber">
                                 <label class="text-center">Please enter the Patient Case Number: </label>
-                                <input class="form-control" type="text" ng-model="Form.PatientCaseNum"/>
+                                <input class="form-control" type="text" ng-model="Form.PatientCaseNum" ng-keyup="$event.keyCode == 13 ? MoveToFormIndex() : null"/>
                             </div>
                             <div id="patientCaseNumberButtons">
                                 <div class="col-md-3">
-                                    <button style="width:100%" class="btn btn-danger" onclick="window.location = '../index.html';">Cancel</button>
+                                    <button style="width:100%" class="btn btn-danger" ng-click="Cancel()">Cancel</button>
                                 </div>
 
                                 <div class="col-md-6">
