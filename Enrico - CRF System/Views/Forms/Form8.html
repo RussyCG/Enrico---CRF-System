@@ -68,13 +68,13 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="Baseline"></td><td>Baseline</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="Procedure"></td><td>Procedure</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="Discharge"></td><td>Discharge</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="28 DFU"></td><td>28 DFU</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="90 DFU"></td><td>90 DFU</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="6 MFU"></td><td>6 MFU</td></tr>
-                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval['rad2_1'] = true" value="1 YFU"></td><td>1 YFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval = true" value="Baseline"></td><td>Baseline</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval = true" value="Procedure"></td><td>Procedure</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval = true" value="Discharge"></td><td>Discharge</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval = true" value="28 DFU"></td><td>28 DFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval = true" value="90 DFU"></td><td>90 DFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval = true" value="6 MFU"></td><td>6 MFU</td></tr>
+                            <tr><td><input type="radio" name="rad2_1" class="info-selection" ng-click="Form.TimeInterval = true" value="1 YFU"></td><td>1 YFU</td></tr>
                         </tbody>
                     </table>
                 </div>
@@ -99,11 +99,11 @@
                         <tbody>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInclusionCriteria')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Inclusion Criteria*"></td><td>Inclusion Criteria*</td></tr>
                             <tr id="divInclusionCriteria" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" ng-model="Form.ProtocolDeviationCode.InclusionCriteria"/></td>
                             </tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divExclusionCriteria')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Exclusion Criteria*"></td><td>Exclusion Criteria*</td></tr>
                             <tr id="divExclusionCriteria" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" ng-model="Form.ProtocolDeviationCode.ExclusionCriteria" /></td>
                             </tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Informed Consent not signed by subject*"></td><td>Informed Consent not signed by subject</td></tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Informed Consent signed after procedure"></td><td>Informed Consent signed after procedure</td></tr>
@@ -112,17 +112,17 @@
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Physical Exam"></td><td>Physical Exam</td></tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divLabratoryValuesNotCollected')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Labratory values not collected*"></td><td>Labratory values not collected*</td></tr>
                             <tr id="divLabratoryValuesNotCollected" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" ng-model="Form.ProtocolDeviationCode.LabratoryValuesNotCollected"/></td>
                             </tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Invasive Hemodynamics Assessment"></td><td>Invasive Hemodynamics Assessment</td></tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divInvasiveHemodynamicsParameters')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Invasive Hemodynamics parameters not collected*"></td><td>Invasive Hemodynamics parameters not collected*</td></tr>
                             <tr id="divInvasiveHemodynamicsParameters" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" ng-model="Form.ProtocolDeviationCode.InvasiveHemodynamicsParametersNotCollected"/></td>
                             </tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Protocol mandated medications not given"></td><td>Protocol mandated medications not given</td></tr>
                             <tr><td><input type="checkbox" name="chk5_1" class="info-selection" onchange="toggleVisibility('divOther')" ng-click="ToggleCheckbox('ProtocolDeviationCode','Correct')" value="Other*"></td><td>Other*</td></tr>
                             <tr id="divOther" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" ng-model="Form.ProtocolDeviationCode.ProtocolMandatedMedicationsNotGiven"/></td>
                             </tr>
                         </tbody>
                     </table>
@@ -146,14 +146,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_1'] = true" value="Not done"></td><td>Not Done</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_2'] = true" value="Out of time window"></td><td>Out of time window</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_3'] = true" value="Out of range"></td><td>Out of range</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_4'] = true" value="Physician Preference"></td><td>Physician preference</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation['rad4_5'] = true" value="Does not apply"></td><td>Does not apply</td></tr>
-                            <tr><td><input type="radio" name="chk6_1" class="info-selection" onchange="toggleVisibility('divOtherReason')" ng-click="Form.ReasonforDeviation['rad4_6'] = true" value="Other*"></td><td>Other*</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation = 'Not done'" value="Not done"></td><td>Not Done</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation = 'Out of time window'" value="Out of time window"></td><td>Out of time window</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation = 'Out of range'" value="Out of range"></td><td>Out of range</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation = 'Physician Preference'" value="Physician Preference"></td><td>Physician preference</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" ng-click="Form.ReasonforDeviation = 'Does not apply'" value="Does not apply"></td><td>Does not apply</td></tr>
+                            <tr><td><input type="radio" name="chk6_1" class="info-selection" onchange="toggleVisibility('divOtherReason')" value="Other*"></td><td>Other*</td></tr>
                             <tr id="divOtherReason" class="additional-info-required-dialog">
-                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" /></td>
+                                <td colspan="2"><input class="form-control" type="text" placeholder="Specify" name="txtHistoryOfCardiacDiseaseOther" ng-model="Form.ReasonforDeviation" /></td>
                             </tr>
                         </tbody>
                     </table>
@@ -177,7 +177,7 @@
                             </div>
 
                             <div class="col-md-9 input-item">
-                                <input style="height: 7em" type="text" name="txtDescription" placeholder="" class="form-control" />
+                                <input style="height: 7em" type="text" name="txtDescription" placeholder="" class="form-control" ng-model="Form.Description"/>
                             </div>
                         </div>
                     </div>
@@ -201,7 +201,7 @@
                             </div>
 
                             <div class="col-md-9 input-item">
-                                <input style="height: 7em" type="text" name="txtComment" placeholder="" class="form-control" />
+                                <input style="height: 7em" type="text" name="txtComment" placeholder="" class="form-control" ng-model="Form.Comment"/>
                             </div>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
     <div class="container-fluid navbar-fixed" id="navButtons">
         <div class="row">
             <div class="col-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
-                <button class="btn btn-warning" onclick="window.location='../Forms/index.html'">< Back to Forms</button>
+                <button class="btn btn-warning" ng-click="ReturnToFormIndex()">< Back to Forms</button>
             </div>
 
             <div class="col-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
