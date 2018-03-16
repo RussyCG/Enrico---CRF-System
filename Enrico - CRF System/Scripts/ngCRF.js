@@ -171,6 +171,10 @@ AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiC
     };
 
     $scope.ToggleCheckbox = function (nameOfArray, nameOfElement) {
+        if ($scope.Form[nameOfArray] == undefined) {
+            $scope.Form[nameOfArray] = [];
+        }
+
         if ($scope.Form[nameOfArray].includes(nameOfElement)) {
             var iPositionOfElement = $scope.Form[nameOfArray].indexOf(nameOfElement);
             $scope.Form[nameOfArray].splice(iPositionOfElement, 1);
