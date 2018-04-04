@@ -9,7 +9,12 @@
 
 
     <!-- Self created style sheet for page -->
+<<<<<<< Updated upstream
     <link rel="stylesheet" href="/Views/Forms/Form10.css" />
+=======
+    <link rel="stylesheet" href="Form1.css" />
+    <!--<link rel="stylesheet" href="FormBaseCSS.css"/>-->
+>>>>>>> Stashed changes
 
     <script src="../../Scripts/moment-with-locales.js"></script>
     <script src="../../Scripts/bootstrap-datetimepicker.js"></script>
@@ -190,7 +195,7 @@
                                 Subject had to repeat them in the forward order
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Readlettersinforwardorder','Correct')" value="2 1 8 5 4"> <label>2 1 8 5 4</label>
+                                <input type="checkbox" name="chk2_2_1" ng-model="Form.check_2.2.1" class="info-selection" ng-click="ToggleCheckbox('Readlettersinforwardorder','Correct')" value="2 1 8 5 4"> <label>2 1 8 5 4</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
@@ -205,7 +210,7 @@
                                 Subject had to repeat them in the backwards order
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection"  ng-click="ToggleCheckbox('Readlettersinbackwardsorder','Correct')" value="7 4 2"> <label>7 4 2</label>
+                                <input type="checkbox" name="chk2_2_2" ng-model="Form.check_2.2.2" class="info-selection"  ng-click="ToggleCheckbox('Readlettersinbackwardsorder','Correct')" value="7 4 2"> <label>7 4 2</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
@@ -235,7 +240,7 @@
 
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input style="text-align:left" type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('AlaphabeticIdentification','Correct')" value="F B A C M N A A J K L B A F A K D E A A A J A M O F A A B"><h4 style="text-align:left"><label><b>F B A C M N A A J K L B A F A K D E A A A J A M O F A A B </b></label></h4>
+                                <input style="text-align:left" type="checkbox" ng-model="Form.check_2.2.3" name="chk2_2_3" class="info-selection" ng-click="ToggleCheckbox('AlaphabeticIdentification','Correct')" value="F B A C M N A A J K L B A F A K D E A A A J A M O F A A B"><h4 style="text-align:left"><label><b>F B A C M N A A J K L B A F A K D E A A A J A M O F A A B </b></label></h4>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
@@ -251,19 +256,19 @@
                                 Subject had to repeat them in the forward order
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-94','Correct')" value="93"> <label>93</label>
+                                <input type="checkbox" name="chk2_2_4" ng-model="Form.check_2.2.4" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-94','Correct')" value="93"> <label>93</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-86','Correct')" value="86"> <label>86</label>
+                                <input type="checkbox" name="chk2_2_5" ng-model="Form.check_2.2.5" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-86','Correct')" value="86"> <label>86</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-79','Correct')" value="79"> <label>79</label>
+                                <input type="checkbox" name="chk2_2_6" ng-model="Form.check_2.2.6" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-79','Correct')" value="79"> <label>79</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-72','Correct')" value="72"> <label>72</label>
+                                <input type="checkbox" name="chk2_2_7" ng-model="Form.check_2.2.7" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-72','Correct')" value="72"> <label>72</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-65','Correct')" value="65"> <label>65</label>
+                                <input type="checkbox" name="chk2_2_8" ng-model="Form.check_2.2.8" class="info-selection" ng-click="ToggleCheckbox('Substractionby7-65','Correct')" value="65"> <label>65</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
@@ -300,7 +305,7 @@
                                 Repeat
                             </div>
                             <div class="col" style="text-wrap : normal; border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Repeatsentence1','Correct')" value="I only know that John is the one to help today"> <label>I only know that John is the one to help today </label>
+                                <input type="checkbox" name="chk2_3_1" ng-model="Form.check_2.3.1" class="info-selection" ng-click="ToggleCheckbox('Repeatsentence1','Correct')" value="I only know that John is the one to help today"> <label>I only know that John is the one to help today </label>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
@@ -312,7 +317,7 @@
 
                             </div>
                             <div class="col" style="text-wrap : normal; border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" ng-click="ToggleCheckbox('Repeatsentence2','Correct')" value="The cat always hid under the couch when dogs were in the room"> <label>The cat always hid under the couch when dogs were in the room </label>
+                                <input type="checkbox" name="chk2_3_2" ng-model="Form.check_2.3.2" class="info-selection" ng-click="ToggleCheckbox('Repeatsentence2','Correct')" value="The cat always hid under the couch when dogs were in the room"> <label>The cat always hid under the couch when dogs were in the room </label>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
@@ -338,7 +343,7 @@
 
                             </div>
                             <div class="col" style="text-wrap : normal; border: 1px solid black">
-                                <input type="checkbox" name="chk2_1" class="info-selection" style="text-wrap : normal; border: 1px solid black" ng-click="ToggleCheckbox('MaximumnumberofFwords','Correct')" value="( N > 11 words)"> <label>( N > 11 words)</label>
+                                <input type="checkbox" name="chk2_3_3" ng-model="Form.check_2.3.3" class="info-selection" style="text-wrap : normal; border: 1px solid black" ng-click="ToggleCheckbox('MaximumnumberofFwords','Correct')" value="( N > 11 words)"> <label>( N > 11 words)</label>
                             </div>
                             <div class="col" style="border: 1px solid black">
 
