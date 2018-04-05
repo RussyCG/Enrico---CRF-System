@@ -70,9 +70,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk1" value="{{Form.AdverseEvent.chkEventOccurred.chk1}}" class="info-selection"></td><td>Intraprocedural</td></tr>
-                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk2" value="{{Form.AdverseEvent.chkEventOccurred.chk2}}" class="info-selection"></td><td>Pre-discharge</td></tr>
-                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk3" value="{{Form.AdverseEvent.chkEventOccurred.chk3}}" class="info-selection"></td><td>Post-discharge</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk1" value="Intraprocedural" class="info-selection"></td><td>Intraprocedural</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk2" value="Pre-discharge" class="info-selection"></td><td>Pre-discharge</td></tr>
+                                <tr><td><input type="radio" name="chkEventOccurred" ng-model="Form.AdverseEvent.chkEventOccurred.chk3" value="Post-discharge" class="info-selection"></td><td>Post-discharge</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -87,11 +87,11 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk1" value="{{Form.AdverseEvent.chkEventType.chk1}}" class="info-selection"></td><td>SAE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk2" value="{{Form.AdverseEvent.chkEventType.chk2}}" class="info-selection"></td><td>SADE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk3" value="{{Form.AdverseEvent.chkEventType.chk3}}" class="info-selection"></td><td>AE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk4" value="{{Form.AdverseEvent.chkEventType.chk4}}" class="info-selection"></td><td>ADE</td></tr>
-                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk5" value="{{Form.AdverseEvent.chkEventType.chk5}}" class="info-selection"></td><td>UADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk1" value="SAE" class="info-selection"></td><td>SAE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk2" value="SADE" class="info-selection"></td><td>SADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk3" value="AE" class="info-selection"></td><td>AE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk4" value="ADE" class="info-selection"></td><td>ADE</td></tr>
+                                <tr><td><input type="radio" name="chkEventType" ng-model="Form.AdverseEvent.chkEventType.chk5" value="UADE" class="info-selection"></td><td>UADE</td></tr>
                             </tbody>
                         </table>
                     </div>
@@ -106,10 +106,10 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk1" value="{{Form.AdverseEvent.chkEventRelatedTo.chk1}}" class="info-selection"></td><td>Procedure</td></tr>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk2" value="{{Form.AdverseEvent.chkEventRelatedTo.chk2}}" class="info-selection"></td><td>Comorbidities</td></tr>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk3" value="{{Form.AdverseEvent.chkEventRelatedTo.chk3}}" class="info-selection" ></td><td>Device Malfunction</td></tr>
-                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk4" value="{{Form.AdverseEvent.chkEventRelatedTo.chk4}}" class="info-selection" onchange="toggleVisibility('txtOtherEventRelatedTo')"></td><td>Other*</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk1" value="Procedure" class="info-selection"></td><td>Procedure</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk2" value="Comorbidities" class="info-selection"></td><td>Comorbidities</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk3" value="Device Malfunction" class="info-selection" ></td><td>Device Malfunction</td></tr>
+                                <tr><td><input type="radio" name="chkEventRelatedTo" ng-model="Form.AdverseEvent.chkEventRelatedTo.chk4" value="Other*" class="info-selection" onchange="toggleVisibility('txtOtherEventRelatedTo')"></td><td>Other*</td></tr>
                                 <tr id="txtOtherEventRelatedTo" class="additional-info-required-dialog">
                                     <td colspan="2"><input class="form-control" type="text" ng-model="Form.AdverseEvent.txtOtherEventRelatedTo.text" placeholder="Specify" name="txtOtherEventRelatedTo" /></td>
                                 </tr>
