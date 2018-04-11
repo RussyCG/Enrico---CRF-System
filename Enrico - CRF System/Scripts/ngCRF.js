@@ -53,7 +53,7 @@ AngularModule.service('ApiCall', ['$http', function ($http) {
     };
 
     this.Get = function (controllerName) {
-        loading.setValue(true);
+        //loading.setValue(true);
         return this.Base(controllerName, "Get").then(successCallBack, errorCallBack);
     };
 
@@ -62,17 +62,17 @@ AngularModule.service('ApiCall', ['$http', function ($http) {
             params: obj
         };
 
-        loading.setValue(true);
+        //loading.setValue(true);
         return this.BaseWithObj(controllerName, "Get", obj).then(successCallBack, errorCallBack);
     };
 
     this.Post = function (controllerName, obj) {
-        loading.setValue(true);
+        //loading.setValue(true);
         return this.BaseWithObj(controllerName, "Post", obj).then(successCallBack, errorCallBack);
     };
 
     this.Put = function (controllerName, obj) {
-        loading.setValue(true);
+        //loading.setValue(true);
         return this.BaseWithObj(controllerName, "Put", obj).then(successCallBack, errorCallBack);
     };
 
@@ -81,12 +81,12 @@ AngularModule.service('ApiCall', ['$http', function ($http) {
             paramas: obj
         }
 
-        loading.setValue(true);
+        //loading.setValue(true);
         return this.BaseWithObj(controllerName, "Delete", obj).then(successCallBack, errorCallBack);
     };
 
     function successCallBack(response, data, status) {
-        loading.setValue(false);
+        //loading.setValue(false);
         if (SuccessMessage != "" && SuccessMessage != undefined) {
             alert(SuccessMessage);
         }
@@ -94,7 +94,7 @@ AngularModule.service('ApiCall', ['$http', function ($http) {
     };
 
     function errorCallBack(response) {
-        loading.setValue(false);
+        //loading.setValue(false);
         if (ErrorMessage != "" && ErrorMessage != undefined) {
             alert(ErrorMessage);
         }
@@ -166,7 +166,7 @@ AngularModule.controller('formController', ['PatientCaseNumber', '$scope', 'ApiC
         }
         else {
             form.Name = formName;
-            console.log(form);
+            ApiCall.Post('Base', form);
         }
     };
 
