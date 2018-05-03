@@ -16,7 +16,7 @@ namespace Enrico___CRF_System.Controllers
         public async Task<string> GetCollections([FromBody]JToken body) {
 
             var docController = new DocumentController();
-            await docController.Post(body.ToString());
+            await docController.POST(body.ToString());
            
             return await docController.Get();
 

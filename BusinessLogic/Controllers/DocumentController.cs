@@ -12,10 +12,7 @@ namespace BusinessLogic.Controllers
 {
     public class DocumentController 
     {
-        //public void async POST(Document Document)
-        //{
-        //     await 
-        //}
+        
         DataBaseContext db = new DataBaseContext();
 
         //public async Task POST(BsonDocument[] documents)
@@ -30,7 +27,7 @@ namespace BusinessLogic.Controllers
             return val[7].ToString();
         }
 
-        public async Task<List<string>> Post(string values) {
+        public async Task<List<string>> POST(string values) {
             var doc = DataBaseContext.JsonToBson(values);
             await DataBaseContext.InsertSingle("test",doc);
             return await DataBaseContext.ListCollections();
